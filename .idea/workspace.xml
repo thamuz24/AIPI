@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="633261ec-bd20-4111-8690-96908a82ee6c" name="Changes" comment="te">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/node_modules/.cache/default-development/0.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/node_modules/.cache/default-development/index.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/.idea/aipa_controll.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/face/face_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_controll/face/face_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/data/aipa.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/data/aipa.mv.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +61,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;update__fe&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/do_an_lol/AIPI/aipa_controll&quot;,
