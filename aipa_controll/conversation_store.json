@@ -1732,6 +1732,39 @@
         "used": []
       },
       "updated_at": "2026-03-03T17:25:30Z"
+    },
+    "sess-mmcbajwh-rkdzkl36": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "tra cứu game arena breakout  infinite",
+          "at": "2026-03-04T17:31:26Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Arena Breakout: Infinite là một trò chơi bắn súng chiến thuật trên PC, tập trung vào tính chân thực và hậu quả hơn so với hành động arcade. Trò chơi này miễn phí và cho bạn trải nghiệm săn looting trên đường đi tới thành công.",
+          "at": "2026-03-04T17:31:26Z"
+        },
+        {
+          "sender": "user",
+          "text": "thế chiến thứ 2 bắt đầu ngày nào",
+          "at": "2026-03-04T17:33:44Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Thế chiến thứ hai bắt đầu vào ngày 1 1939 , khi Đức Quốc Xã tấn công Ba Lan.",
+          "at": "2026-03-04T17:33:44Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-04T17:33:44Z"
     }
   }
 }
