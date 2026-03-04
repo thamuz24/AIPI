@@ -1,0 +1,38 @@
+[
+  {
+    "question": "hello",
+    "answer": "Chào bạn. Mình đang sẵn sàng hỗ trợ bạn."
+  },
+  {
+    "question": "bạn làm được gì",
+    "answer": "Xin chào! Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần hỗ trợ gì nhé!"
+  },
+  {
+    "question": "chào bạn , bạn là ai",
+    "answer": "Xin chào! Tôi là trợ lý AI AIPA, có thể giúp bạn với nhiều tác vụ như tìm kiếm thông tin, giải đáp thắc mắc, lập lịch hoặc hỗ trợ học tập."
+  },
+  {
+    "question": "bạn có thể làm gì",
+    "answer": "Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần gì nhé!"
+  },
+  {
+    "question": "dân số thế giới bao nhiêu người",
+    "answer": "Theo số liệu gần đây nhất, dân số thế giới khoảng 8 tỷ người. Số liệu chính xác có thể thay đổi theo thời gian, bạn có thể kiểm tra trên trang web của Liên Hợp Quốc hoặc tổ chức dân số thế giới để có thông tin cập nhật nhất."
+  },
+  {
+    "question": "tôi muốn biết tổ chức liên hợp quốc là gì",
+    "answer": "Mình đã tra cứu nhanh từ nguồn web, tóm tắt như sau:\n1. Liên Hợp Quốc Wikipedia tiếng Việt: Liên Hợp Quốc (còn gọi là Liên Hiệp Quốc, viết tắt LHQ; tiếng Anh: United Nations, viết tắt là UN) là một tổ chức liên chính phủ có nhiệm vụ duy trì hòa bình v ...\nNguồn: https://vi.wikipedia.org/wiki/LiC3AAnHE1BBA3pQuE1BB91c\n2. Thông tin cơ bản về Liên hợp quốc: Liên hợp quốc chính thức thành lập ngày 24/10/1945, khi Trung Quốc, Pháp, Liên Xô, Anh, Hoa Kỳ và đa số các quốc gia ký kết trước đó phê ...\nNguồn: https://nhandan.vn/special/thongtincobanLienhopquoc/index.html"
+  },
+  {
+    "question": "Mỹ là",
+    "answer": "Mỹ là một quốc gia lớn ở Bắc Mỹ, gồm 50 tiểu bang và thủ đô Washington, D.C. Mỹ là một cường quốc thế giới về kinh tế, chính trị và quân sự. Nó cũng nổi tiếng với nhiều thành phố lớn như New York, Los Angeles và Chicago, cùng nhiều văn hóa đa dạng và nền giáo dục hàng đầu thế giới."
+  },
+  {
+    "question": "bạn là",
+    "answer": "Xin chào! Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần hỗ trợ gì nhé!"
+  },
+  {
+    "question": "bạn là ai",
+    "answer": "Xin chào! Tôi là trợ lý AI AIPA, có thể giúp bạn với nhiều tác vụ như tìm kiếm thông tin, giải đáp thắc mắc, lập lịch hoặc hỗ trợ học tập."
+  }
+]

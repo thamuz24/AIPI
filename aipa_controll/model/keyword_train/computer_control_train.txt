@@ -1,0 +1,35 @@
+﻿# Computer control train file
+# Format: trigger => ACTION|arg1|arg2||ACTION2|arg1|arg2
+# Rule match: prompt phai bat dau bang trigger (khong phan biet hoa/thuong, co/khong dau)
+# Placeholder ho tro trong arg:
+#   {PROMPT}      : toan bo prompt goc
+#   {PROMPT_CLEAN}: prompt da chuan hoa khong dau
+#   {REST}        : phan prompt con lai sau trigger
+#   {NOW}         : thoi gian hien tai yyyy-mm-dd HH:MM:SS
+#   {NL}          : ky tu xuong dong
+#
+# Action ho tro:
+# OPEN_FILE/READ_FILE|path
+# LIST_DIR|path
+# WRITE_FILE|path|content
+# APPEND_FILE|path|content
+# CREATE_FILE|path|optional_content
+# CREATE_DIR|path
+# DELETE_FILE|path
+# DELETE_DIR|path
+# DELETE_PATH|path
+# SCAN_DESKTOP_CLOCK
+
+thực hiện tác vụ: kiểm tra thời gian =>SCAN_DESKTOP_CLOCK
+mo file train=>OPEN_FILE|model/keyword_train/computer_control_train.txt
+xem lich su hoi thoai=>OPEN_FILE|conversation_store.json
+liet ke model=>LIST_DIR|model
+
+tao thu muc test=>CREATE_DIR|tmp/train_manual
+xoa thu muc test=>DELETE_DIR|tmp/train_manual
+
+tao file test=>CREATE_FILE|tmp/train_manual/test.txt|File duoc tao luc {NOW}
+ghi de file test=>WRITE_FILE|tmp/train_manual/test.txt|{REST}
+them vao file test=>APPEND_FILE|tmp/train_manual/test.txt|{REST}{NL}
+mo file test=>OPEN_FILE|tmp/train_manual/test.txt
+xoa file test=>DELETE_FILE|tmp/train_manual/test.txt

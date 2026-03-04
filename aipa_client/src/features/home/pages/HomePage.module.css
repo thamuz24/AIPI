@@ -1,0 +1,525 @@
+﻿/* HomePage.module.css */
+
+@keyframes slow-pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(0.98); }
+}
+
+@keyframes loading-dots {
+    0%, 20%, 80%, 100% { transform: scale(1); }
+    40% { transform: scale(1.5); }
+    60% { transform: scale(0.8); }
+}
+
+@keyframes float-anime {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes eye-blink {
+    0%, 44%, 48%, 100% { transform: scaleY(1); }
+    46% { transform: scaleY(0.2); }
+}
+
+@keyframes mouth-talk {
+    0% { transform: scaleY(0.85) translateY(0); }
+    100% { transform: scaleY(1.2) translateY(1px); }
+}
+
+@keyframes listen-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+.homePageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #161b22;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #0d1117;
+    border-bottom: 1px solid #30363d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.headerTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00bcd4;
+    letter-spacing: 0.05em;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.newChatButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #0f1f2a;
+    color: #b6f2ff;
+    border: 1px solid #1f4f62;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.newChatButton:hover {
+    background: #123043;
+    border-color: #00bcd4;
+    color: #ffffff;
+}
+
+.profileButton {
+    background: #22272e;
+    color: #00bcd4;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.profileButton:hover {
+    background-color: #30363d;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+.settingsPopover {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 250px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    z-index: 150;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.settingsPopover.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.popoverItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.popoverItem:hover {
+    background-color: #22272e;
+}
+
+.popoverItem.logout {
+    color: #ef4444;
+}
+
+.mainContent {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    padding-bottom: 16px;
+}
+
+.botArea {
+    width: 30%;
+    max-width: 300px;
+    padding: 24px;
+    border-right: 1px solid #30363d;
+    background-color: #161b22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.botImage {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    background: #0d1117;
+    border: 2px solid #00bcd4;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    overflow: hidden;
+}
+
+.animeScene {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 8px;
+}
+
+.animeAura {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, rgba(16, 185, 129, 0) 70%);
+    filter: blur(8px);
+    animation: slow-pulse 2.4s ease-in-out infinite;
+}
+
+.animeAuraSpeaking {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.42) 0%, rgba(59, 130, 246, 0) 70%);
+}
+
+.animeGirl {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: float-anime 3s ease-in-out infinite;
+}
+
+.animeGirlSpeaking .animeMouth {
+    animation: mouth-talk 0.22s ease-in-out infinite alternate;
+}
+
+.animeGirlListening .animeHair {
+    animation: listen-bob 0.9s ease-in-out infinite;
+}
+
+.animeImageWrap {
+    width: 78%;
+    height: 78%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+}
+
+.animeImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.animeHair {
+    width: 74px;
+    height: 52px;
+    border-radius: 46px 46px 24px 24px;
+    background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+    margin-bottom: -10px;
+}
+
+.animeFace {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #fde68a 0%, #fcd34d 100%);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.animeEyes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    height: 14px;
+}
+
+.animeMouth {
+    width: 18px;
+    height: 10px;
+    border: 2px solid #7f1d1d;
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+    transform-origin: center top;
+}
+
+.eyeDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1f2937;
+    transform-origin: center;
+}
+
+.leftEye {
+    animation: eye-blink 3.9s ease-in-out infinite;
+}
+
+.rightEye {
+    animation: eye-blink 4.1s ease-in-out infinite;
+}
+
+.animeFace[data-expression='smile'] .animeMouth {
+    width: 20px;
+    height: 11px;
+}
+
+.animeFace[data-expression='happy'] .animeMouth {
+    width: 16px;
+    height: 9px;
+}
+
+.animeFace[data-expression='wink'] .rightEye {
+    transform: scaleY(0.2);
+    animation: none;
+}
+
+.animeFace[data-expression='wink'] .animeMouth {
+    width: 16px;
+    transform: rotate(-10deg);
+}
+
+.animeFace[data-expression='surprised'] .eyeDot {
+    height: 7px;
+}
+
+.animeFace[data-expression='surprised'] .animeMouth {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #7f1d1d;
+    border-radius: 50%;
+    border-top: 2px solid #7f1d1d;
+}
+
+.animeBody {
+    width: 72px;
+    height: 80px;
+    margin-top: -2px;
+    border-radius: 16px 16px 12px 12px;
+    background: linear-gradient(180deg, #06b6d4 0%, #0284c7 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.modelPlaceholder {
+    font-size: 13px;
+    color: #9ca3af;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+.botInfo {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.botName {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.botStatus {
+    font-size: 12px;
+    color: #48bb78;
+    transition: color 0.3s;
+}
+
+.voiceSelector {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.voiceButton {
+    background: #22272e;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.voiceButton:hover {
+    border-color: #00bcd4;
+    color: #ffffff;
+}
+
+.voiceButtonActive {
+    background: #00bcd4;
+    border-color: #00bcd4;
+    color: #0b0f14;
+    font-weight: 600;
+}
+
+.chatArea {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 120px);
+}
+
+.messageBubble {
+    max-width: min(78%, 920px);
+    padding: 10px 15px;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.userMessage {
+    align-self: flex-end;
+    margin-left: auto;
+    background-color: #00bcd4;
+    color: black;
+    border-bottom-right-radius: 4px;
+}
+
+.botMessage {
+    align-self: flex-start;
+    background-color: #22272e;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-bottom-left-radius: 4px;
+}
+
+.loadingDots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 8px 15px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #00bcd4;
+    border-radius: 50%;
+    animation: loading-dots 1.5s infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.footer {
+    padding: 16px 24px;
+    background-color: #0d1117;
+    border-top: 1px solid #30363d;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: sticky;
+    bottom: 0;
+    z-index: 90;
+}
+
+.chatInput {
+    flex-grow: 1;
+    padding: 12px 16px;
+    background-color: #22272e;
+    border: 1px solid #30363d;
+    border-radius: 24px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.chatInput:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.3);
+}
+
+.micButton {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.micButton.active {
+    background-color: #ef4444;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.8);
+    animation: slow-pulse 1s infinite;
+}
+
+.micButton:hover {
+    background-color: #38a169;
+}
+
+.sendButton {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sendButton:disabled, .micButton:disabled {
+    background-color: #30363d;
+    cursor: not-allowed;
+    opacity: 0.5;
+}

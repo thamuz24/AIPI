@@ -1,0 +1,1737 @@
+{
+  "sessions": {
+    "demo-memory-codex": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Toi ten la Nam va toi thich bong da",
+          "at": "2026-03-03T09:33:17Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chào Nam! Rất vui được biết bạn thích bóng đá. Bạn có thể chia sẻ thêm về đội bóng yêu thích của mình không?",
+          "at": "2026-03-03T09:33:17Z"
+        },
+        {
+          "sender": "user",
+          "text": "Ban nho ten toi la gi?",
+          "at": "2026-03-03T09:33:20Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tên bạn là Nam.",
+          "at": "2026-03-03T09:33:20Z"
+        }
+      ],
+      "facts": [
+        "Ten nguoi dung la nam va toi thich bong da."
+      ],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T09:33:20Z"
+    },
+    "demo-memory-codex-2": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Toi ten la Nam va toi thich bong da",
+          "at": "2026-03-03T09:34:32Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chào Nam! Rất vui được biết bạn thích bóng đá. Bạn có thể chia sẻ thêm về đội bóng yêu thích của mình không?",
+          "at": "2026-03-03T09:34:32Z"
+        },
+        {
+          "sender": "user",
+          "text": "Ban nho ten toi la gi?",
+          "at": "2026-03-03T09:34:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tên bạn là Nam.",
+          "at": "2026-03-03T09:34:34Z"
+        }
+      ],
+      "facts": [
+        "Ten nguoi dung la nam."
+      ],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T09:34:34Z"
+    },
+    "61423057-ee42-459b-9b51-4a69e2bd4adb": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "tôi muốn code game mmorpg cần gì",
+          "at": "2026-03-03T09:56:15Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Để phát triển một game MMORPG (Massively Multiplayer Online Role-Playing Game), bạn cần chuẩn bị về mặt kỹ thuật và quản lý dự án như sau:\n\n1. **Yêu Cầu Công Nghệ:**\n   - **Ngôn Ngữ Lập Trình:** C# (Unity), Java (Minecraft), C++ (World of Warcraft).\n   - **Engine:** Unity, Unreal Engine.\n   - **Cơ sở Dữ liệu:** MySQL, PostgreSQL, NoSQL.\n   - **Server:** Node.js, Python, Java.\n\n2. **Phân Phối Công Việc:**\n   - **Lập Trình viên:** Phát triển client và server.\n   - **Thiết Kế Hình ảnh:** Thiết kế nhân vật, đồ họa.\n   - **Thiết Kế Sound:** Tạo âm thanh, hiệu ứng âm thanh.\n   - **Thiết Kế UI/UX:** Thiết kế giao diện người dùng.\n   - **Nhân Vật Kịch bản:** Viết kịch bản cho nhân vật, câu chuyện.\n   - **Kiểm thử:** Kiểm tra lỗi, tối ưu hóa hiệu suất.\n\n3. **Phần Mềm và Công Cụ:**\n   - **Tạo Map:** Tiled, Blender.\n   - **Tạo Asset:** Substance Painter, Blender.\n   - **Tạo UI:** Unity UI, Unreal Engine UI.\n\n4. **Kỹ Năng và Kiến Thức:**\n   - **Kỹ Năng Lập Trình:** Nắm vững các ngôn ngữ lập trình và các công nghệ liên quan.\n   - **Kiến Thức về Game:** Hiểu về cơ chế hoạt động của game MMORPG.\n   - **Kỹ Năng Quản Lý Dự Án:** Quản lý thời gian, phân công công việc.\n\n5. **Phần Mềm Quản Lý Dự Án:**\n   - **Trello, Jira:** Quản lý công việc.\n   - **GitHub, GitLab:** Quản lý code và code review.\n\n6. **Kế Hoạch Phát Triển:**\n   - **Phân Cải:** Xác định các tính năng cần thiết và không cần thiết.\n   - **Điểm Chạm:** Xác định các giai đoạn phát triển và đánh giá.\n\n7. **Chi Phí:**\n   - **Báo Giá:** Đảm bảo có ngân sách phù hợp cho dự án.\n\n8. **Đối Tác:**\n   - **Nhà Cung Cấp Dịch Vụ:** Tìm kiếm nhà cung cấp dịch vụ như hosting, cloud service.\n\n9. **Kiểm Tra và Tối Ưu Hóa:**\n   - **Kiểm Tra Lỗi:** Sử dụng các công cụ kiểm tra lỗi.\n   - **Tối Ưu Hóa Hiệu Suất:** Tối ưu hóa hiệu suất game.\n\nChúc bạn thành công trong dự án game của mình!",
+          "at": "2026-03-03T09:56:15Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T09:56:46Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI của hệ thống AIPA, sẵn sàng hỗ trợ bạn với các câu hỏi và yêu cầu của bạn.",
+          "at": "2026-03-03T09:56:46Z"
+        },
+        {
+          "sender": "user",
+          "text": "lịch sử là gì",
+          "at": "2026-03-03T09:57:09Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Lịch sử là môn khoa học xã hội và nhân văn nghiên cứu về quá trình phát triển của con người, xã hội, các sự kiện và biến cố qua các thời kỳ. Lịch sử bao gồm việc thu thập, phân tích và trình bày thông tin về quá khứ để hiểu và giải thích các sự kiện đã xảy ra.",
+          "at": "2026-03-03T09:57:09Z"
+        },
+        {
+          "sender": "user",
+          "text": "loài người trải qua bao nhiêu giai đoạn tiến hóa",
+          "at": "2026-03-03T09:58:09Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Loài người trải qua nhiều giai đoạn tiến hóa, nhưng thường được chia thành ba giai đoạn chính:\n\n1. **Homo habilis (vài triệu năm trước):** Giai đoạn đầu tiên, loài người bắt đầu sử dụng công cụ đá.\n\n2. **Homo erectus (2.5 triệu - 50.000 năm trước):** Giai đoạn này thấy sự tiến bộ trong việc sử dụng công cụ và khả năng di chuyển ra khỏi lục địa Á châu.\n\n3. **Homo sapiens (300.000 - hiện tại):** Loài người hiện đại, bao gồm cả các nhóm dân tộc hiện đang tồn tại.\n\nTrong đó, Homo sapiens có nhiều giai đoạn phân hóa nhỏ hơn, bao gồm các nhóm như Homo sapiens idaltu, Homo sapiens sapiens, và các nhóm di cư ra khỏi châu Phi như Homo sapiens out of Africa.",
+          "at": "2026-03-03T09:58:09Z"
+        },
+        {
+          "sender": "user",
+          "text": "nước nào lớn nhất",
+          "at": "2026-03-03T10:17:08Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nước lớn nhất thế giới theo diện tích là Nga.",
+          "at": "2026-03-03T10:17:08Z"
+        },
+        {
+          "sender": "user",
+          "text": "triều đại trung quốc thời nào lớn nhất",
+          "at": "2026-03-03T10:17:45Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Triều đại nhà Minh và nhà Qín được coi là hai triều đại lớn nhất của lịch sử Trung Quốc về diện tích lãnh thổ. Trong đó, nhà Qín dưới sự trị vì của Thành Đô I có diện tích lớn nhất.",
+          "at": "2026-03-03T10:17:45Z"
+        },
+        {
+          "sender": "user",
+          "text": "triều đại nào là cuối cùng",
+          "at": "2026-03-03T10:18:18Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Triều đại cuối cùng của Trung Quốc là Cộng hòa Nhân dân Trung Hoa, bắt đầu từ năm 1949 khi Cách mạng Trung Quốc thành công.",
+          "at": "2026-03-03T10:18:18Z"
+        },
+        {
+          "sender": "user",
+          "text": "theo tôi biết là có nội chiến ở trung quốc đúng không",
+          "at": "2026-03-03T10:18:59Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trung Quốc hiện tại là một quốc gia thống nhất, không có nội chiến. Dưới sự lãnh đạo của Đảng Cộng sản Trung Quốc, đất nước đang trải qua giai đoạn phát triển kinh tế và xã hội.",
+          "at": "2026-03-03T10:18:59Z"
+        },
+        {
+          "sender": "user",
+          "text": "tôi đang hỏi lịch sử",
+          "at": "2026-03-03T10:19:22Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trong lịch sử, Trung Quốc đã trải qua nhiều giai đoạn nội chiến, như Nội chiến Trung Quốc (1927-1949) trước khi Đảng Cộng sản Trung Quốc lên nắm quyền.",
+          "at": "2026-03-03T10:19:22Z"
+        },
+        {
+          "sender": "user",
+          "text": "cuộc chiến đó diễn ra như thế nào",
+          "at": "2026-03-03T10:19:58Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Cuộc Nội chiến Trung Quốc (1927-1949) diễn ra giữa Đảng Cộng sản Trung Quốc và Quốc dân đảng Trung Quốc. Đảng Cộng sản giành chiến thắng, thành lập Cộng hòa Nhân dân Trung Hoa vào năm 1949.",
+          "at": "2026-03-03T10:19:58Z"
+        },
+        {
+          "sender": "user",
+          "text": "ai lãnh đao",
+          "at": "2026-03-03T10:22:21Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trong cuộc Nội chiến Trung Quốc, Đảng Cộng sản Trung Quốc do Hồ Chí Minh lãnh đạo đã giành chiến thắng, trong khi Quốc dân đảng do Tôn Trung Sơn và sau đó là蒋介石 阎锡山 邓演达等领导。最终，毛泽东领导的共产党取得了胜利。",
+          "at": "2026-03-03T10:22:21Z"
+        },
+        {
+          "sender": "user",
+          "text": "tôi muốn tìm hiểu lịch sử cuộc nội chiến trung hoa",
+          "at": "2026-03-03T10:27:27Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Cuộc Nội chiến Trung Quốc diễn ra từ 1927 đến 1949 giữa Đảng Cộng sản Trung Quốc do Hồ Chí Minh lãnh đạo và Quốc dân đảng Trung Quốc do Chiang Kai-shek lãnh đạo. Đảng Cộng sản giành chiến thắng và thành lập Cộng hòa Nhân dân Trung Hoa.",
+          "at": "2026-03-03T10:27:27Z"
+        },
+        {
+          "sender": "user",
+          "text": "tôi muốn tìm hiểu lịch sử cuộc nội chiến trung hoa",
+          "at": "2026-03-03T10:33:08Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Cuộc Nội chiến Trung Quốc diễn ra từ 1927 đến 1949. Trong giai đoạn này, Đảng Cộng sản Trung Quốc do Hồ Chí Minh lãnh đạo đã đối抗国民党，最终在1949年取得了胜利，建立了中华人民共和国。",
+          "at": "2026-03-03T10:33:08Z"
+        },
+        {
+          "sender": "user",
+          "text": "Việt nam nằm ở đâu",
+          "at": "2026-03-03T10:34:20Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Việt Nam nằm ở phía nam bán đảo Đông Dương, giáp với Trung Quốc ở phía bắc, Lào ở phía tây bắc, Campuchia ở phía tây nam và có biển Đông ở phía đông và nam.",
+          "at": "2026-03-03T10:34:20Z"
+        },
+        {
+          "sender": "user",
+          "text": "Trung quốc do ai lãnh đạo",
+          "at": "2026-03-03T12:18:02Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trung Quốc hiện đang được lãnh đạo bởi Đảng Cộng sản Trung Quốc, với Tổng Bí thư Tập Cận Bình là lãnh đạo cao nhất.",
+          "at": "2026-03-03T12:18:02Z"
+        },
+        {
+          "sender": "user",
+          "text": "Còn việt nam",
+          "at": "2026-03-03T12:18:28Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Việt Nam hiện đang được lãnh đạo bởi Đảng Cộng sản Việt Nam, với Chủ tịch nước Nguyễn Xuân Phúc và Thủ tướng Phạm Minh Chính là hai lãnh đạo cao nhất.",
+          "at": "2026-03-03T12:18:28Z"
+        },
+        {
+          "sender": "user",
+          "text": "Nhà họ Lưu nguồn gốc",
+          "at": "2026-03-03T12:18:57Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nhà họ Lưu có nguồn gốc từ Trung Quốc, bắt nguồn từ triều đại nhà Lưu Bang (Hán Bang) vào khoảng thế kỷ 3 trước Công nguyên. Họ Lưu là một trong những họ phổ biến nhất ở Trung Quốc và một số nước Đông Á khác.",
+          "at": "2026-03-03T12:18:57Z"
+        },
+        {
+          "sender": "user",
+          "text": "từ khi nào họ lưu du hành về việt nam",
+          "at": "2026-03-03T12:19:30Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Họ Lưu du nhập vào Việt Nam từ thời kỳ nhà Trần, khoảng thế kỷ 13-14, khi có nhiều gia đình Trung Quốc di cư vào Việt Nam do các sự kiện lịch sử.",
+          "at": "2026-03-03T12:19:30Z"
+        },
+        {
+          "sender": "user",
+          "text": "Các người nổi tiếng có hị Lưu",
+          "at": "2026-03-03T12:20:01Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Có nhiều người nổi tiếng có họ Lưu ở Việt Nam, như nhà thơ Lưu Trọng Lư, nhà văn Lưu Quang Vũ, và diễn viên Lưu Đức Hoa (từng làm việc ở Việt Nam).",
+          "at": "2026-03-03T12:20:01Z"
+        },
+        {
+          "sender": "user",
+          "text": "Việt cộng là gì",
+          "at": "2026-03-03T12:20:29Z"
+        },
+        {
+          "sender": "bot",
+          "text": "\"Việt cộng\" là một từ ngữ có nguồn gốc từ Mỹ, thường được sử dụng để chỉ các thành viên của Đảng Cộng sản Việt Nam và những người ủng hộ trong thời kỳ chiến tranh Việt Nam. Tuy nhiên, nó không phải là thuật ngữ chính thức và có thể bị coi là mang tính xúc phạm.",
+          "at": "2026-03-03T12:20:29Z"
+        },
+        {
+          "sender": "user",
+          "text": "Tôi muốn tìm hiểu về các mô hình ngôn ngữ lớn.",
+          "at": "2026-03-03T12:21:01Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mô hình ngôn ngữ lớn (Large Language Model - LLM) là các hệ thống AI được huấn luyện trên lượng lớn dữ liệu văn bản, có khả năng hiểu và tạo ra văn bản tự nhiên. Chúng được sử dụng trong nhiều ứng dụng như xử lý ngôn ngữ tự nhiên, hỗ trợ trí tuệ nhân tạo, và tạo nội dung tự động. Mô hình nổi tiếng như GPT của OpenAI vàBERT của Google là những ví dụ về LLM.",
+          "at": "2026-03-03T12:21:01Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T12:41:41Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI của hệ thống AIPA, giúp hỗ trợ bạn trong việc giải đáp các câu hỏi và cung cấp thông tin cần thiết.",
+          "at": "2026-03-03T12:41:41Z"
+        },
+        {
+          "sender": "user",
+          "text": "nhà họ Nguyễn",
+          "at": "2026-03-03T12:42:02Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nhà họ Nguyễn là một trong những họ lớn và có ảnh hưởng trong lịch sử Việt Nam. Họ Nguyễn thống trị triều đại Nguyễn từ năm 1802 đến 1945. Ngày nay, họ Nguyễn vẫn là một trong những họ phổ biến tại Việt Nam.",
+          "at": "2026-03-03T12:42:02Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T13:19:05Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI của hệ thống AIPA, sẵn sàng giúp bạn với các câu hỏi và thông tin bạn cần.",
+          "at": "2026-03-03T13:19:05Z"
+        },
+        {
+          "sender": "user",
+          "text": "nối từ không",
+          "at": "2026-03-03T13:19:30Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bắt đầu nhé. Mình ra trước: \"công nghệ\". Lượt bạn, hãy nối bằng từ bắt đầu với \"nghệ\".",
+          "at": "2026-03-03T13:19:30Z"
+        },
+        {
+          "sender": "user",
+          "text": "nghệ an",
+          "at": "2026-03-03T13:19:44Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Hợp lệ. Mình nối: \"ăn uống\". Lượt bạn, bắt đầu bằng \"uống\".",
+          "at": "2026-03-03T13:19:44Z"
+        },
+        {
+          "sender": "user",
+          "text": "uống nước",
+          "at": "2026-03-03T13:19:57Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Hợp lệ. Mình nối: \"nước hoa\". Lượt bạn, bắt đầu bằng \"hoa\".",
+          "at": "2026-03-03T13:19:57Z"
+        },
+        {
+          "sender": "user",
+          "text": "hoa hồng",
+          "at": "2026-03-03T13:20:06Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Hợp lệ. Mình nối: \"hồng học\". Lượt bạn, bắt đầu bằng \"học\".",
+          "at": "2026-03-03T13:20:06Z"
+        },
+        {
+          "sender": "user",
+          "text": "học hành",
+          "at": "2026-03-03T13:20:16Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Hợp lệ. Mình nối: \"hành học\". Lượt bạn, bắt đầu bằng \"học\".",
+          "at": "2026-03-03T13:20:16Z"
+        },
+        {
+          "sender": "user",
+          "text": "ê phạm luật rồi",
+          "at": "2026-03-03T13:20:30Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chưa hợp lệ. Từ của bạn phải bắt đầu bằng \"học\".",
+          "at": "2026-03-03T13:20:30Z"
+        },
+        {
+          "sender": "user",
+          "text": "ngừng chơi",
+          "at": "2026-03-03T13:20:58Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chưa hợp lệ. Từ của bạn phải bắt đầu bằng \"học\".",
+          "at": "2026-03-03T13:20:58Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T13:26:49Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chưa hợp lệ. Từ của bạn phải bắt đầu bằng \"học\".",
+          "at": "2026-03-03T13:26:49Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": true,
+        "expected": "hoc",
+        "expected_display": "học",
+        "last_bot_phrase": "hành học",
+        "used": [
+          "uong nuoc",
+          "cong nghe",
+          "an uong",
+          "hoc hanh",
+          "hong hoc",
+          "hanh hoc",
+          "nghe an",
+          "nuoc hoa",
+          "hoa hong"
+        ]
+      },
+      "updated_at": "2026-03-03T13:26:49Z"
+    },
+    "ui-speed-test": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Hay giai thich chi tiet ve tien hoa cua loai nguoi tu goc nhin sinh hoc, lich su, xa hoi va van hoa, neu co the cho them vi du ve cac moc quan trong va su khac nhau giua cac nhom nguoi co dai.",
+          "at": "2026-03-03T10:09:51Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tiên hóa của loài người là quá trình tiến hóa từ loài cổ đại đến con người hiện đại. Từ góc độ sinh học, loài người đã phát triển từ loài Australopithecus đến Homo habilis, Homo erectus, Homo sapiens. \n\nTừ góc độ lịch sử, loài người đã trải qua các giai đoạn: đồ đá cũ, đồ đá mới, đồ đá tinh, văn minh nông nghiệp và công nghiệp. \n\nTừ góc độ xã hội, loài người đã hình thành các xã hội nguyên thủy, xã hội nông nghiệp, xã hội công nghiệp và xã hội hậu công nghiệp. \n\nTừ góc độ văn hóa, loài người đã tạo ra các nền văn minh như Ai Cập, Hy Lạp, Rome, Ấn Độ, Trung Quốc, và Tây Phương. \n\nVí dụ, người châu Á và châu Phi có gen khác biệt, người châu Âu có lịch sử di cư và giao thoa văn hóa với người Địa Trung Hải.",
+          "at": "2026-03-03T10:09:51Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T10:09:51Z"
+    },
+    "ui-speed-test-2": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Hay giai thich chi tiet ve tien hoa cua loai nguoi tu goc nhin sinh hoc, lich su, xa hoi va van hoa, neu co the cho them vi du ve cac moc quan trong va su khac nhau giua cac nhom nguoi co dai.",
+          "at": "2026-03-03T10:12:57Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tiên hóa của loài người từ góc nhìn sinh học, lịch sử, xã hội và văn hóa là quá trình liên tục và phức tạp:\n\n1. Sinh học: Người tiền sử phát triển về mặt thể chất, như tăng kích thước não, cải thiện khả năng tiêu hóa, thích nghi với môi trường sống khác nhau.\n\n2. Lịch sử: Người tiền sử chuyển từ lối sống săn bắt-ôm mạ sang nông nghiệp, tạo ra các xã hội phức tạp hơn, có tổ chức.\n\n3. Xã hội: Xã hội tiền sử hình thành các hệ thống quyền lực, tôn giáo, pháp luật, tạo ra các mối quan hệ xã hội phức tạp.\n\n4. Văn hóa: Văn hóa tiền sử phát triển các ngôn ngữ, nghệ thuật",
+          "at": "2026-03-03T10:12:57Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T10:12:57Z"
+    },
+    "china-civil-war-fact-check": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "theo toi biet la co noi chien o trung quoc dung khong",
+          "at": "2026-03-03T10:24:59Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Có, Trung Quốc có nhiều chiến trường trong lịch sử, cũng như hiện tại họ có các hoạt động quân sự ở một số khu vực biên giới.",
+          "at": "2026-03-03T10:24:59Z"
+        },
+        {
+          "sender": "user",
+          "text": "toi dang hoi lich su",
+          "at": "2026-03-03T10:25:04Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trung Quốc có nhiều chiến tranh trong lịch sử, như chiến tranh chống thực dân入侵，以及近现代的抗日战争等。具体历史事件可以查阅相关历史资料。",
+          "at": "2026-03-03T10:25:04Z"
+        },
+        {
+          "sender": "user",
+          "text": "cuoc chien do dien ra nhu the nao",
+          "at": "2026-03-03T10:25:14Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trong lịch sử, các cuộc chiến tranh ở Trung Quốc thường bao gồm các trận đánh lớn, chiến lược phòng ngự và tấn công, cũng như các chiến dịch kéo dài trên nhiều năm. Ví dụ, trong Chiến tranh chống thực dân入侵，双方进行了长期的军事对抗，包括陆地和海上战斗。具体细节可以查阅相关历史书籍或资料。",
+          "at": "2026-03-03T10:25:14Z"
+        },
+        {
+          "sender": "user",
+          "text": "ai lanh dao",
+          "at": "2026-03-03T10:25:24Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trong lịch sử Trung Quốc, nhiều người lãnh đạo khác nhau đã lãnh đạo các cuộc chiến tranh, từ các vua chúa thời cổ đại đến các tướng quân và lãnh đạo chính trị hiện đại. Ví dụ, trong Chiến tranh chống thực dân入侵，蒋介石是其中一位重要的领导人。具体人物和领导情况可以查阅详细的历史资料。",
+          "at": "2026-03-03T10:25:24Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T10:25:24Z"
+    },
+    "china-civil-war-fact-check-2": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "theo toi biet la co noi chien o trung quoc dung khong",
+          "at": "2026-03-03T10:26:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trung Quốc có nhiều chiến trường trong lịch sử, như chiến tranh chống xâm lược và các cuộc chiến nội bộ. Bạn muốn biết về một chiến trường cụ thể nào không?",
+          "at": "2026-03-03T10:26:34Z"
+        },
+        {
+          "sender": "user",
+          "text": "toi dang hoi lich su",
+          "at": "2026-03-03T10:26:40Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trung Quốc có nhiều chiến tranh trong lịch sử, như Chiến tranh Đông Bộ, Chiến tranh Tây Bộ và nhiều cuộc chiến khác. Bạn có muốn biết thêm về một cuộc chiến cụ thể không?",
+          "at": "2026-03-03T10:26:40Z"
+        },
+        {
+          "sender": "user",
+          "text": "cuoc chien do dien ra nhu the nao",
+          "at": "2026-03-03T10:26:40Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nội chiến Trung Quốc diễn ra theo nhiều giai đoạn từ 1927 đến 1949 (có gián đoạn thời kỳ kháng Nhật 1937-1945), giữa Quốc dân đảng và Đảng Cộng sản Trung Quốc; kết cục là phe Cộng sản thắng và lập nước Cộng hòa Nhân dân Trung Hoa năm 1949.",
+          "at": "2026-03-03T10:26:40Z"
+        },
+        {
+          "sender": "user",
+          "text": "ai lanh dao",
+          "at": "2026-03-03T10:26:40Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trong Nội chiến Trung Quốc, phe Cộng sản do Mao Trạch Đông lãnh đạo, còn phe Quốc dân đảng do Tưởng Giới Thạch lãnh đạo.",
+          "at": "2026-03-03T10:26:40Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T10:26:40Z"
+    },
+    "web-first-check": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "toi muon tim hieu lich su cuoc noi chien trung hoa",
+          "at": "2026-03-03T10:31:37Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nội chiến Trung Quốc (1927-1949, gián đoạn thời kỳ kháng Nhật) diễn ra giữa Đảng Cộng sản Trung Quốc và Quốc dân đảng. Kết quả là phe Cộng sản thắng lợi, thành lập nước Cộng hòa Nhân dân Trung Hoa năm 1949.",
+          "at": "2026-03-03T10:31:37Z"
+        },
+        {
+          "sender": "user",
+          "text": "ai lanh dao",
+          "at": "2026-03-03T10:31:45Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trong Nội chiến Trung Quốc, phe Cộng sản do Mao Trạch Đông lãnh đạo, còn phe Quốc dân đảng do Tưởng Giới Thạch lãnh đạo.",
+          "at": "2026-03-03T10:31:45Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T10:31:45Z"
+    },
+    "sess-mmallndg-8nrq3d98": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Họ Nguyễn là ai?",
+          "at": "2026-03-03T12:42:55Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Họ Nguyễn là một trong những họ hàng đầu của Việt Nam, có lịch sử lâu đời và rộng rãi khắp cả nước.",
+          "at": "2026-03-03T12:42:55Z"
+        },
+        {
+          "sender": "user",
+          "text": "Danh sách bảng xếp hạng các họ ở Việt Nam.",
+          "at": "2026-03-03T12:43:13Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Danh sách các họ hàng phổ biến ở Việt Nam thường được xếp hạng như sau: Nguyễn, Lê, Trần, Đỗ, Phan, Trương, Phạm, Hồ, Đào, Hà. Tuy nhiên, không có bảng xếp hạng chính thức toàn quốc.",
+          "at": "2026-03-03T12:43:13Z"
+        },
+        {
+          "sender": "user",
+          "text": "Nước mỹ là gì?",
+          "at": "2026-03-03T12:43:36Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nước Mỹ là một quốc gia lớn ở Bắc Mỹ, bao gồm 50 tiểu bang và thủ đô Washington D.C. Nó nổi tiếng với sự đa dạng văn hóa, kinh tế phát triển và nhiều thành phố lớn như New York và Los Angeles.",
+          "at": "2026-03-03T12:43:36Z"
+        },
+        {
+          "sender": "user",
+          "text": "Tổng thống hiện tại của nước mỹ.",
+          "at": "2026-03-03T12:43:57Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tổng thống hiện tại của Mỹ là Joe Biden.",
+          "at": "2026-03-03T12:43:57Z"
+        },
+        {
+          "sender": "user",
+          "text": "Dữ liệu của bạn được lấy từ 5 bao nhiêu?",
+          "at": "2026-03-03T12:44:14Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Dữ liệu của tôi được lấy từ nhiều nguồn khác nhau chứ không phải từ 5 bao nhiêu.",
+          "at": "2026-03-03T12:44:14Z"
+        },
+        {
+          "sender": "user",
+          "text": "Nhà Nguyễn.",
+          "at": "2026-03-03T12:44:39Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nhà Nguyễn là triều đại cuối cùng của vương quốc Việt Nam, kéo dài từ năm 1802 đến 1945. Nhà Nguyễn có 13 vua, bắt đầu với vua Gia Long (Nguyễn Ánh) và kết thúc với vua Bảo Đại.",
+          "at": "2026-03-03T12:44:39Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bạn ấy à?",
+          "at": "2026-03-03T12:45:05Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Dạ, tôi là trợ lý AI của bạn. Có gì cần tôi giúp không?",
+          "at": "2026-03-03T12:45:05Z"
+        },
+        {
+          "sender": "user",
+          "text": "Chơi trò chơi không?",
+          "at": "2026-03-03T12:45:21Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi có thể giúp bạn tìm thông tin về các trò chơi hoặc giải đáp thắc mắc về trò chơi. Bạn muốn biết thông tin về trò chơi nào?",
+          "at": "2026-03-03T12:45:21Z"
+        },
+        {
+          "sender": "user",
+          "text": "Àm gay.",
+          "at": "2026-03-03T12:46:59Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin lỗi, bạn muốn chơi trò chơi gì hoặc có câu hỏi gì về trò chơi không?",
+          "at": "2026-03-03T12:46:59Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bỏ qua đi, bây giờ tôi muốn tìm hiểu về nước mỹ.",
+          "at": "2026-03-03T12:47:15Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn biết thông tin gì về Mỹ? Ví dụ như lịch sử, văn hóa, kinh tế hoặc địa lý. Hãy cho tôi biết cụ thể hơn nhé.",
+          "at": "2026-03-03T12:47:15Z"
+        },
+        {
+          "sender": "user",
+          "text": "Có bao nhiêu bàng?",
+          "at": "2026-03-03T12:47:31Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn biết số lượng bàng ở đâu hoặc trong bối cảnh nào? Hãy cung cấp thêm thông tin để tôi có thể giúp bạn chính xác hơn.",
+          "at": "2026-03-03T12:47:31Z"
+        },
+        {
+          "sender": "user",
+          "text": "Là việc ban hành bảng thì mỹ hiện tại có bao nhiêu bang?",
+          "at": "2026-03-03T12:47:46Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Hiện tại, nước Mỹ có 50 bang.",
+          "at": "2026-03-03T12:47:46Z"
+        },
+        {
+          "sender": "user",
+          "text": "Hòm đẹp ấy còn gì sách văn hóa của nước mỹ?",
+          "at": "2026-03-03T12:48:05Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nước Mỹ hiện tại có 50 bang. Bạn muốn biết thêm thông tin về văn hóa Mỹ từ đâu ạ?",
+          "at": "2026-03-03T12:48:05Z"
+        },
+        {
+          "sender": "user",
+          "text": "Chicago.",
+          "at": "2026-03-03T12:48:23Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chicago là một thành phố lớn ở Illinois, Mỹ. Thành phố này nổi tiếng với nhiều bảo tàng văn hóa như Bảo tàng Lịch sử Quốc gia Chicago, Bảo tàng Nghệ thuật Chicago và Bảo tàng Sách Chicago.",
+          "at": "2026-03-03T12:48:23Z"
+        },
+        {
+          "sender": "user",
+          "text": "Sẽ có đổi giọng khác được không?",
+          "at": "2026-03-03T12:48:51Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn đổi giọng nói trong cuộc trò chuyện hay trong một đoạn văn? Nếu bạn muốn thay đổi nội dung, vui lòng cung cấp thêm thông tin.",
+          "at": "2026-03-03T12:48:51Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bỏ qua đi.",
+          "at": "2026-03-03T12:49:05Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Được, tôi sẽ tiếp tục trả lời câu hỏi của bạn nếu có.",
+          "at": "2026-03-03T12:49:05Z"
+        },
+        {
+          "sender": "user",
+          "text": "Để kết quả mẹ mẹ ơi.",
+          "at": "2026-03-03T12:49:40Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin lỗi, bạn muốn kết quả gì, mẹ ơi? Hãy cung cấp thêm thông tin nhé.",
+          "at": "2026-03-03T12:49:40Z"
+        },
+        {
+          "sender": "user",
+          "text": "Hít le là ai?",
+          "at": "2026-03-03T12:50:17Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Hít Le là một ca sĩ nhạc R&B người Mỹ.",
+          "at": "2026-03-03T12:50:17Z"
+        },
+        {
+          "sender": "user",
+          "text": "Phát xít đức là gì?",
+          "at": "2026-03-03T12:50:31Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Phát xít Đức是指纳粹德国，是一个极右翼的专制政权，于1933年至1945年控制了德国。",
+          "at": "2026-03-03T12:50:31Z"
+        },
+        {
+          "sender": "user",
+          "text": "Hitler là ai",
+          "at": "2026-03-03T12:51:01Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Hitler là Adolf Hitler, tên thật là Áp-xi-dơ-đốp Hít-lê, là chính trị gia Đức và là lãnh đạo của Đảng Quốc xã. Ông là nguyên thủ quốc gia của Đức trong giai đoạn từ năm 1934 đến 1945.",
+          "at": "2026-03-03T12:51:01Z"
+        },
+        {
+          "sender": "user",
+          "text": "do thái là",
+          "at": "2026-03-03T12:51:28Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Do Thái là một cộng đồng dân tộc, văn hóa và tôn giáo. Họ có nguồn gốc từ đất Holy Land và theo đạo Do Thái.",
+          "at": "2026-03-03T12:51:28Z"
+        },
+        {
+          "sender": "user",
+          "text": "chơi nối từ không",
+          "at": "2026-03-03T12:53:58Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tất nhiên, em sẽ chơi với anh. Anh hãy bắt đầu nhé!",
+          "at": "2026-03-03T12:53:58Z"
+        },
+        {
+          "sender": "user",
+          "text": "gay lọ",
+          "at": "2026-03-03T12:54:17Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi không thể tiếp tục trò chơi với từ ngữ không phù hợp như vậy. Hãy thử lại với những từ khác nhé.",
+          "at": "2026-03-03T12:54:17Z"
+        },
+        {
+          "sender": "user",
+          "text": "đồng bằng",
+          "at": "2026-03-03T12:54:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "cánh đồng bằng广阔平原",
+          "at": "2026-03-03T12:54:34Z"
+        },
+        {
+          "sender": "user",
+          "text": "chơi nối từ không",
+          "at": "2026-03-03T13:07:08Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tất nhiên, em sẽ chơi với anh. Anh hãy bắt đầu nhé!",
+          "at": "2026-03-03T13:07:08Z"
+        },
+        {
+          "sender": "user",
+          "text": "đồng bằng",
+          "at": "2026-03-03T13:07:22Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đồng bằng là khu vực phẳng hoặc thấp gần bờ sông hoặc biển.",
+          "at": "2026-03-03T13:07:22Z"
+        },
+        {
+          "sender": "user",
+          "text": "xin chào",
+          "at": "2026-03-03T13:09:12Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin chào! Có điều gì tôi可以帮助您吗？",
+          "at": "2026-03-03T13:09:12Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T13:39:28Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY.",
+          "at": "2026-03-03T13:39:28Z"
+        },
+        {
+          "sender": "user",
+          "text": "trung quốc",
+          "at": "2026-03-03T13:42:56Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY.",
+          "at": "2026-03-03T13:42:56Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T13:47:24Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY.",
+          "at": "2026-03-03T13:47:24Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T13:47:24Z"
+    },
+    "sess-mman6ebw-xntm6923": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T13:27:16Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI AIPA, sẵn sàng hỗ trợ bạn mọi lúc mọi nơi.",
+          "at": "2026-03-03T13:27:16Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn lấy dữ liệu từ đâu",
+          "at": "2026-03-03T13:27:45Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi lấy dữ liệu từ nhiều nguồn khác nhau để trả lời câu hỏi của bạn, bao gồm dữ liệu được lập trình sẵn và các nguồn thông tin đáng tin cậy trên internet.",
+          "at": "2026-03-03T13:27:45Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T13:27:45Z"
+    },
+    "sess-mmanci6z-y6wm0goc": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T13:31:45Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI của hệ thống AIPA, sẵn sàng hỗ trợ bạn mọi lúc mọi nơi.",
+          "at": "2026-03-03T13:31:45Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T13:31:45Z"
+    },
+    "sess-mmancwwr-uon39s8s": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "nước mỹ",
+          "at": "2026-03-03T13:32:08Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nước Mỹ còn được gọi là Hoa Kỳ, là một quốc gia lớn ở Bắc Mỹ.",
+          "at": "2026-03-03T13:32:08Z"
+        },
+        {
+          "sender": "user",
+          "text": "trung quốc là",
+          "at": "2026-03-03T13:54:16Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY.\nChi tiết Gemini: Gemini gemini-2.0-flash lỗi HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 43.004449922s.",
+          "at": "2026-03-03T13:54:16Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là",
+          "at": "2026-03-03T13:57:16Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY.\nChi tiết Gemini: Gemini gemini-2.0-flash lỗi HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 42.80757318s.",
+          "at": "2026-03-03T13:57:16Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T14:00:53Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả",
+          "at": "2026-03-03T14:00:53Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T14:16:22Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình OPENAI_API_KEY (xAI Grok) hoặc GEMINI_API_KEY.\nChi tiết Grok: No module named 'openai'",
+          "at": "2026-03-03T14:16:22Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là",
+          "at": "2026-03-03T14:17:52Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình OPENAI_API_KEY (xAI Grok) hoặc GEMINI_API_KEY.\nChi tiết Grok: Error code: 403 - {'code': 'The caller does not have permission to execute the specified operation', 'error': \"Your newly created team doesn't have any credits or licenses yet. You can purchase those on https://console.x.ai/team/6b87a5e1-53be-4eaa-9338-9c648f42b375.\"}",
+          "at": "2026-03-03T14:17:52Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn alf",
+          "at": "2026-03-03T14:22:00Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình OPENAI_API_KEY hoặc GEMINI_API_KEY.\nChi tiết OpenAI: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+          "at": "2026-03-03T14:22:00Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là",
+          "at": "2026-03-03T14:29:45Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình OPENAI_API_KEY hoặc GEMINI_API_KEY. Hiện tại, cả hai API đều báo vượt quá hạn mức sử dụng. Vui lòng kiểm tra gói dịch vụ và thông tin thanh toán của bạn.",
+          "at": "2026-03-03T14:29:45Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T14:35:35Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI của hệ thống AIPA, có thể giúp bạn với nhiều câu hỏi và .",
+          "at": "2026-03-03T14:35:35Z"
+        },
+        {
+          "sender": "user",
+          "text": "trung quốc ở đâu",
+          "at": "2026-03-03T14:36:12Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trung Quốc nằm ở Đông Á, giáp với nhiều quốc gia như Nga, Kazakhstan, Ấn Độ, Bhutan, v.v.",
+          "at": "2026-03-03T14:36:12Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T15:03:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Thiếu SERPERAPIKEY nên chưa thể tra cứu Google trước khi trả lời. Bạn hãy cấu hình SERPERAPIKEY rồi chạy lại.",
+          "at": "2026-03-03T15:03:34Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T15:10:03Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình chưa lấy được dữ liệu từ Google cho câu hỏi này nên tạm thời không trả lời để tránh sai thông tin. Bạn thử lại sau ít phút.",
+          "at": "2026-03-03T15:10:03Z"
+        },
+        {
+          "sender": "user",
+          "text": "trung quốc ở đâu",
+          "at": "2026-03-03T15:10:17Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình chưa lấy được dữ liệu từ Google cho câu hỏi này nên tạm thời không trả lời để tránh sai thông tin. Bạn thử lại sau ít phút.",
+          "at": "2026-03-03T15:10:17Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T15:10:17Z"
+    },
+    "debug-sess": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "kể chuyện ngắn về mèo",
+          "at": "2026-03-03T13:44:02Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY.",
+          "at": "2026-03-03T13:44:02Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T13:44:02Z"
+    },
+    "sess-mmanye5c-obj4ffkc": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T13:48:44Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY.\nChi tiết Gemini: Gemini gemini-2.0-flash lỗi HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 15.381547273s.",
+          "at": "2026-03-03T13:48:44Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T13:48:44Z"
+    },
+    "sess-mmao1oc7-d7xtkw2t": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T13:51:16Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình GEMINI_API_KEY hoặc OPENAI_API_KEY.\nChi tiết Gemini: Gemini gemini-2.0-flash lỗi HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 43.38451603s.",
+          "at": "2026-03-03T13:51:16Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bạn là ai?",
+          "at": "2026-03-03T16:48:33Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI AIPA, có thể giúp gì cho bạn hôm nay?",
+          "at": "2026-03-03T16:48:33Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bạn có thể làm gì?",
+          "at": "2026-03-03T16:48:45Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi có thể giúp bạn trả lời câu hỏi, cung cấp thông tin, viết văn bản, giải quyết vấn đề và nhiều hơn nữa. Hãy cho tôi biết bạn cần hỗ trợ gì nhé!",
+          "at": "2026-03-03T16:48:45Z"
+        },
+        {
+          "sender": "user",
+          "text": "Việt Nam nằm ở đâu?",
+          "at": "2026-03-03T16:49:06Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Việt Nam nằm ở Đông Nam Á, giáp với Trung Quốc ở phía bắc, Lào và Campuchia ở phía tây. Biển Đông bao bọc Việt Nam ở phía đông và nam.",
+          "at": "2026-03-03T16:49:06Z"
+        },
+        {
+          "sender": "user",
+          "text": "Hiệp định paris ký kết ở đâu?",
+          "at": "2026-03-03T16:49:38Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Hiệp định Paris về chấm dứt chiến\n\nHiệp định Paris về chấm dứt chiến tranh được ký kết tại thành phố Paris, Pháp.",
+          "at": "2026-03-03T16:49:38Z"
+        },
+        {
+          "sender": "user",
+          "text": "Đức quốc xã là gì?",
+          "at": "2026-03-03T16:49:58Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đức Quốc xã là tên gọi của Đế quốc Đức thời kỳ độc tài của Đảng Quốc xã, từ năm 1933 đến 1945, dưới sự lãnh đạo của Adolf Hitler.",
+          "at": "2026-03-03T16:49:58Z"
+        },
+        {
+          "sender": "user",
+          "text": "Họa sĩ người áo là ai?",
+          "at": "2026-03-03T16:50:31Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Họa sĩ Người Áo là một nghệ sĩ nổi tiếng của Việt Nam. Ông tên thật là Nguyễn Văn Trỗi, sinh năm 1923, mất năm 1966. Ông nổi tiếng với các bức tranh sơn dầu và bút",
+          "at": "2026-03-03T16:50:31Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bây giờ là mấy giờ?",
+          "at": "2026-03-03T16:51:13Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin lỗi, tôi không thể biết thời gian hiện tại vì tôi không có khả năng truy cập thông tin từ bên ngoài. Bạn có thể kiểm tra thời gian trên thiết bị của mình.",
+          "at": "2026-03-03T16:51:13Z"
+        },
+        {
+          "sender": "user",
+          "text": "tựa game arena breakout infinity bạn có biết không",
+          "at": "2026-03-03T16:51:54Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Có, Arena Breakout Infinity là một trò chơi hành động giải đố. Trong game, bạn sẽ điều khiển nhân vật di chuyển qua các cấp độ với nhiều vật cản khác nhau.",
+          "at": "2026-03-03T16:51:54Z"
+        },
+        {
+          "sender": "user",
+          "text": "sai, kiểm tra lại",
+          "at": "2026-03-03T16:52:21Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin lỗi, tôi không tìm thấy thông tin về trò chơi \"Arena Breakout Infinity\". Có thể tên trò chơi có sai sót. Bạn có thể cung cấp thêm thông tin không?",
+          "at": "2026-03-03T16:52:21Z"
+        },
+        {
+          "sender": "user",
+          "text": "Thời gian.",
+          "at": "2026-03-03T17:13:50Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin lỗi, tôi không thể kiểm tra thời gian hiện tại vì tôi không có kết nối với thiết bị của bạn. Bạn có thể kiểm tra thời gian trên điện thoại hoặc máy tính của mình.",
+          "at": "2026-03-03T17:13:50Z"
+        },
+        {
+          "sender": "user",
+          "text": "Thực hiện tác vụ kiểm tra thời gian.",
+          "at": "2026-03-03T17:19:46Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Da thuc thi tap lenh train: \"thuc hien tac vu: kiem tra thoi gian\"\n1. Loi: Action khong ho tro: SCANDESKTOPCLOCK",
+          "at": "2026-03-03T17:19:46Z"
+        },
+        {
+          "sender": "user",
+          "text": "Thực hiện tác vụ kiểm tra thời gian.",
+          "at": "2026-03-03T17:20:39Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Da thuc thi tap lenh train: \"thực hiện tác vụ: kiểm tra thời gian\"\n1. Loi: Action khong ho tro: SCANDESKTOPCLOCK",
+          "at": "2026-03-03T17:20:39Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T17:20:39Z"
+    },
+    "verify-openai-module": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Xin chào, trả lời 1 câu tiếng Việt",
+          "at": "2026-03-03T14:17:21Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có model cloud khả dụng để trả lời. Bạn hãy cấu hình OPENAI_API_KEY (xAI Grok) hoặc GEMINI_API_KEY.\nChi tiết Grok: Error code: 403 - {'code': 'The caller does not have permission to execute the specified operation', 'error': \"Your newly created team doesn't have any credits or licenses yet. You can purchase those on https://console.x.ai/team/6b87a5e1-53be-4eaa-9338-9c648f42b375.\"}",
+          "at": "2026-03-03T14:17:21Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T14:17:21Z"
+    },
+    "gemma-check": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "B?n l? ai?",
+          "at": "2026-03-03T14:28:41Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI tiếng Việt, được phát triển bởi hệ thống AIPA. Nhiệm vụ của tôi là hỗ trợ người dùng bằng cách cung cấp thông tin và trả lời các câu hỏi. Tôi luôn cố gắng trả lời chính xác, rõ ràng và ngắn gọn nhất có thể. Rất vui được hỗ trợ bạn!",
+          "at": "2026-03-03T14:28:41Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T14:28:41Z"
+    },
+    "local-test": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "xin ch?o, gi?i thi?u ng?n",
+          "at": "2026-03-03T14:34:37Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin chào! Tôi là trợ lý AI của hệ thống AIPA, luôn sẵn sàng hỗ trợ bạn với các câu hỏi hoặc vấn đề bạn cần giải quyết.",
+          "at": "2026-03-03T14:34:37Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T14:34:37Z"
+    },
+    "default": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "xin chao",
+          "at": "2026-03-03T14:45:30Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Thiếu SERPER_API_KEY nên chưa thể tra cứu Google trước khi trả lời. Bạn hãy cấu hình SERPER_API_KEY rồi chạy lại.",
+          "at": "2026-03-03T14:45:30Z"
+        },
+        {
+          "sender": "user",
+          "text": "xin chao",
+          "at": "2026-03-03T14:46:06Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Thiếu SERPER_API_KEY nên chưa thể tra cứu Google trước khi trả lời. Bạn hãy cấu hình SERPER_API_KEY rồi chạy lại.",
+          "at": "2026-03-03T14:46:06Z"
+        },
+        {
+          "sender": "user",
+          "text": "ban la ai",
+          "at": "2026-03-03T15:15:22Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI của hệ thống AIPA, giúp bạn trả lời câu hỏi và hỗ trợ nhiều công việc khác.",
+          "at": "2026-03-03T15:15:22Z"
+        },
+        {
+          "sender": "user",
+          "text": "ban la ai",
+          "at": "2026-03-03T15:16:45Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI, giúp bạn",
+          "at": "2026-03-03T15:16:45Z"
+        },
+        {
+          "sender": "user",
+          "text": "tim tren google tai lieu python",
+          "at": "2026-03-03T15:16:51Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn tìm tài liệu về Python trên Google? Tôi có thể gợi ý một số từ khóa như \"tài liệu Python cơ bản\", \"hướng dẫn học Python miễn phí\" để bạn tìm kiếm. Bạn muốn tôi giúp tìm một trang cụ thể không?",
+          "at": "2026-03-03T15:16:51Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T15:16:51Z"
+    },
+    "sess-mmar5cc6-t1kxlkhy": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T15:18:09Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI AIPA, giúp bạn tìm thông tin và hỗ trợ giải đáp các câu hỏi.",
+          "at": "2026-03-03T15:18:09Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn có thể làm gò",
+          "at": "2026-03-03T15:18:24Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi có thể giúp bạn tìm thông tin, giải đáp câu hỏi, viết văn bản, tạo nhắc nhở và nhiều công việc khác. Hãy cho tôi biết bạn cần giúp gì nhé.",
+          "at": "2026-03-03T15:18:24Z"
+        },
+        {
+          "sender": "user",
+          "text": "tôi muốn tìm hiểu lịch sử đức quốc xã",
+          "at": "2026-03-03T15:20:09Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đức Quốc xã tồn tại từ năm 1933 đến 1945, do Adolf Hitler lãnh đạo. Họ cai trị Đức bằng cách độc đoán và sử dụng các biện pháp chính trị, kinh tế và quân sự. Lịch sử này liên quan đến sự phát triển của chủ nghĩa dân tộc cực đoan, sự đàn áp các nhóm thiểu số, và sự tham chiến trong Thế chiến II. Bạn có muốn tìm hiểu chi tiết về một khía cạnh cụ thể không?",
+          "at": "2026-03-03T15:20:09Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T16:43:43Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI AIPA, giúp bạn tìm thông tin và hỗ trợ giải đáp các câu hỏi.",
+          "at": "2026-03-03T16:43:43Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T16:43:43Z"
+    },
+    "sess-mmaubyt7-o2j1ktwr": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-03T16:48:01Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI AIPA, sẵn sàng giúp bạn với các câu hỏi hoặc công việc cần hỗ trợ.",
+          "at": "2026-03-03T16:48:01Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-04T04:51:39Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng chưa có mô hình cục bộ khả dụng để trả lời. Bạn hãy bật Ollama và kiểm tra mô hình cục bộ.",
+          "at": "2026-03-04T04:51:39Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-04T05:42:05Z"
+        },
+        {
+          "sender": "bot",
+          "text": "AIPA.",
+          "at": "2026-03-04T05:42:05Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn có thể làm gì",
+          "at": "2026-03-04T05:42:18Z"
+        },
+        {
+          "sender": "bot",
+          "text": "AIPA.",
+          "at": "2026-03-04T05:42:18Z"
+        },
+        {
+          "sender": "user",
+          "text": "xin chao",
+          "at": "2026-03-04T06:22:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chào bạn. Mình đang sẵn sàng hỗ trợ bạn.",
+          "at": "2026-03-04T06:22:34Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-04T06:23:04Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI AIPA, có thể giúp bạn với nhiều tác vụ như tìm kiếm thông tin, giải đáp thắc mắc, lập lịch hoặc hỗ trợ học tập.",
+          "at": "2026-03-04T06:23:04Z"
+        },
+        {
+          "sender": "user",
+          "text": "nước mỹ khai sinh từ đâu",
+          "at": "2026-03-04T06:23:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nước Mỹ khai sinh từ các thuộc địa Anh ở Bắc Mỹ vào thế kỷ 17. Cụ thể, khai sinh chính thức được đánh dấu bằng việc ký kết Hiệp ước Paris năm 1783, khi Anh công nhận độc lập của Mỹ.",
+          "at": "2026-03-04T06:23:34Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn có thể làm gì",
+          "at": "2026-03-04T06:25:50Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi có thể giúp bạn tìm kiếm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác.",
+          "at": "2026-03-04T06:25:50Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-04T09:52:05Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi là trợ lý AI AIPA, sẵn sàng giúp bạn với nhiều tác vụ như tìm kiếm thông tin, giải đáp thắc mắc, lập lịch hoặc hỗ trợ học tập.",
+          "at": "2026-03-04T09:52:05Z"
+        },
+        {
+          "sender": "user",
+          "text": "hello",
+          "at": "2026-03-04T12:24:53Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chào bạn. Mình đang sẵn sàng hỗ trợ bạn.",
+          "at": "2026-03-04T12:24:53Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn làm được gì",
+          "at": "2026-03-04T12:25:17Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin chào! Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần hỗ trợ gì nhé!",
+          "at": "2026-03-04T12:25:17Z"
+        },
+        {
+          "sender": "user",
+          "text": "chào bạn , bạn là ai",
+          "at": "2026-03-04T14:18:47Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin chào! Tôi là trợ lý AI AIPA, có thể giúp bạn với nhiều tác vụ như tìm kiếm thông tin, giải đáp thắc mắc, lập lịch hoặc hỗ trợ học tập.",
+          "at": "2026-03-04T14:18:47Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn có thể làm gì",
+          "at": "2026-03-04T14:19:52Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần gì nhé!",
+          "at": "2026-03-04T14:19:52Z"
+        },
+        {
+          "sender": "user",
+          "text": "dân số thế giới bao nhiêu người",
+          "at": "2026-03-04T14:20:26Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Theo số liệu gần đây nhất, dân số thế giới khoảng 8 tỷ người. Số liệu chính xác có thể thay đổi theo thời gian, bạn có thể kiểm tra trên trang web của Liên Hợp Quốc hoặc tổ chức dân số thế giới để có thông tin cập nhật nhất.",
+          "at": "2026-03-04T14:20:26Z"
+        },
+        {
+          "sender": "user",
+          "text": "tôi muốn biết tổ chức liên hợp quốc là gì",
+          "at": "2026-03-04T14:21:25Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã tra cứu nhanh từ nguồn web, tóm tắt như sau:\n1. Liên Hợp Quốc Wikipedia tiếng Việt: Liên Hợp Quốc (còn gọi là Liên Hiệp Quốc, viết tắt LHQ; tiếng Anh: United Nations, viết tắt là UN) là một tổ chức liên chính phủ có nhiệm vụ duy trì hòa bình v ...\nNguồn: https://vi.wikipedia.org/wiki/LiC3AAnHE1BBA3pQuE1BB91c\n2. Thông tin cơ bản về Liên hợp quốc: Liên hợp quốc chính thức thành lập ngày 24/10/1945, khi Trung Quốc, Pháp, Liên Xô, Anh, Hoa Kỳ và đa số các quốc gia ký kết trước đó phê ...\nNguồn: https://nhandan.vn/special/thongtincobanLienhopquoc/index.html",
+          "at": "2026-03-04T14:21:25Z"
+        },
+        {
+          "sender": "user",
+          "text": "Mỹ là",
+          "at": "2026-03-04T14:22:36Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mỹ là một quốc gia lớn ở Bắc Mỹ, gồm 50 tiểu bang và thủ đô Washington, D.C. Mỹ là một cường quốc thế giới về kinh tế, chính trị và quân sự. Nó cũng nổi tiếng với nhiều thành phố lớn như New York, Los Angeles và Chicago, cùng nhiều văn hóa đa dạng và nền giáo dục hàng đầu thế giới.",
+          "at": "2026-03-04T14:22:36Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là",
+          "at": "2026-03-04T14:38:03Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin chào! Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần hỗ trợ gì nhé!",
+          "at": "2026-03-04T14:38:03Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-04T15:05:58Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin chào! Tôi là trợ lý AI AIPA, có thể giúp bạn với nhiều tác vụ như tìm kiếm thông tin, giải đáp thắc mắc, lập lịch hoặc hỗ trợ học tập.",
+          "at": "2026-03-04T15:05:58Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn có thể làm gì",
+          "at": "2026-03-04T15:07:46Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần gì nhé!",
+          "at": "2026-03-04T15:07:46Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-04T15:07:46Z"
+    },
+    "debug-clock": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Thực hiện tác vụ: kiểm tra thời gian",
+          "at": "2026-03-03T17:24:29Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Da thuc thi tap lenh train: \"thực hiện tác vụ: kiểm tra thời gian\"\n1. Khong doc duoc text dong ho tu desktop. Gio he thong hien tai: 00:24:29.",
+          "at": "2026-03-03T17:24:29Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T17:24:29Z"
+    },
+    "debug-clock-voice-prefix": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Giọng nói: Thực hiện tác vụ: kiểm tra thời gian",
+          "at": "2026-03-03T17:25:30Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Da thuc thi tap lenh train: \"thực hiện tác vụ: kiểm tra thời gian\"\n1. Khong doc duoc text dong ho tu desktop. Gio he thong hien tai: 00:25:30.",
+          "at": "2026-03-03T17:25:30Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-03T17:25:30Z"
+    }
+  }
+}

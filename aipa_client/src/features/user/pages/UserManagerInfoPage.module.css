@@ -1,0 +1,224 @@
+/* UserManagerInfoPage.module.css */
+
+/* === Khung chính và Nền === */
+.container {
+    min-height: 100vh;
+    padding: 32px;
+    background-color: #0d1117; 
+    color: #c9d1d9; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.contentBox {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 32px;
+}
+
+.topActions {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+
+.backButton {
+    border: 1px solid #30363d;
+    background: #22272e;
+    color: #c9d1d9;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.backButton:hover {
+    border-color: #00bcd4;
+    color: #00bcd4;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.25);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00bcd4;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 10px;
+}
+
+/* === Thanh Tabs (Chuyển đổi các mục quản lý) === */
+.tabsContainer {
+    display: flex;
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 30px;
+}
+
+.tabButton {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    color: #9ca3af;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+}
+
+.tabButtonActive {
+    color: white;
+    border-bottom: 3px solid #00bcd4;
+}
+
+.tabButton:hover {
+    color: white;
+}
+
+/* === Các Form và Input chung === */
+.formSection {
+    margin-bottom: 40px;
+}
+
+.sectionTitle {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 16px;
+    border-left: 4px solid #00bcd4;
+    padding-left: 10px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.inputLabel {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+
+.inputField, .selectField {
+    padding: 10px 16px;
+    background-color: #22272e;
+    border: 1px solid #4b5563;
+    border-radius: 8px;
+    color: white;
+    transition: all 0.3s;
+}
+
+.inputField:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2); 
+}
+
+/* Nút bấm */
+.saveButton, .actionButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #00bcd4;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.saveButton:hover {
+    background-color: #0097a7;
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.4);
+}
+
+.dangerButton {
+    background-color: #ef4444;
+}
+
+.dangerButton:hover {
+    background-color: #dc2626;
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+}
+
+/* === Bảng Tổng hợp Prompt (Lịch sử) === */
+.promptTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.promptTable th, .promptTable td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+}
+
+.promptTable th {
+    background-color: #22272e;
+    color: #00bcd4;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.promptTable tbody tr:hover {
+    background-color: #2c313a; 
+}
+
+.promptTable td {
+    font-size: 14px;
+    color: #c9d1d9;
+}
+
+.statusTag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.statusTag.text {
+    background-color: #1e40af; /* Blue */
+}
+
+.statusTag.voice {
+    background-color: #10b981; /* Green */
+}
+
+/* === Lưới hiển thị thông tin (Dùng cho Tab 1) === */
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.infoCard {
+    background-color: #22272e;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.infoCard p {
+    margin-bottom: 8px;
+}
+
+.infoCard p strong {
+    color: #00bcd4;
+    display: inline-block;
+    min-width: 120px;
+}
