@@ -1,5 +1,5 @@
 @echo off
-setlocal EnableExtensions
+setlocal EnableExtensions EnableDelayedExpansion
 
 set "SCRIPT_DIR=%~dp0"
 set "CONTROLL_DIR=%SCRIPT_DIR%"
@@ -75,7 +75,7 @@ if "%NEED_BOOTSTRAP_VENV%"=="1" (
 
   echo [INFO] Dang tao lai Python venv cho may hien tai...
   if exist "%VENV_DIR%" rmdir /s /q "%VENV_DIR%"
-  call %HOST_PY_CMD% -m venv "%VENV_DIR%"
+  call !HOST_PY_CMD! -m venv "%VENV_DIR%"
   if errorlevel 1 (
     echo [ERROR] Tao .venv that bai.
     pause
@@ -181,5 +181,6 @@ if defined AIPA_OLLAMA_MODEL (
 "%CONTROLL_PY%" -m uvicorn chat_server:app --host 0.0.0.0 --port 8001
 
 endlocal
+
 
 
