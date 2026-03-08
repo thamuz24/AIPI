@@ -74,6 +74,14 @@ COMPUTER_CONTROL_ALLOW_DELETE = os.getenv('AIPA_COMPUTER_CONTROL_ALLOW_DELETE', 
 CONTROL_READ_PREVIEW_LIMIT = int(os.getenv('AIPA_CONTROL_READ_PREVIEW_LIMIT', '2500'))
 CONTROL_LIST_LIMIT = int(os.getenv('AIPA_CONTROL_LIST_LIMIT', '50'))
 try:
+    CONTROL_GRID_ROWS = max(1, int(os.getenv('AIPA_CONTROL_GRID_ROWS', '6')))
+except ValueError:
+    CONTROL_GRID_ROWS = 6
+try:
+    CONTROL_GRID_COLS = max(1, int(os.getenv('AIPA_CONTROL_GRID_COLS', '6')))
+except ValueError:
+    CONTROL_GRID_COLS = 6
+try:
     KNOWLEDGE_VECTOR_DIM = max(64, int(os.getenv('AIPA_KNOWLEDGE_VECTOR_DIM', '256')))
 except ValueError:
     KNOWLEDGE_VECTOR_DIM = 256
@@ -1474,6 +1482,7 @@ _CONTROL_RULE_CACHE: Tuple[Optional[int], List[dict]] = (None, [])
 _APP_LAUNCHER_CACHE_LOCK = threading.Lock()
 _APP_LAUNCHER_CACHE: Tuple[float, Dict[str, Path]] = (0.0, {})
 APP_LAUNCHER_CACHE_TTL_SECONDS = max(10, int(os.getenv('AIPA_APP_LAUNCHER_CACHE_TTL', '300')))
+_MOUSE_KEYBOARD_CONTROLLER = None
 
 
 def _load_keyword_list_from_txt(file_path: Path, fallback_keywords: List[str]) -> List[str]:
@@ -2134,6 +2143,109 @@ def _close_windows_application(app_name: str) -> str:
     return f'Đã đóng ứng dụng: {", ".join(image_names)} ({len(matched)} tiến trình).'
 
 
+def _get_mouse_keyboard_controller():
+    global _MOUSE_KEYBOARD_CONTROLLER
+    if _MOUSE_KEYBOARD_CONTROLLER is not None:
+        return _MOUSE_KEYBOARD_CONTROLLER
+
+    try:
+        from controllers.mouse_keyboard_controller import MouseKeyboardController
+    except Exception as exc:
+        raise RuntimeError(f'Khong tai duoc bo dieu khien chuot/phim: {exc}') from exc
+
+    _MOUSE_KEYBOARD_CONTROLLER = MouseKeyboardController()
+    return _MOUSE_KEYBOARD_CONTROLLER
+
+
+def _get_screen_size_for_control() -> Tuple[int, int]:
+    try:
+        user32 = ctypes.windll.user32
+        width = int(user32.GetSystemMetrics(0))
+        height = int(user32.GetSystemMetrics(1))
+        if width > 0 and height > 0:
+            return width, height
+    except Exception:
+        pass
+    return 1920, 1080
+
+
+def _parse_mouse_target(raw_target: str) -> Tuple[int, int]:
+    target = str(raw_target or '').strip()
+    if not target:
+        raise ValueError('Toa do chuot dang trong.')
+
+    grid_target = _normalize_match_ascii(target)
+    if re.match(r'^[a-z][0-9]+$', grid_target):
+        try:
+            from utils.coordinate_resolver import CoordinateResolver
+        except Exception as exc:
+            raise RuntimeError(f'Khong tai duoc bo giai toa do luoi: {exc}') from exc
+
+        screen_width, screen_height = _get_screen_size_for_control()
+        resolver = CoordinateResolver(
+            rows=CONTROL_GRID_ROWS,
+            cols=CONTROL_GRID_COLS,
+            screen_width=screen_width,
+            screen_height=screen_height,
+        )
+        return resolver.resolve(grid_target)
+
+    point_match = re.match(r'^\s*(-?\d+)\s*(?:,|\s)\s*(-?\d+)\s*$', target)
+    if not point_match:
+        raise ValueError('Toa do khong hop le. Dung dang "x,y", "x y" hoac toa do luoi nhu "c3".')
+
+    x = int(point_match.group(1))
+    y = int(point_match.group(2))
+    if x < 0 or y < 0:
+        raise ValueError('Toa do x/y phai >= 0.')
+    return x, y
+
+
+def _split_drag_targets(raw_text: str) -> Tuple[str, str]:
+    text = str(raw_text or '').strip()
+    if not text:
+        raise ValueError('Thieu toa do cho lenh keo chuot.')
+
+    grid_pair = re.match(r'^\s*([a-z][0-9]+)\s*(?:->|to|den)\s*([a-z][0-9]+)\s*$', _normalize_match_ascii(text))
+    if grid_pair:
+        return grid_pair.group(1), grid_pair.group(2)
+
+    point_pair = re.match(
+        r'^\s*(-?\d+\s*(?:,|\s)\s*-?\d+)\s*(?:->|to|den)\s*(-?\d+\s*(?:,|\s)\s*-?\d+)\s*$',
+        text,
+        flags=re.IGNORECASE,
+    )
+    if point_pair:
+        return point_pair.group(1), point_pair.group(2)
+
+    four_numbers_csv = re.match(r'^\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*$', text)
+    if four_numbers_csv:
+        return (
+            f'{four_numbers_csv.group(1)},{four_numbers_csv.group(2)}',
+            f'{four_numbers_csv.group(3)},{four_numbers_csv.group(4)}',
+        )
+
+    four_numbers_space = re.match(r'^\s*(-?\d+)\s+(-?\d+)\s+(-?\d+)\s+(-?\d+)\s*$', text)
+    if four_numbers_space:
+        return (
+            f'{four_numbers_space.group(1)} {four_numbers_space.group(2)}',
+            f'{four_numbers_space.group(3)} {four_numbers_space.group(4)}',
+        )
+
+    parts = [part for part in text.split() if part]
+    if len(parts) == 2:
+        return parts[0], parts[1]
+
+    raise ValueError('Lenh keo chuot can 2 diem. Vi du: "a1 b3" hoac "100,200 -> 300,400".')
+
+
+def _parse_hotkey_tokens(raw_keys: str) -> List[str]:
+    normalized = _normalize_match_ascii(raw_keys)
+    if not normalized:
+        raise ValueError('Lenh phim tat dang trong.')
+    return [token for token in re.split(r'[\s+,]+', normalized) if token]
+
+
 def _execute_computer_control_action(action_text: str, prompt: str, prompt_tail: str) -> str:
     raw_action = str(action_text or '').strip()
     if not raw_action:
@@ -2157,6 +2269,79 @@ def _execute_computer_control_action(action_text: str, prompt: str, prompt_tail:
             raise ValueError(f'Hành động {command} cần tên ứng dụng.')
         app_target = _render_control_value(parts[1], prompt, prompt_tail)
         return _close_windows_application(app_target)
+
+    if command in {'CLICK', 'LEFT_CLICK', 'MOUSE_CLICK', 'MOUSE_LEFT_CLICK'}:
+        if len(parts) < 2:
+            raise ValueError(f'Hanh dong {command} can toa do chuot.')
+        target_raw = _render_control_value('|'.join(parts[1:]), prompt, prompt_tail)
+        x, y = _parse_mouse_target(target_raw)
+        controller = _get_mouse_keyboard_controller()
+        controller.mouse.left_click((x, y))
+        return f'Da click chuot trai tai ({x}, {y}).'
+
+    if command in {'RIGHT_CLICK', 'MOUSE_RIGHT_CLICK'}:
+        if len(parts) < 2:
+            raise ValueError(f'Hanh dong {command} can toa do chuot.')
+        target_raw = _render_control_value('|'.join(parts[1:]), prompt, prompt_tail)
+        x, y = _parse_mouse_target(target_raw)
+        controller = _get_mouse_keyboard_controller()
+        controller.mouse.right_click((x, y))
+        return f'Da click chuot phai tai ({x}, {y}).'
+
+    if command in {'DRAG_MOUSE', 'MOUSE_DRAG', 'DRAG'}:
+        if len(parts) >= 3:
+            start_raw = _render_control_value(parts[1], prompt, prompt_tail)
+            end_raw = _render_control_value('|'.join(parts[2:]), prompt, prompt_tail)
+        elif len(parts) == 2:
+            drag_text = _render_control_value(parts[1], prompt, prompt_tail)
+            start_raw, end_raw = _split_drag_targets(drag_text)
+        else:
+            raise ValueError(f'Hanh dong {command} can diem bat dau va diem ket thuc.')
+
+        start = _parse_mouse_target(start_raw)
+        end = _parse_mouse_target(end_raw)
+        controller = _get_mouse_keyboard_controller()
+        controller.mouse.drag(start, end)
+        return f'Da keo chuot tu {start} den {end}.'
+
+    if command in {'SCROLL', 'MOUSE_SCROLL'}:
+        if len(parts) < 2:
+            raise ValueError(f'Hanh dong {command} can huong cuon.')
+        direction = _normalize_match_ascii(_render_control_value(parts[1], prompt, prompt_tail))
+        amount = 2
+        if len(parts) >= 3:
+            amount_text = _render_control_value(parts[2], prompt, prompt_tail).strip()
+            if amount_text:
+                amount = abs(int(amount_text))
+                if amount == 0:
+                    amount = 1
+        controller = _get_mouse_keyboard_controller()
+        if direction in {'up', 'len'}:
+            controller.mouse.scroll_up(amount)
+            return f'Da cuon chuot len {amount} buoc.'
+        if direction in {'down', 'xuong'}:
+            controller.mouse.scroll_down(amount)
+            return f'Da cuon chuot xuong {amount} buoc.'
+        raise ValueError('Huong cuon khong hop le. Dung "up/len" hoac "down/xuong".')
+
+    if command in {'TYPE_TEXT', 'TYPE', 'KEYBOARD_TYPE', 'TEXT'}:
+        if len(parts) < 2:
+            raise ValueError(f'Hanh dong {command} can noi dung can go.')
+        text_to_type = _render_control_value('|'.join(parts[1:]), prompt, prompt_tail)
+        if not text_to_type.strip():
+            raise ValueError('Noi dung go dang trong.')
+        controller = _get_mouse_keyboard_controller()
+        controller.keyboard.type_text(text_to_type)
+        return f'Da go {len(text_to_type)} ky tu.'
+
+    if command in {'PRESS_KEYS', 'PRESS', 'HOTKEY', 'KEY_COMBO', 'KEYBOARD_PRESS'}:
+        if len(parts) < 2:
+            raise ValueError(f'Hanh dong {command} can to hop phim.')
+        key_text = _render_control_value('|'.join(parts[1:]), prompt, prompt_tail)
+        keys = _parse_hotkey_tokens(key_text)
+        controller = _get_mouse_keyboard_controller()
+        controller.keyboard.press_combination(keys)
+        return f'Da nhan to hop phim: {" + ".join(keys)}.'
 
     if command in {'OPEN_FILE', 'READ_FILE', 'OPEN', 'READ'}:
         if len(parts) < 2:
@@ -2281,7 +2466,20 @@ def _try_execute_computer_control(prompt: str) -> Optional[str]:
             actions_candidate = [str(action) for action in rule.get('actions', [])]
             if not prompt_tail_candidate:
                 requires_tail = any(
-                    action.upper().startswith(('OPEN_APP|', 'CLOSE_APP|', 'KILL_APP|', 'STOP_APP|', 'TERMINATE_APP|'))
+                    action.upper().startswith(
+                        (
+                            'OPEN_APP|',
+                            'CLOSE_APP|',
+                            'KILL_APP|',
+                            'STOP_APP|',
+                            'TERMINATE_APP|',
+                            'CLICK|',
+                            'RIGHT_CLICK|',
+                            'DRAG_MOUSE|',
+                            'TYPE_TEXT|',
+                            'PRESS_KEYS|',
+                        )
+                    )
                     and '{REST}' in action
                     for action in actions_candidate
                 )

@@ -21,6 +21,12 @@
 # SCAN_DESKTOP_CLOCK
 # OPEN_APP|app_name
 # CLOSE_APP|app_name
+# CLICK|target(x,y hoac a1)
+# RIGHT_CLICK|target
+# DRAG_MOUSE|from|to
+# SCROLL|up/down|amount
+# TYPE_TEXT|text
+# PRESS_KEYS|ctrl+c
 
 thực hiện tác vụ: kiểm tra thời gian =>SCAN_DESKTOP_CLOCK
 mo file train=>OPEN_FILE|model/keyword_train/computer_control_train.txt
@@ -44,3 +50,14 @@ dong=>CLOSE_APP|{REST}
 tat app=>CLOSE_APP|{REST}
 dong ung dung=>CLOSE_APP|{REST}
 tat ung dung=>CLOSE_APP|{REST}
+
+# Mouse + keyboard + typing
+click=>CLICK|{REST}
+click trai=>CLICK|{REST}
+click phai=>RIGHT_CLICK|{REST}
+keo chuot=>DRAG_MOUSE|{REST}
+cuon len=>SCROLL|up|3
+cuon xuong=>SCROLL|down|3
+go chu=>TYPE_TEXT|{REST}
+nhan phim=>PRESS_KEYS|{REST}
+phim tat=>PRESS_KEYS|{REST}

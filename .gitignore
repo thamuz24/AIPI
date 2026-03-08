@@ -1,0 +1,6 @@
+aipa_client/build
+aipa_client/node_modules
+ai_models
+ai_service
+.idea/workspace.xml
+aipa_controll/.idea/workspace.xml
