@@ -8,6 +8,7 @@ const DEFAULT_USER_SETTINGS = Object.freeze({
   shareDataForTraining: false,
   faceVerificationEnabled: true,
   voiceChatEnabled: true,
+  aiResponseVoiceEnabled: true,
 });
 
 function isStorageAvailable() {
@@ -90,6 +91,7 @@ export function getUserSettings(username) {
     shareDataForTraining: normalizeBoolean(parsed?.shareDataForTraining, DEFAULT_USER_SETTINGS.shareDataForTraining),
     faceVerificationEnabled: normalizeBoolean(parsed?.faceVerificationEnabled, DEFAULT_USER_SETTINGS.faceVerificationEnabled),
     voiceChatEnabled: normalizeBoolean(parsed?.voiceChatEnabled, DEFAULT_USER_SETTINGS.voiceChatEnabled),
+    aiResponseVoiceEnabled: normalizeBoolean(parsed?.aiResponseVoiceEnabled, DEFAULT_USER_SETTINGS.aiResponseVoiceEnabled),
   };
 }
 
@@ -105,6 +107,7 @@ export function saveUserSettings(username, nextSettings) {
     shareDataForTraining: normalizeBoolean(merged.shareDataForTraining, DEFAULT_USER_SETTINGS.shareDataForTraining),
     faceVerificationEnabled: normalizeBoolean(merged.faceVerificationEnabled, DEFAULT_USER_SETTINGS.faceVerificationEnabled),
     voiceChatEnabled: normalizeBoolean(merged.voiceChatEnabled, DEFAULT_USER_SETTINGS.voiceChatEnabled),
+    aiResponseVoiceEnabled: normalizeBoolean(merged.aiResponseVoiceEnabled, DEFAULT_USER_SETTINGS.aiResponseVoiceEnabled),
   };
 
   if (isStorageAvailable()) {

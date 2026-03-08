@@ -178,6 +178,9 @@ if defined AIPA_OLLAMA_MODEL (
 ) else (
   echo Dang chay backend voi local HF model: %AIPA_TEXT_MODEL%
 )
+echo [INFO] Dang don backend cu tren cong 8001...
+powershell -NoProfile -Command "$toStop = Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -and $_.CommandLine -match 'uvicorn\\s+chat_server:app' -and $_.CommandLine -match '--port\\s+8001' }; foreach ($p in $toStop) { try { Stop-Process -Id $p.ProcessId -Force -ErrorAction Stop } catch {} }"
+timeout /t 1 >nul
 "%CONTROLL_PY%" -m uvicorn chat_server:app --host 0.0.0.0 --port 8001
 
 endlocal

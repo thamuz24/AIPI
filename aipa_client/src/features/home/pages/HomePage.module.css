@@ -142,6 +142,123 @@
     color: #ef4444;
 }
 
+.trainOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 13, 18, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    padding: 18px;
+}
+
+.trainModal {
+    width: min(700px, 96vw);
+    background: #111823;
+    border: 1px solid #2f3f52;
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    padding: 16px;
+}
+
+.trainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.trainHeader h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #dff8ff;
+}
+
+.trainCloseButton {
+    border: 1px solid #3b4f66;
+    background: #1c2735;
+    color: #b6dff0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.trainHint {
+    margin: 0 0 12px;
+    color: #9bb2c8;
+    font-size: 13px;
+}
+
+.trainForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trainLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    color: #cde7f7;
+}
+
+.trainTextarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 68px;
+    max-height: 240px;
+    border-radius: 10px;
+    border: 1px solid #354a5e;
+    background: #0f1620;
+    color: #e6f3ff;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.trainTextarea:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+}
+
+.trainActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.trainSecondaryButton,
+.trainPrimaryButton {
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.trainSecondaryButton {
+    background: #1b2531;
+    border-color: #334558;
+    color: #cde3f3;
+}
+
+.trainPrimaryButton {
+    background: #00bcd4;
+    border-color: #00bcd4;
+    color: #052229;
+    font-weight: 600;
+}
+
+.trainPrimaryButton:disabled,
+.trainSecondaryButton:disabled,
+.trainCloseButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .mainContent {
     flex-grow: 1;
     display: flex;

@@ -1,38 +1,38 @@
-[
-  {
-    "question": "hello",
-    "answer": "Chào bạn. Mình đang sẵn sàng hỗ trợ bạn."
-  },
-  {
-    "question": "bạn làm được gì",
-    "answer": "Xin chào! Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần hỗ trợ gì nhé!"
-  },
-  {
-    "question": "chào bạn , bạn là ai",
-    "answer": "Xin chào! Tôi là trợ lý AI AIPA, có thể giúp bạn với nhiều tác vụ như tìm kiếm thông tin, giải đáp thắc mắc, lập lịch hoặc hỗ trợ học tập."
-  },
-  {
-    "question": "bạn có thể làm gì",
-    "answer": "Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần gì nhé!"
-  },
-  {
-    "question": "dân số thế giới bao nhiêu người",
-    "answer": "Theo số liệu gần đây nhất, dân số thế giới khoảng 8 tỷ người. Số liệu chính xác có thể thay đổi theo thời gian, bạn có thể kiểm tra trên trang web của Liên Hợp Quốc hoặc tổ chức dân số thế giới để có thông tin cập nhật nhất."
-  },
-  {
-    "question": "tôi muốn biết tổ chức liên hợp quốc là gì",
-    "answer": "Mình đã tra cứu nhanh từ nguồn web, tóm tắt như sau:\n1. Liên Hợp Quốc Wikipedia tiếng Việt: Liên Hợp Quốc (còn gọi là Liên Hiệp Quốc, viết tắt LHQ; tiếng Anh: United Nations, viết tắt là UN) là một tổ chức liên chính phủ có nhiệm vụ duy trì hòa bình v ...\nNguồn: https://vi.wikipedia.org/wiki/LiC3AAnHE1BBA3pQuE1BB91c\n2. Thông tin cơ bản về Liên hợp quốc: Liên hợp quốc chính thức thành lập ngày 24/10/1945, khi Trung Quốc, Pháp, Liên Xô, Anh, Hoa Kỳ và đa số các quốc gia ký kết trước đó phê ...\nNguồn: https://nhandan.vn/special/thongtincobanLienhopquoc/index.html"
-  },
-  {
-    "question": "Mỹ là",
-    "answer": "Mỹ là một quốc gia lớn ở Bắc Mỹ, gồm 50 tiểu bang và thủ đô Washington, D.C. Mỹ là một cường quốc thế giới về kinh tế, chính trị và quân sự. Nó cũng nổi tiếng với nhiều thành phố lớn như New York, Los Angeles và Chicago, cùng nhiều văn hóa đa dạng và nền giáo dục hàng đầu thế giới."
-  },
-  {
-    "question": "bạn là",
-    "answer": "Xin chào! Tôi có thể giúp bạn tìm thông tin, giải đáp thắc mắc, lập lịch, hỗ trợ học tập, viết văn bản, tạo nhắc nhở và nhiều tác vụ khác. Hãy cho tôi biết bạn cần hỗ trợ gì nhé!"
-  },
-  {
-    "question": "bạn là ai",
-    "answer": "Xin chào! Tôi là trợ lý AI AIPA, có thể giúp bạn với nhiều tác vụ như tìm kiếm thông tin, giải đáp thắc mắc, lập lịch hoặc hỗ trợ học tập."
-  }
+﻿[
+    {
+        "question":  "hello",
+        "answer":  "ChĂ o báº¡n. MĂ¬nh Ä‘ang sáºµn sĂ ng há»— trá»£ báº¡n."
+    },
+    {
+        "question":  "báº¡n lĂ m Ä‘Æ°á»£c gĂ¬",
+        "answer":  "Xin chĂ o! TĂ´i cĂ³ thá»ƒ giĂºp báº¡n tĂ¬m thĂ´ng tin, giáº£i Ä‘Ă¡p tháº¯c máº¯c, láº­p lá»‹ch, há»— trá»£ há»c táº­p, viáº¿t vÄƒn báº£n, táº¡o nháº¯c nhá»Ÿ vĂ  nhiá»u tĂ¡c vá»¥ khĂ¡c. HĂ£y cho tĂ´i biáº¿t báº¡n cáº§n há»— trá»£ gĂ¬ nhĂ©!"
+    },
+    {
+        "question":  "chĂ o báº¡n , báº¡n lĂ  ai",
+        "answer":  "Xin chĂ o! TĂ´i lĂ  trá»£ lĂ½ AI, cĂ³ thá»ƒ giĂºp báº¡n vá»›i nhiá»u tĂ¡c vá»¥ nhÆ° tĂ¬m kiáº¿m thĂ´ng tin, giáº£i Ä‘Ă¡p tháº¯c máº¯c, láº­p lá»‹ch hoáº·c há»— trá»£ há»c táº­p."
+    },
+    {
+        "question":  "báº¡n cĂ³ thá»ƒ lĂ m gĂ¬",
+        "answer":  "TĂ´i cĂ³ thá»ƒ giĂºp báº¡n tĂ¬m thĂ´ng tin, giáº£i Ä‘Ă¡p tháº¯c máº¯c, láº­p lá»‹ch, há»— trá»£ há»c táº­p, viáº¿t vÄƒn báº£n, táº¡o nháº¯c nhá»Ÿ vĂ  nhiá»u tĂ¡c vá»¥ khĂ¡c. HĂ£y cho tĂ´i biáº¿t báº¡n cáº§n gĂ¬ nhĂ©!"
+    },
+    {
+        "question":  "dĂ¢n sá»‘ tháº¿ giá»›i bao nhiĂªu ngÆ°á»i",
+        "answer":  "Theo sá»‘ liá»‡u gáº§n Ä‘Ă¢y nháº¥t, dĂ¢n sá»‘ tháº¿ giá»›i khoáº£ng 8 tá»· ngÆ°á»i. Sá»‘ liá»‡u chĂ­nh xĂ¡c cĂ³ thá»ƒ thay Ä‘á»•i theo thá»i gian, báº¡n cĂ³ thá»ƒ kiá»ƒm tra trĂªn trang web cá»§a LiĂªn Há»£p Quá»‘c hoáº·c tá»• chá»©c dĂ¢n sá»‘ tháº¿ giá»›i Ä‘á»ƒ cĂ³ thĂ´ng tin cáº­p nháº­t nháº¥t."
+    },
+    {
+        "question":  "tĂ´i muá»‘n biáº¿t tá»• chá»©c liĂªn há»£p quá»‘c lĂ  gĂ¬",
+        "answer":  "MĂ¬nh Ä‘Ă£ tra cá»©u nhanh tá»« nguá»“n web, tĂ³m táº¯t nhÆ° sau:\n1. LiĂªn Há»£p Quá»‘c Wikipedia tiáº¿ng Viá»‡t: LiĂªn Há»£p Quá»‘c (cĂ²n gá»i lĂ  LiĂªn Hiá»‡p Quá»‘c, viáº¿t táº¯t LHQ; tiáº¿ng Anh: United Nations, viáº¿t táº¯t lĂ  UN) lĂ  má»™t tá»• chá»©c liĂªn chĂ­nh phá»§ cĂ³ nhiá»‡m vá»¥ duy trĂ¬ hĂ²a bĂ¬nh v ...\nNguá»“n: https://vi.wikipedia.org/wiki/LiC3AAnHE1BBA3pQuE1BB91c\n2. ThĂ´ng tin cÆ¡ báº£n vá» LiĂªn há»£p quá»‘c: LiĂªn há»£p quá»‘c chĂ­nh thá»©c thĂ nh láº­p ngĂ y 24/10/1945, khi Trung Quá»‘c, PhĂ¡p, LiĂªn XĂ´, Anh, Hoa Ká»³ vĂ  Ä‘a sá»‘ cĂ¡c quá»‘c gia kĂ½ káº¿t trÆ°á»›c Ä‘Ă³ phĂª ...\nNguá»“n: https://nhandan.vn/special/thongtincobanLienhopquoc/index.html"
+    },
+    {
+        "question":  "Má»¹ lĂ ",
+        "answer":  "Má»¹ lĂ  má»™t quá»‘c gia lá»›n á»Ÿ Báº¯c Má»¹, gá»“m 50 tiá»ƒu bang vĂ  thá»§ Ä‘Ă´ Washington, D.C. Má»¹ lĂ  má»™t cÆ°á»ng quá»‘c tháº¿ giá»›i vá» kinh táº¿, chĂ­nh trá»‹ vĂ  quĂ¢n sá»±. NĂ³ cÅ©ng ná»•i tiáº¿ng vá»›i nhiá»u thĂ nh phá»‘ lá»›n nhÆ° New York, Los Angeles vĂ  Chicago, cĂ¹ng nhiá»u vÄƒn hĂ³a Ä‘a dáº¡ng vĂ  ná»n giĂ¡o dá»¥c hĂ ng Ä‘áº§u tháº¿ giá»›i."
+    },
+    {
+        "question":  "báº¡n lĂ ",
+        "answer":  "Xin chĂ o! TĂ´i cĂ³ thá»ƒ giĂºp báº¡n tĂ¬m thĂ´ng tin, giáº£i Ä‘Ă¡p tháº¯c máº¯c, láº­p lá»‹ch, há»— trá»£ há»c táº­p, viáº¿t vÄƒn báº£n, táº¡o nháº¯c nhá»Ÿ vĂ  nhiá»u tĂ¡c vá»¥ khĂ¡c. HĂ£y cho tĂ´i biáº¿t báº¡n cáº§n há»— trá»£ gĂ¬ nhĂ©!"
+    },
+    {
+        "question":  "báº¡n lĂ  ai",
+        "answer":  "Xin chĂ o! TĂ´i lĂ  trá»£ lĂ½ AI AIPA, cĂ³ thá»ƒ giĂºp báº¡n vá»›i nhiá»u tĂ¡c vá»¥ nhÆ° tĂ¬m kiáº¿m thĂ´ng tin, giáº£i Ä‘Ă¡p tháº¯c máº¯c, láº­p lá»‹ch hoáº·c há»— trá»£ há»c táº­p."
+    }
 ]

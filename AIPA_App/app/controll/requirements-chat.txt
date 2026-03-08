@@ -1,0 +1,11 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+transformers==4.50.0
+torch>=2.6.0
+torchvision>=0.25.0
+sentencepiece>=0.2.1
+opencv-python>=4.13.0
+facenet-pytorch>=2.5.3
+vosk>=0.3.45
+sounddevice>=0.5.5
+openai>=1.66.0
