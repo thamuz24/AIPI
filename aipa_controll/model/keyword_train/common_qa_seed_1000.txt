@@ -1000,3 +1000,5 @@ tôi chưa rõ machine learning là gì => Machine learning là cách máy học
 giúp mình hiểu machine learning là gì => Machine learning là cách máy học mẫu từ dữ liệu để dự đoán hoặc phân loại.
 bạn có thể giải thích machine learning là gì được không => Machine learning là cách máy học mẫu từ dữ liệu để dự đoán hoặc phân loại.
 cho mình câu trả lời ngắn gọn cho machine learning là gì => Machine learning là cách máy học mẫu từ dữ liệu để dự đoán hoặc phân loại.
+bạn là ai => tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.
+bạn có thể làm gì => tôi sẽ giúp bạn với phạm vi cho phép.

@@ -6,14 +6,55 @@
   <component name="ChangeListManager">
     <list default="true" id="92d797b8-1ee7-42d1-81b8-dc31b15460a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIPA_App/app/controll/chat_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../AIPA_App/app/controll/chat_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIPA_App/app/controll/conversation_store.json" beforeDir="false" afterPath="$PROJECT_DIR$/../AIPA_App/app/controll/conversation_store.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIPA_App/app/controll/knowledge_store.json" beforeDir="false" afterPath="$PROJECT_DIR$/../AIPA_App/app/controll/knowledge_store.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIPA_App/app/controll/model/keyword_train/common_qa_seed_1000.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AIPA_App/app/controll/model/keyword_train/common_qa_seed_1000.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIPA_App/app/controll/model/keyword_train/computer_control_train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AIPA_App/app/controll/model/keyword_train/computer_control_train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AIPA_App/app/controll/requirements-chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AIPA_App/app/controll/requirements-chat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aipa_client/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../aipa_client/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aipa_client/src/features/home/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../aipa_client/src/features/home/pages/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aipa_client/src/features/home/pages/HomePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../aipa_client/src/features/home/pages/HomePage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aipa_controll.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aipa_controll.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knowledge_store.json" beforeDir="false" afterPath="$PROJECT_DIR$/knowledge_store.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/keyword_train/common_qa_seed_1000.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model/keyword_train/common_qa_seed_1000.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/keyword_train/computer_control_train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model/keyword_train/computer_control_train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-chat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_aipa_all.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_aipa_all.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aipa_core/doc/PACKAGING_SUITE_WINDOWS.md" beforeDir="false" afterPath="$PROJECT_DIR$/../aipa_core/doc/PACKAGING_SUITE_WINDOWS.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="20504" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Nguyenhoang164&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/thamuz24/AIPI.git&quot;,
+    &quot;accountId&quot;: &quot;3764ade5-05e1-4f22-97cf-14f59d089f79&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -23,22 +64,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Batch.run_aipa_all.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/do_an_lol/AIPI/aipa_controll",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Batch.run_aipa_all.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;update__fe&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kamit/Desktop/AIPA/aipa_controll&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="run_aipa_all" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="aipa_controll" />
@@ -49,17 +97,11 @@
       <option name="PARAMETERS" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Batch.run_aipa_all" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.29188.22" />
-        <option value="bundled-python-sdk-1f1b7bcced7d-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.29188.22" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -73,10 +115,17 @@
       <workItem from="1772644717020" duration="1002000" />
       <workItem from="1772645853081" duration="19000" />
       <workItem from="1772647285782" duration="569000" />
+      <workItem from="1773242761600" duration="68000" />
+      <workItem from="1773242848845" duration="1117000" />
+      <workItem from="1773244011055" duration="8976000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

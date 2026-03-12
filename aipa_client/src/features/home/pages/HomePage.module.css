@@ -506,6 +506,52 @@
     font-weight: 600;
 }
 
+.tipsCard {
+    margin-top: 14px;
+    border: 1px solid #2d3b4a;
+    border-radius: 10px;
+    background: #121922;
+    text-align: left;
+    overflow: hidden;
+}
+
+.tipsHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 10px;
+    border: none;
+    background: #18212d;
+    color: #d2ecff;
+    cursor: pointer;
+}
+
+.tipsTitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tipsToggle {
+    font-size: 11px;
+    color: #9cc6dc;
+}
+
+.tipsList {
+    margin: 0;
+    padding: 10px 14px 10px 24px;
+    color: #b9d0e0;
+    font-size: 12px;
+    line-height: 1.45;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
 .chatArea {
     flex-grow: 1;
     display: flex;

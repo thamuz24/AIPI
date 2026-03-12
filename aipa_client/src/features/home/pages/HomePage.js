@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { User, Settings, Lock, LogOut, Trash2, Send, Zap, Mic, Volume2, Shield, MessageSquarePlus } from 'lucide-react';
+import { User, Settings, Lock, LogOut, Trash2, Send, Zap, Mic, Volume2, Shield, MessageSquarePlus, BookOpen } from 'lucide-react';
 import styles from './HomePage.module.css';
 import { useAuth } from '../../auth/context';
 import { ANIME_MODEL_IMAGE_PATH } from '../model/animeModelConfig';
@@ -53,6 +53,26 @@ const START_VOICE_RESPONSE_COMMANDS = [
 ];
 const getExpressionByKey = (key) => EXPRESSIONS.find((item) => item.key === key) || EXPRESSIONS[0];
 const getWelcomeText = (username) => `Ch\u00e0o m\u1eebng tr\u1edf l\u1ea1i ${username}! T\u00f4i l\u00e0 tr\u1ee3 l\u00fd, b\u1ea1n c\u1ea7n h\u1ed7 tr\u1ee3 g\u00ec h\u00f4m nay?`;
+const QUICK_TIPS = [
+  'Nh\u1eadp 1 l\u1ec7nh trong m\u1ed7i tin nh\u1eafn, kh\u00f4ng g\u1ed9p nhi\u1ec1u t\u00e1c v\u1ee5 c\u00f9ng l\u00fac.',
+  'C\u00fa ph\u00e1p t\u1ed1t nh\u1ea5t: \u0111\u1ed9ng t\u1eeb + \u0111\u1ed1i t\u01b0\u1ee3ng. V\u00ed d\u1ee5: "m\u1edf notepad", "\u0111\u00f3ng chrome".',
+  '\u0110i\u1ec1u khi\u1ec3n chu\u1ed9t: "click a1", "click ph\u1ea3i b3", ho\u1eb7c "click 520,340".',
+  'K\u00e9o chu\u1ed9t: "k\u00e9o chu\u1ed9t a1 -> c3" ho\u1eb7c "k\u00e9o chu\u1ed9t 100,200 -> 500,700".',
+  'G\u00f5 ch\u1eef: "g\u00f5 ch\u1eef Xin ch\u00e0o", ph\u00edm t\u1eaft: "nh\u1ea5n ph\u00edm ctrl+s", "ph\u00edm t\u1eaft alt+tab".',
+  'T\u1ea1o file m\u1ecdi \u0111\u1ecbnh d\u1ea1ng: "t\u1ea1o file bao_cao.docx", "t\u1ea1o file du_lieu.xlsx".',
+  'N\u1ebfu t\u00ean app d\u1ec5 sai, h\u00e3y nh\u1eadp g\u1ea7n \u0111\u00fang: h\u1ec7 th\u1ed1ng s\u1ebd g\u1ee3i \u00fd t\u00ean \u1ee9ng d\u1ee5ng g\u1ea7n nh\u1ea5t.',
+  'D\u00f9ng "Tr\u00f2 chuy\u1ec7n m\u1edbi" khi \u0111\u1ed5i ch\u1ee7 \u0111\u1ec1 \u0111\u1ec3 AI ph\u1ea3n h\u1ed3i ch\u00ednh x\u00e1c h\u01a1n.',
+];
+const TIP_COMMANDS = new Set([
+  'tip',
+  'tips',
+  'huong dan',
+  'huong dan nhanh',
+  'huong dan su dung',
+  'huong dan dieu khien',
+  'lenh dieu khien',
+  'dieu khien may tinh',
+]);
 
 const toChatHistory = (history) =>
   history
@@ -98,6 +118,18 @@ const normalizeVoiceCommand = (value) => String(value || '')
   .trim();
 
 const includesAny = (text, phrases) => phrases.some((phrase) => text.includes(phrase));
+const isTipsCommand = (normalizedText) =>
+  TIP_COMMANDS.has(normalizedText) ||
+  includesAny(normalizedText, ['xem tip', 'xem huong dan', 'hien huong dan', 'goi y lenh']);
+const buildTipsMessage = () => `H\u01b0\u1edbng d\u1eabn \u0111i\u1ec1u khi\u1ec3n nhanh:\n${QUICK_TIPS.map((tip, index) => `${index + 1}. ${tip}`).join('\n')}`;
+const stripControlChars = (value) =>
+  Array.from(String(value || ''))
+    .filter((ch) => {
+      if (ch === '\n' || ch === '\r' || ch === '\t') return true;
+      const code = ch.charCodeAt(0);
+      return !(code <= 31 || code === 127);
+    })
+    .join('');
 
 const isStartVoicePromptCommand = (normalizedText) => {
   if (!normalizedText) return false;
@@ -130,7 +162,7 @@ const isStartVoiceResponseCommand = (normalizedText) => {
 const repairLikelyMojibake = (value) => {
   const text = String(value || '');
   if (!text) return '';
-  const hasMojibakeMarker = /[ÃÄÂâ€™â€œâ€\uFFFD]|á»|áº|Ä‘/u.test(text);
+  const hasMojibakeMarker = /(?:\u00C3.|\u00C4.|\u00C2.|\u00E1\u00BA|\u00E1\u00BB|\u00E2\u20AC|\uFFFD)/u.test(text);
   if (!hasMojibakeMarker) return text;
 
   try {
@@ -145,8 +177,8 @@ const repairLikelyMojibake = (value) => {
     const decoded = new TextDecoder('utf-8').decode(new Uint8Array(bytes));
     if (!decoded) return text;
 
-    const rawBad = (text.match(/[ÃÄÂâ€™â€œâ€\uFFFD]|á»|áº/gu) || []).length;
-    const fixedBad = (decoded.match(/[ÃÄÂâ€™â€œâ€\uFFFD]|á»|áº/gu) || []).length;
+    const rawBad = (text.match(/(?:\u00C3.|\u00C4.|\u00C2.|\u00E1\u00BA|\u00E1\u00BB|\u00E2\u20AC|\uFFFD)/gu) || []).length;
+    const fixedBad = (decoded.match(/(?:\u00C3.|\u00C4.|\u00C2.|\u00E1\u00BA|\u00E1\u00BB|\u00E2\u20AC|\uFFFD)/gu) || []).length;
     if (fixedBad < rawBad) {
       return decoded;
     }
@@ -157,25 +189,8 @@ const repairLikelyMojibake = (value) => {
   return text;
 };
 const sanitizeDisplayText = (value) => {
-  const text = repairLikelyMojibake(value);
-  const allowedPunct = new Set(['.', ',', '!', '?', ';', ':', "'", '"', '(', ')', '[', ']', '-', '/']);
-  let output = '';
-
-  for (const ch of text) {
-    if (ch === '\n' || ch === '\r' || ch === '\t' || ch === ' ') {
-      output += ch;
-      continue;
-    }
-    if ((ch >= '0' && ch <= '9') || allowedPunct.has(ch)) {
-      output += ch;
-      continue;
-    }
-    if (/\p{Script=Latin}/u.test(ch) || /\p{Mark}/u.test(ch)) {
-      output += ch;
-    }
-  }
-
-  return output
+  const text = String(value || '');
+  return stripControlChars(text)
     .replace(/[ \t]{2,}/g, ' ')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
@@ -190,7 +205,9 @@ const normalizeAnswerText = (value) => {
     .trim();
 
   text = repairLikelyMojibake(text);
+
   text = sanitizeDisplayText(text);
+  text = text.normalize('NFC');
 
   if (text.length > 1400) {
     text = `${text.slice(0, 1400).trimEnd()}...`;
@@ -223,6 +240,32 @@ const isControlLeakAnswer = (normalizedAnswer) =>
     'da mo ung dung',
     'm ng dng',
   ]);
+
+const isFallbackOrErrorAnswer = (rawAnswer) => {
+  const normalized = normalizeVoiceCommand(rawAnswer);
+  if (!normalized) return false;
+
+  if (
+    includesAny(normalized, [
+      'khong ket noi duoc dich vu ai',
+      'tam thoi chua co cau tra loi phu hop',
+      'he thong ai dang ban khoi dong hoac tam thoi qua tai',
+      'he thong ai dang ban khoi dong',
+      'tam thoi qua tai',
+      'hien tai minh chua tim duoc cau tra loi phu hop',
+    ])
+  ) {
+    return true;
+  }
+
+  // Các câu cực ngắn, quá chung chung cũng không nên đem đi train tự động
+  if (normalized.length <= 32) {
+    const trivialPatterns = ['khong biet', 'khong ro', 'khong chac', 'khong co thong tin'];
+    if (includesAny(normalized, trivialPatterns)) return true;
+  }
+
+  return false;
+};
 
 const extractAudioUrl = (payload) => {
   if (!payload || typeof payload !== 'object') return '';
@@ -437,10 +480,10 @@ const TrainModal = ({
           </label>
           <div className={styles.trainActions}>
             <button type="button" className={styles.trainSecondaryButton} onClick={onClose} disabled={isSubmitting}>
-              {'Hu\u0309y'}
+              {'H\u1ee7y'}
             </button>
             <button type="submit" className={styles.trainPrimaryButton} disabled={isSubmitting || !question.trim() || !answer.trim()}>
-              {isSubmitting ? 'Đang lưu...' : 'Lưu dữ liệu train'}
+              {isSubmitting ? '\u0110ang l\u01b0u...' : 'L\u01b0u d\u1eef li\u1ec7u train'}
             </button>
           </div>
         </form>
@@ -474,6 +517,7 @@ const HomePage = () => {
   const [userSettings, setUserSettings] = useState(() => getUserSettings(username));
   const [isVoicePromptMode, setIsVoicePromptMode] = useState(false);
   const [isTrainModalOpen, setIsTrainModalOpen] = useState(false);
+  const [isTipsOpen, setIsTipsOpen] = useState(true);
   const [trainQuestion, setTrainQuestion] = useState('');
   const [trainAnswer, setTrainAnswer] = useState('');
   const [isSubmittingTrain, setIsSubmittingTrain] = useState(false);
@@ -809,7 +853,12 @@ const HomePage = () => {
       tokens: estimateTokenCount(userPrompt) + estimateTokenCount(botResponse.text),
     });
 
-    if (storedHistory.length > 0 && !requestFailed && userSettings.shareDataForTraining) {
+    if (
+      storedHistory.length > 0 &&
+      !requestFailed &&
+      userSettings.shareDataForTraining &&
+      !isFallbackOrErrorAnswer(botResponse.text)
+    ) {
       trainAssistantApi({
         question: userPrompt,
         answer: botResponse.text,
@@ -831,6 +880,16 @@ const HomePage = () => {
     const messageText = input.trim();
     const normalizedMessage = normalizeVoiceCommand(messageText);
     const newMessage = { id: Date.now(), sender: 'user', text: messageText };
+
+    if (isTipsCommand(normalizedMessage)) {
+      setMessages((prev) => [
+        ...prev,
+        newMessage,
+        { id: Date.now() + 1, sender: 'bot', text: buildTipsMessage() },
+      ]);
+      setInput('');
+      return;
+    }
 
     if (isStopVoiceResponseCommand(normalizedMessage)) {
       setMessages((prev) => [
@@ -1066,10 +1125,10 @@ const HomePage = () => {
       setIsTrainModalOpen(false);
       resetTrainForm();
       const knowledgeSize = Number(result?.knowledge_size);
-      const sizeText = Number.isFinite(knowledgeSize) ? `${knowledgeSize}` : 'nhiều';
-      pushBotMessage(`Đã lưu dữ liệu train thành công. Kho tri thức hiện có khoảng ${sizeText} mục.`);
+      const sizeText = Number.isFinite(knowledgeSize) ? `${knowledgeSize}` : 'nhi\u1ec1u';
+      pushBotMessage(`\u0110\u00e3 l\u01b0u d\u1eef li\u1ec7u train th\u00e0nh c\u00f4ng. Kho tri th\u1ee9c hi\u1ec7n c\u00f3 kho\u1ea3ng ${sizeText} m\u1ee5c.`);
     } catch (_error) {
-      pushBotMessage('Không thể lưu dữ liệu train lúc này. Bạn thử lại sau.');
+      pushBotMessage('Kh\u00f4ng th\u1ec3 l\u01b0u d\u1eef li\u1ec7u train l\u00fac n\u00e0y. B\u1ea1n th\u1eed l\u1ea1i sau.');
     } finally {
       setIsSubmittingTrain(false);
     }
@@ -1150,6 +1209,28 @@ const HomePage = () => {
               <Volume2 size={14} style={{ display: 'inline', marginRight: '6px' }} />
               {'T\u1ef1 \u0111\u1ed9ng \u0111\u1ecdc c\u00e2u tr\u1ea3 l\u1eddi, thay \u0111\u1ed5i bi\u1ec3u c\u1ea3m ng\u1eabu nhi\u00ean.'}
             </p>
+            <div className={styles.tipsCard}>
+              <button
+                type="button"
+                className={styles.tipsHeader}
+                onClick={() => setIsTipsOpen((prev) => !prev)}
+                aria-expanded={isTipsOpen}
+              >
+                <span className={styles.tipsTitle}>
+                  <BookOpen size={14} />
+                  {'Hướng dẫn sử dụng nhanh'}
+                </span>
+                <span className={styles.tipsToggle}>{isTipsOpen ? 'Ẩn' : 'Mở'}</span>
+              </button>
+
+              {isTipsOpen && (
+                <ul className={styles.tipsList}>
+                  {QUICK_TIPS.map((tip, index) => (
+                    <li key={`tip-${index}`}>{tip}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
         </div>
 
@@ -1215,5 +1296,6 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
 
 

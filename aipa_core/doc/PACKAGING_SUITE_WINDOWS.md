@@ -24,11 +24,9 @@ Tu thu muc `aipa_core`:
 
 Lenh tren se:
 
-1. Dong goi `aipa_core` thanh `release\windows\AIPA`
-2. Copy `..\aipa_client\build` vao `release\windows\AIPA\app\client`
-3. Copy `..\aipa_controll` vao `release\windows\AIPA\app\controll` (bo qua `.venv`, `tmp`, `__pycache__`)
-4. Bat desktop mode trong `AIPA.exe` (tu khoi dong `aipa_controll`, mo cua so app va tu tat khi dong cua so)
-5. Xuat bo cai doc lap ra thu muc `..\AIPA_App` (ngoai `aipa_core`)
+1. Dong goi backend `aipa_core` va frontend `aipa_client` + `aipa_controll` thanh mot bo cai hoan chinh.
+2. Bat desktop mode trong `AIPA.exe` (tu khoi dong `aipa_controll`, mo cua so app va tu tat khi dong cua so).
+3. Xuat bo cai doc lap ra thu muc `..\AIPA_App` (ngoai `aipa_core`, chua file `AIPA.exe` cuoi cung).
 
 ## Build lai frontend truoc khi dong goi
 

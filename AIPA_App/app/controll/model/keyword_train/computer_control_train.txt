@@ -1,46 +1,113 @@
-﻿# Computer control train file
-# Format: trigger => ACTION|arg1|arg2||ACTION2|arg1|arg2
-# Rule match: prompt phai bat dau bang trigger (khong phan biet hoa/thuong, co/khong dau)
-# Placeholder ho tro trong arg:
-#   {PROMPT}      : toan bo prompt goc
-#   {PROMPT_CLEAN}: prompt da chuan hoa khong dau
-#   {REST}        : phan prompt con lai sau trigger
-#   {NOW}         : thoi gian hien tai yyyy-mm-dd HH:MM:SS
-#   {NL}          : ky tu xuong dong
+﻿# Tệp train điều khiển máy tính
+# Định dạng: trigger => ACTION|arg1|arg2||ACTION2|arg1|arg2
+# Quy tắc khớp: prompt phải bắt đầu bằng trigger (không phân biệt hoa/thường, có/không dấu)
+# Placeholder hỗ trợ trong arg:
+#   {PROMPT}      : toàn bộ prompt gốc
+#   {PROMPT_CLEAN}: prompt đã chuẩn hóa không dấu
+#   {REST}        : phần prompt còn lại sau trigger
+#   {NOW}         : thời gian hiện tại yyyy-mm-dd HH:MM:SS
+#   {NL}          : ký tự xuống dòng
 #
-# Action ho tro:
-# OPEN_FILE/READ_FILE|path
-# LIST_DIR|path
-# WRITE_FILE|path|content
-# APPEND_FILE|path|content
-# CREATE_FILE|path|optional_content
-# CREATE_DIR|path
-# DELETE_FILE|path
-# DELETE_DIR|path
-# DELETE_PATH|path
+# Hành động hỗ trợ (giữ nguyên mã ACTION):
+# (Desktop scope - mặc định an toàn)
+# OPEN_FILE/READ_FILE|path            (trong Desktop; bỏ trống để liệt kê Desktop)
+# LIST_DIR|path                       (trong Desktop; bỏ trống để liệt kê Desktop)
+# WRITE_FILE|path|content             (ghi đè trong Desktop)
+# APPEND_FILE|path|content            (thêm vào file trong Desktop)
+# WRITE_FILE_REST|path content         (ghi đè, parse từ {REST})
+# APPEND_FILE_REST|path content        (append, parse từ {REST})
+# CREATE_FILE|path|optional_content   (tạo file trong Desktop)
+# CREATE_DIR|path                     (tạo thư mục trong Desktop)
+# DELETE_FILE|path                    (xóa file trong Desktop)
+# DELETE_DIR|path                     (xóa thư mục trong Desktop)
+# DELETE_PATH|path                    (xóa file/thư mục trong Desktop)
+# (Project/control scope)
+# OPEN_CONTROL_FILE|path              (đọc/list trong COMPUTER_CONTROL_ROOT)
+# LIST_CONTROL_DIR|path               (list trong COMPUTER_CONTROL_ROOT)
+# (Utility)
+# WAIT|seconds
+# OPEN_URL|url
 # SCAN_DESKTOP_CLOCK
 # OPEN_APP|app_name
 # CLOSE_APP|app_name
+# CLICK|target(x,y hoặc a1)
+# RIGHT_CLICK|target
+# DRAG_MOUSE|from|to
+# SCROLL|up/down|amount
+# TYPE_TEXT|text
+# PRESS_KEYS|ctrl+c
 
-thực hiện tác vụ: kiểm tra thời gian =>SCAN_DESKTOP_CLOCK
-mo file train=>OPEN_FILE|model/keyword_train/computer_control_train.txt
-xem lich su hoi thoai=>OPEN_FILE|conversation_store.json
-liet ke model=>LIST_DIR|model
+# =========================================================
+# Trợ giúp
+# =========================================================
+hướng dẫn điều khiển=>OPEN_CONTROL_FILE|docs/COMPUTER_CONTROL_PROMPTS.md
+danh sách lệnh=>OPEN_CONTROL_FILE|docs/COMPUTER_CONTROL_PROMPTS.md
 
-tao thu muc test=>CREATE_DIR|tmp/train_manual
-xoa thu muc test=>DELETE_DIR|tmp/train_manual
+# =========================================================
+# Tiện ích
+# =========================================================
+thực hiện tác vụ: kiểm tra thời gian=>SCAN_DESKTOP_CLOCK
+chờ=>WAIT|{REST}
+mở web=>OPEN_URL|{REST}
+mở link=>OPEN_URL|{REST}
+mở website=>OPEN_URL|{REST}
 
-tao file test=>CREATE_FILE|tmp/train_manual/test.txt|File duoc tao luc {NOW}
-ghi de file test=>WRITE_FILE|tmp/train_manual/test.txt|{REST}
-them vao file test=>APPEND_FILE|tmp/train_manual/test.txt|{REST}{NL}
-mo file test=>OPEN_FILE|tmp/train_manual/test.txt
-xoa file test=>DELETE_FILE|tmp/train_manual/test.txt
+# =========================================================
+# File dự án (control root)
+# =========================================================
+mở file train=>OPEN_CONTROL_FILE|model/keyword_train/computer_control_train.txt
+xem lịch sử hội thoại=>OPEN_CONTROL_FILE|conversation_store.json
+xem dữ liệu knowledge=>OPEN_CONTROL_FILE|knowledge_store.json
+liệt kê model=>LIST_CONTROL_DIR|model
 
-# Generic app launcher: "mo firefox", "mo chrome", "mo notepad", ...
-mo=>OPEN_APP|{REST}
+# =========================================================
+# Desktop file/thư mục (mặc định)
+# =========================================================
+liệt kê desktop=>LIST_DIR
+xem desktop=>LIST_DIR
+mở file=>OPEN_FILE|{REST}
+xem file=>OPEN_FILE|{REST}
+ghi file=>WRITE_FILE_REST|{REST}
+ghi đè file=>WRITE_FILE_REST|{REST}
+thêm vào file=>APPEND_FILE_REST|{REST}{NL}
+append file=>APPEND_FILE_REST|{REST}
+liệt kê thư mục=>LIST_DIR|{REST}
+xem thư mục=>LIST_DIR|{REST}
+tạo thư mục=>CREATE_DIR|{REST}
+xóa thư mục=>DELETE_DIR|{REST}
+xóa file=>DELETE_FILE|{REST}
+xóa đường dẫn=>DELETE_PATH|{REST}
 
-# Generic app closer: "dong firefox", "tat app chrome", ...
-dong=>CLOSE_APP|{REST}
-tat app=>CLOSE_APP|{REST}
-dong ung dung=>CLOSE_APP|{REST}
-tat ung dung=>CLOSE_APP|{REST}
+tạo thư mục test=>CREATE_DIR|tmp/train_manual
+xóa thư mục test=>DELETE_DIR|tmp/train_manual
+
+tạo file test=>CREATE_FILE|tmp/train_manual/test.txt|File được tạo lúc {NOW}
+ghi đè file test=>WRITE_FILE|tmp/train_manual/test.txt|{REST}
+thêm vào file test=>APPEND_FILE|tmp/train_manual/test.txt|{REST}{NL}
+mở file test=>OPEN_FILE|tmp/train_manual/test.txt
+xóa file test=>DELETE_FILE|tmp/train_manual/test.txt
+
+# Tạo file bất kỳ theo tên/đuôi người dùng cung cấp
+# Ví dụ: "tạo file bao_cao.docx", "tạo file du_lieu.xlsx", "tạo file ghi_chu.txt"
+tạo file=>CREATE_FILE|{REST}
+tạo tệp=>CREATE_FILE|{REST}
+
+# Mở ứng dụng tổng quát: "mở firefox", "mở chrome", "mở notepad", ...
+mở=>OPEN_APP|{REST}
+
+# Đóng ứng dụng tổng quát: "đóng firefox", "tắt app chrome", ...
+đóng=>CLOSE_APP|{REST}
+tắt app=>CLOSE_APP|{REST}
+đóng ứng dụng=>CLOSE_APP|{REST}
+tắt ứng dụng=>CLOSE_APP|{REST}
+
+# Chuột + bàn phím + gõ chữ
+click=>CLICK|{REST}
+click trái=>CLICK|{REST}
+click phải=>RIGHT_CLICK|{REST}
+kéo chuột=>DRAG_MOUSE|{REST}
+cuộn lên=>SCROLL|up|3
+cuộn xuống=>SCROLL|down|3
+gõ chữ=>TYPE_TEXT|{REST}
+nhấn phím=>PRESS_KEYS|{REST}
+phím tắt=>PRESS_KEYS|{REST}
