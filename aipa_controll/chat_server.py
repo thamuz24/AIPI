@@ -1028,6 +1028,9 @@ def _should_use_web_search(prompt: str) -> bool:
         'o dau',
         'la ai',
         'la gi',
+        'co hai',
+        'tac hai',
+        'nguy hiem',
         'khi nao',
         'nam nao',
         'bao nhieu',
@@ -1233,7 +1236,7 @@ class TextModel:
         )
 
         output = generator(
-            composed_protmp,
+            composed_prompt,
             max_new_tokens=120,
             do_sample=False,
             repetition_penalty=1.08,
@@ -3682,8 +3685,17 @@ def chat(request: ChatRequest):
     prompt_for_model = _apply_language_instruction(prompt_for_model, request.prompt)
 
     generated_answer = ''
+    web_answer = None
+    web_allowed = (
+        WEB_SEARCH_ENABLED
+        and WEB_SEARCH_MODE != 'off'
+        and web_search_service.active
+        and web_search_service.google_ready
+    )
+    ollama_attempted = False
 
     if ollama_chat_model.enabled:
+        ollama_attempted = True
         raw_answer = ''
         try:
             raw_answer = ollama_chat_model.generate(prompt_for_model, merged_history, memory_facts)
@@ -3706,6 +3718,17 @@ def chat(request: ChatRequest):
                     generated_answer = 'Mình chưa thể tạo câu trả lời có dấu đầy đủ. Bạn thử lại giúp mình nhé.'
             conversation_store.append_exchange(session_id, request.prompt, generated_answer)
             return ChatResponse(answer=generated_answer, source='model', model=OLLAMA_MODEL_NAME)
+
+    # If local LLM fails (common: not enough RAM), proactively use web search when available.
+    if web_allowed and (should_lookup_web or (ollama_attempted and not generated_answer)):
+        web_answer = _search_web_answer(request.prompt)
+        if web_answer:
+            answer = _finalize_answer_for_response(web_answer, max_len=1800)
+            conversation_store.append_exchange(session_id, request.prompt, answer)
+            return ChatResponse(answer=answer, source='web', model='web_search')
+
+    if should_lookup_web and not web_allowed:
+        web_notice = 'Hiện tại mình chưa thể tra cứu web. Bạn thử lại sau ít phút.'
 
     if HF_FALLBACK_ENABLED:
         raw_answer = ''
@@ -3731,16 +3754,15 @@ def chat(request: ChatRequest):
             conversation_store.append_exchange(session_id, request.prompt, generated_answer)
             return ChatResponse(answer=generated_answer, source='model', model=MODEL_NAME)
 
-    web_answer = None
-    if should_lookup_web:
+    # Last resort: still try web search if models failed and web is available.
+    if web_allowed and not web_answer:
         web_answer = _search_web_answer(request.prompt)
-        if not web_answer:
-            if not WEB_SEARCH_ENABLED or not web_search_service.active or not web_search_service.google_ready:
-                web_notice = 'Hiện tại mình chưa thể tra cứu web. Bạn thử lại sau ít phút.'
+        if web_answer:
+            answer = _finalize_answer_for_response(web_answer, max_len=1800)
+            conversation_store.append_exchange(session_id, request.prompt, answer)
+            return ChatResponse(answer=answer, source='web', model='web_search')
 
-    if web_answer:
-        fallback_answer = web_answer
-    elif should_lookup_web and web_notice:
+    if should_lookup_web and web_notice:
         fallback_answer = web_notice
     else:
         fallback_answer = (

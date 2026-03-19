@@ -27,7 +27,52 @@ public class AipaApplication {
 		if (shouldExitBecauseInstanceAlreadyRunning()) {
 			return;
 		}
+		autostartControllServiceEarly();
 		SpringApplication.run(AipaApplication.class, args);
+	}
+
+	private static void autostartControllServiceEarly() {
+		// Start the Python controll service as early as possible so the UI doesn't hit "cannot connect" on first prompts.
+		boolean enabled = Boolean.parseBoolean(System.getProperty("aipa.controll.autostart", "false"));
+		if (!enabled) {
+			String env = System.getenv("AIPA_CONTROLL_AUTOSTART");
+			enabled = env != null && (env.equalsIgnoreCase("1") || env.equalsIgnoreCase("true") || env.equalsIgnoreCase("yes"));
+		}
+		if (!enabled) {
+			return;
+		}
+		if (!System.getProperty("os.name", "").toLowerCase().contains("win")) {
+			return;
+		}
+		// If something is already listening on 8001, don't try to start another copy.
+		if (!isPortAvailable(8001)) {
+			return;
+		}
+
+		String script = System.getProperty("aipa.desktop.controll-script", "app/controll/run_aipa_all.bat");
+		try {
+			Path scriptPath = Path.of(script).toAbsolutePath().normalize();
+			if (!Files.isRegularFile(scriptPath)) {
+				// Try resolving relative to detected app root (works for dev runs too).
+				Path appRoot = detectAppRoot();
+				if (appRoot != null) {
+					Path rel = appRoot.resolve(script).normalize();
+					if (Files.isRegularFile(rel)) {
+						scriptPath = rel;
+					}
+				}
+			}
+			if (!Files.isRegularFile(scriptPath)) {
+				return;
+			}
+
+			ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", scriptPath.toString());
+			pb.directory(scriptPath.getParent().toFile());
+			pb.redirectErrorStream(true);
+			pb.start();
+		} catch (Exception ignored) {
+			// Best-effort only; DesktopModeLauncher/ControllServiceAutoStarter will try again later.
+		}
 	}
 
 	private static void configurePackagedPaths() {
@@ -35,6 +80,8 @@ public class AipaApplication {
 				|| System.getenv("AIPA_STATIC_LOCATIONS") != null;
 		boolean hasCustomControllScript = System.getProperty("aipa.desktop.controll-script") != null
 				|| System.getenv("AIPA_DESKTOP_CONTROLL_SCRIPT") != null;
+		boolean hasCustomControllAutostart = System.getProperty("aipa.controll.autostart") != null
+				|| System.getenv("AIPA_CONTROLL_AUTOSTART") != null;
 
 		Path appRoot = detectAppRoot();
 		if (appRoot == null) {
@@ -55,6 +102,13 @@ public class AipaApplication {
 			Path controllScript = appRoot.resolve("app").resolve("controll").resolve("run_aipa_all.bat").normalize();
 			if (Files.isRegularFile(controllScript)) {
 				System.setProperty("aipa.desktop.controll-script", controllScript.toString());
+			}
+		}
+
+		if (!hasCustomControllAutostart) {
+			Path controllScript = appRoot.resolve("app").resolve("controll").resolve("run_aipa_all.bat").normalize();
+			if (Files.isRegularFile(controllScript)) {
+				System.setProperty("aipa.controll.autostart", "true");
 			}
 		}
 	}

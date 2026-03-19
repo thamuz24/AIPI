@@ -2389,6 +2389,126 @@
           "sender": "bot",
           "text": "Hướng dẫn điều khiển máy tính (prompt):\n\nVí dụ nhanh (có thể thêm tiền tố \"máy tính:\" / \"pc:\" / \"lệnh:\" để rõ nghĩa):\n- máy tính: mở chrome\n- máy tính: đóng chrome\n- máy tính: click a1\n- máy tính: click 1200,700\n- máy tính: kéo chuột a1 -> c3\n- máy tính: cuộn xuống\n- máy tính: gõ chữ xin chào\n- máy tính: nhấn phím ctrl+l\n- máy tính: tạo file ghi_chu.txt\n- máy tính: ghi đè file ghi_chu.txt nội dung hôm nay {NOW}\n- máy tính: mở file ghi_chu.txt\n- máy tính: liệt kê desktop\n- máy tính: mở web openai.com\n\nTrigger đã cấu hình (40/48):\n- thực hiện tác vụ: kiểm tra thời gian\n- xem lịch sử hội thoại\n- xem dữ liệu knowledge\n- hướng dẫn điều khiển\n- thêm vào file test\n- tạo thư mục test\n- xóa thư mục test\n- ghi đè file test\n- liệt kê desktop\n- liệt kê thư mục\n- danh sách lệnh\n- mở file train\n- liệt kê model\n- thêm vào file\n- xóa đường dẫn\n- tạo file test\n- xóa file test\n- đóng ứng dụng\n- mở file test\n- tắt ứng dụng\n- xem desktop\n- ghi đè file\n- append file\n- xem thư mục\n- tạo thư mục\n- xóa thư mục\n- mở website\n- click trái\n- click phải\n- cuộn xuống\n- kéo chuột\n- nhấn phím\n- xem file\n- ghi file\n- xóa file\n- tạo file\n- cuộn lên\n- phím tắt\n- mở link\n- mở file\n... và 8 trigger khác.\n\nTệp train: C:/Users/kamit/Desktop/AIPA/AIPA_App/app/controll/model/keyword_train/computer_control_train.txt\nTài liệu đầy đủ: C:/Users/kamit/Desktop/AIPA/AIPA_App/app/controll/docs/COMPUTER_CONTROL_PROMPTS.md\nAPI: GET /api/computer-control/help, GET /api/computer-control/rules",
           "at": "2026-03-12T07:39:05Z"
+        },
+        {
+          "sender": "user",
+          "text": "ban la ai",
+          "at": "2026-03-19T05:38:02Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T05:38:02Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-19T05:38:53Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T05:38:53Z"
+        },
+        {
+          "sender": "user",
+          "text": "xin chào",
+          "at": "2026-03-19T05:39:03Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chào bạn, mình sẵn sàng hỗ trợ bạn ngay bây giờ.",
+          "at": "2026-03-19T05:39:03Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T05:46:23Z"
+        },
+        {
+          "sender": "bot",
+          "text": "ng trng tâm, r ràng, thân thin, không lan man.",
+          "at": "2026-03-19T05:46:23Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T05:50:52Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Thuốc lá có hại cho sức khỏe. Bạn muốn biết thêm thông tin về tác hại của thuốc lá không?",
+          "at": "2026-03-19T05:50:52Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-19T05:57:09Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T05:57:09Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T05:57:33Z"
+        },
+        {
+          "sender": "bot",
+          "text": "ng trng tâm, r ràng, thân thin, không lan man. Tr l: Thuc lá có hi cho sc khe.",
+          "at": "2026-03-19T05:57:33Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T05:58:01Z"
+        },
+        {
+          "sender": "bot",
+          "text": "ng trng tâm, r ràng, thân thin, không lan man. Tr l: Chào bn, mn sn sàng h tr bn ngay bây gi. Ngi dùng: thuc lá có hi không Tr l:",
+          "at": "2026-03-19T05:58:01Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T06:02:35Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Thuốc lá có hại cho sức khỏe. Bạn muốn biết thêm thông tin về tác hại của thuốc lá?",
+          "at": "2026-03-19T06:02:35Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T06:03:05Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trả lời ngắn gọn: Tác hại của hút thuốc lá tới sức khỏe Hút thuốc lá có thể gây ung thư với mọi cơ quan trong cơ thể của bạn: phổi, bàng quang, máu, cổ tử cung, đại tràng, thực quản, thận, vòm họng, gan, tụy, dạ dày\nTóm tắt: Tác hại của hút thuốc lá tới sức khỏe Hút thuốc lá có thể gây ung thư với mọi cơ quan trong cơ thể của bạn: phổi, bàng quang, máu, cổ tử cung, đại tràng, thực quản, thận, vòm họng, gan, tụy, dạ dày.",
+          "at": "2026-03-19T06:03:05Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T06:08:49Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trả lời ngắn gọn: Tác hại của hút thuốc lá tới sức khỏe Hút thuốc lá có thể gây ung thư với mọi cơ quan trong cơ thể của bạn: phổi, bàng quang, máu, cổ tử cung, đại tràng, thực quản, thận, vòm họng, gan, tụy, dạ dày\nTóm tắt: Tác hại của hút thuốc lá tới sức khỏe Hút thuốc lá có thể gây ung thư với mọi cơ quan trong cơ thể của bạn: phổi, bàng quang, máu, cổ tử cung, đại tràng, thực quản, thận, vòm họng, gan, tụy, dạ dày.",
+          "at": "2026-03-19T06:08:49Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-19T06:08:58Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T06:08:58Z"
         }
       ],
       "facts": [],
@@ -2399,7 +2519,7 @@
         "last_bot_phrase": "",
         "used": []
       },
-      "updated_at": "2026-03-12T07:39:05Z"
+      "updated_at": "2026-03-19T06:08:58Z"
     },
     "verify-clean-2": {
       "messages": [
@@ -3578,6 +3698,156 @@
           "sender": "bot",
           "text": "Hướng dẫn điều khiển máy tính (prompt):\n\nVí dụ nhanh (có thể thêm tiền tố \"máy tính:\" / \"pc:\" / \"lệnh:\" để rõ nghĩa):\n- máy tính: mở chrome\n- máy tính: đóng chrome\n- máy tính: click a1\n- máy tính: click 1200,700\n- máy tính: kéo chuột a1 -> c3\n- máy tính: cuộn xuống\n- máy tính: gõ chữ xin chào\n- máy tính: nhấn phím ctrl+l\n- máy tính: tạo file ghi_chu.txt\n- máy tính: ghi đè file ghi_chu.txt nội dung hôm nay {NOW}\n- máy tính: mở file ghi_chu.txt\n- máy tính: liệt kê desktop\n- máy tính: mở web openai.com\n\nTrigger đã cấu hình (40/48):\n- thực hiện tác vụ: kiểm tra thời gian\n- xem lịch sử hội thoại\n- xem dữ liệu knowledge\n- hướng dẫn điều khiển\n- thêm vào file test\n- tạo thư mục test\n- xóa thư mục test\n- ghi đè file test\n- liệt kê desktop\n- liệt kê thư mục\n- danh sách lệnh\n- mở file train\n- liệt kê model\n- thêm vào file\n- xóa đường dẫn\n- tạo file test\n- xóa file test\n- đóng ứng dụng\n- mở file test\n- tắt ứng dụng\n- xem desktop\n- ghi đè file\n- append file\n- xem thư mục\n- tạo thư mục\n- xóa thư mục\n- mở website\n- click trái\n- click phải\n- cuộn xuống\n- kéo chuột\n- nhấn phím\n- xem file\n- ghi file\n- xóa file\n- tạo file\n- cuộn lên\n- phím tắt\n- mở link\n- mở file\n... và 8 trigger khác.\n\nTệp train: C:/Users/kamit/Desktop/AIPA/AIPA_App/app/controll/model/keyword_train/computer_control_train.txt\nTài liệu đầy đủ: C:/Users/kamit/Desktop/AIPA/AIPA_App/app/controll/docs/COMPUTER_CONTROL_PROMPTS.md\nAPI: GET /api/computer-control/help, GET /api/computer-control/rules",
           "at": "2026-03-12T07:41:23Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-19T05:40:33Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T05:40:33Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn có thể làm gì",
+          "at": "2026-03-19T05:40:41Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi sẽ giúp bạn với phạm vi cho phép.",
+          "at": "2026-03-19T05:40:41Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T05:41:07Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Mình đã nhận câu hỏi nhưng hệ thống AI đang bận khởi động hoặc tạm thời quá tải. Bạn thử lại sau ít phút, hoặc đặt câu hỏi cụ thể hơn để mình trả lời tốt hơn.",
+          "at": "2026-03-19T05:41:07Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-19T06:10:30Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T06:10:30Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn có thể làm gì",
+          "at": "2026-03-19T06:10:37Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi sẽ giúp bạn với phạm vi cho phép.",
+          "at": "2026-03-19T06:10:37Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T06:10:53Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trả lời ngắn gọn: Tác hại của hút thuốc lá tới sức khỏe Hút thuốc lá có thể gây ung thư với mọi cơ quan trong cơ thể của bạn: phổi, bàng quang, máu, cổ tử cung, đại tràng, thực quản, thận, vòm họng, gan, tụy, dạ dày\nTóm tắt: Tác hại của hút thuốc lá tới sức khỏe Hút thuốc lá có thể gây ung thư với mọi cơ quan trong cơ thể của bạn: phổi, bàng quang, máu, cổ tử cung, đại tràng, thực quản, thận, vòm họng, gan, tụy, dạ dày.",
+          "at": "2026-03-19T06:10:53Z"
+        },
+        {
+          "sender": "user",
+          "text": "vậy làm sao để khắc phục nghiện thuốc lá",
+          "at": "2026-03-19T06:11:14Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trả lời ngắn gọn: 13 mẹo cai thuốc lá tốt nhất từ trước đến nay 13 mẹo cai thuốc lá tốt nhất từ trước đến nay · 1\nTóm tắt: 13 mẹo cai thuốc lá tốt nhất từ trước đến nay 13 mẹo cai thuốc lá tốt nhất từ trước đến nay · 1.1. Liệu pháp thay thế nicotine · 1.2. Tránh các yếu tố kích hoạt cơn thèm thuốc · 1.3. Trì hoãn và củng cố tích ...",
+          "at": "2026-03-19T06:11:14Z"
+        },
+        {
+          "sender": "user",
+          "text": "tiếng anh là gì",
+          "at": "2026-03-19T06:11:36Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Trả lời ngắn gọn: Google Dịch Dịch vụ của Google, được cung cấp miễn phí, dịch nhanh các từ, cụm từ và trang web giữa tiếng Anh và hơn 100 ngôn ngữ khác\nTóm tắt: Google Dịch Dịch vụ của Google, được cung cấp miễn phí, dịch nhanh các từ, cụm từ và trang web giữa tiếng Anh và hơn 100 ngôn ngữ khác.",
+          "at": "2026-03-19T06:11:36Z"
+        },
+        {
+          "sender": "user",
+          "text": "mở steam",
+          "at": "2026-03-19T06:11:52Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. Đã mở ứng dụng: Steam.lnk",
+          "at": "2026-03-19T06:11:52Z"
+        },
+        {
+          "sender": "user",
+          "text": "đóng steam",
+          "at": "2026-03-19T06:19:17Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"đóng\"\n1. Đã đóng ứng dụng: steam.exe (1 tiến trình).",
+          "at": "2026-03-19T06:19:17Z"
+        },
+        {
+          "sender": "user",
+          "text": "mở discord",
+          "at": "2026-03-19T11:57:17Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. Đã mở ứng dụng: Discord.lnk",
+          "at": "2026-03-19T11:57:17Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-19T12:37:03Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T12:37:03Z"
+        },
+        {
+          "sender": "user",
+          "text": "nhà trắng ở đâu",
+          "at": "2026-03-19T12:37:48Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Nhà Trắng位于美国华盛顿特区。您还需要其他信息吗？",
+          "at": "2026-03-19T12:37:48Z"
+        },
+        {
+          "sender": "user",
+          "text": "thuốc lá có hại không",
+          "at": "2026-03-19T12:38:08Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Thuốc lá có hại cho sức khỏe. Bạn có muốn biết thêm thông tin về tác hại của thuốc lá không?",
+          "at": "2026-03-19T12:38:08Z"
+        },
+        {
+          "sender": "user",
+          "text": "ăn rau có tốt cho sức khỏe không",
+          "at": "2026-03-19T12:38:30Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Ăn rau tốt cho sức khỏe. Bạn muốn biết thêm thông tin gì?",
+          "at": "2026-03-19T12:38:30Z"
         }
       ],
       "facts": [],
@@ -3588,7 +3858,7 @@
         "last_bot_phrase": "",
         "used": []
       },
-      "updated_at": "2026-03-12T07:41:23Z"
+      "updated_at": "2026-03-19T12:38:30Z"
     },
     "sess-mmeyn48x-d7pd4103": {
       "messages": [
@@ -5674,6 +5944,472 @@
         "used": []
       },
       "updated_at": "2026-03-11T17:29:41Z"
+    },
+    "sess-mmxgjiaj-h60uq4hw": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Martin.",
+          "at": "2026-03-19T12:39:59Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn hỏi về ai tên Martin?",
+          "at": "2026-03-19T12:39:59Z"
+        },
+        {
+          "sender": "user",
+          "text": "M steam.",
+          "at": "2026-03-19T12:40:08Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn hỏi về Steam của Martin?",
+          "at": "2026-03-19T12:40:08Z"
+        },
+        {
+          "sender": "user",
+          "text": "Mò steam?",
+          "at": "2026-03-19T12:40:14Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. Đã mở ứng dụng: Steam.lnk",
+          "at": "2026-03-19T12:40:14Z"
+        },
+        {
+          "sender": "user",
+          "text": "Ấy.",
+          "at": "2026-03-19T12:40:21Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn có thể kiểm tra lịch hệ thống, nếu cần mình sẽ tính theo ngày cụ thể.",
+          "at": "2026-03-19T12:40:21Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bác, mẹ máy.",
+          "at": "2026-03-19T12:40:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Máy của bác gặp vấn đề gì vậy?",
+          "at": "2026-03-19T12:40:34Z"
+        },
+        {
+          "sender": "user",
+          "text": "Tạo file đốc chấm TT.",
+          "at": "2026-03-19T12:41:27Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"tạo file\"\n1. Đã tạo tệp.",
+          "at": "2026-03-19T12:41:27Z"
+        },
+        {
+          "sender": "user",
+          "text": "Tấm test t.",
+          "at": "2026-03-19T12:41:48Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn tạo một tập tin test có tên là t?",
+          "at": "2026-03-19T12:41:48Z"
+        },
+        {
+          "sender": "user",
+          "text": "Mở đốc rắm tay t.",
+          "at": "2026-03-19T12:41:54Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. Đã mở ứng dụng: XAMPP htdocs folder.lnk",
+          "at": "2026-03-19T12:41:54Z"
+        },
+        {
+          "sender": "user",
+          "text": "Mở đốc chấm t.",
+          "at": "2026-03-19T12:42:04Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. cannot access local variable '_APP_LAUNCHER_CACHE' where it is not associated with a value",
+          "at": "2026-03-19T12:42:04Z"
+        },
+        {
+          "sender": "user",
+          "text": "Đổi tên quá.",
+          "at": "2026-03-19T12:42:22Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn đổi tên file nào?",
+          "at": "2026-03-19T12:42:22Z"
+        },
+        {
+          "sender": "user",
+          "text": "Mở file text.",
+          "at": "2026-03-19T12:42:33Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở file\"\n1. Không tìm thấy tệp hoặc thư mục trong Desktop.",
+          "at": "2026-03-19T12:42:33Z"
+        },
+        {
+          "sender": "user",
+          "text": "Mở test.",
+          "at": "2026-03-19T12:42:38Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. Đã mở ứng dụng: What is new in the latest version.lnk",
+          "at": "2026-03-19T12:42:38Z"
+        },
+        {
+          "sender": "user",
+          "text": "Gõ abc.",
+          "at": "2026-03-19T12:42:53Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã gõ: abc",
+          "at": "2026-03-19T12:42:53Z"
+        },
+        {
+          "sender": "user",
+          "text": "Gõ 1 2 3 4.",
+          "at": "2026-03-19T12:43:15Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã gõ: 1 2 3 4",
+          "at": "2026-03-19T12:43:15Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên 2 lần.",
+          "at": "2026-03-19T12:43:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:43:34Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên 2 lần.",
+          "at": "2026-03-19T12:43:34Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:43:34Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống 2 lần.",
+          "at": "2026-03-19T12:43:38Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T12:43:38Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống 2 lần.",
+          "at": "2026-03-19T12:43:38Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T12:43:38Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên.",
+          "at": "2026-03-19T12:43:46Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:43:46Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên.",
+          "at": "2026-03-19T12:43:47Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:43:47Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên.",
+          "at": "2026-03-19T12:43:49Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:43:49Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên.",
+          "at": "2026-03-19T12:43:49Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:43:49Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống.",
+          "at": "2026-03-19T12:43:54Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T12:43:54Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống.",
+          "at": "2026-03-19T12:43:54Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T12:43:54Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cái tốt nhất giọng nói ấy.",
+          "at": "2026-03-19T12:44:03Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã cuộn lên.\n\nĐã cuộn xuống.\n\nBạn muốn biết gì tiếp theo?",
+          "at": "2026-03-19T12:44:03Z"
+        },
+        {
+          "sender": "user",
+          "text": "Phẩy.",
+          "at": "2026-03-19T12:44:15Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã phẩy.",
+          "at": "2026-03-19T12:44:15Z"
+        },
+        {
+          "sender": "user",
+          "text": "Tạo file một.",
+          "at": "2026-03-19T12:45:04Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"tạo file\"\n1. Đã tạo tệp.",
+          "at": "2026-03-19T12:45:04Z"
+        },
+        {
+          "sender": "user",
+          "text": "Mở một.",
+          "at": "2026-03-19T12:45:10Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. Đã mở ứng dụng: Remote Desktop Connection.lnk",
+          "at": "2026-03-19T12:45:10Z"
+        },
+        {
+          "sender": "user",
+          "text": "Đóng một.",
+          "at": "2026-03-19T12:45:16Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"đóng\"\n1. Không tìm thấy tiến trình đang chạy cho ứng dụng: một.",
+          "at": "2026-03-19T12:45:16Z"
+        },
+        {
+          "sender": "user",
+          "text": "Đóng remote.",
+          "at": "2026-03-19T12:45:22Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"đóng\"\n1. Không tìm thấy tiến trình đang chạy cho ứng dụng: remote.",
+          "at": "2026-03-19T12:45:22Z"
+        },
+        {
+          "sender": "user",
+          "text": "À?",
+          "at": "2026-03-19T12:45:30Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Chào bạn, mình sẵn sàng hỗ trợ bạn ngay bây giờ.",
+          "at": "2026-03-19T12:45:30Z"
+        },
+        {
+          "sender": "user",
+          "text": "Mở thùng rác.",
+          "at": "2026-03-19T12:45:53Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. cannot access local variable '_APP_LAUNCHER_CACHE' where it is not associated with a value",
+          "at": "2026-03-19T12:45:53Z"
+        },
+        {
+          "sender": "user",
+          "text": "Màu da.",
+          "at": "2026-03-19T12:46:03Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn biết về màu da của ai hoặc gì đó cụ thể không?",
+          "at": "2026-03-19T12:46:03Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên trên.",
+          "at": "2026-03-19T12:46:09Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:46:09Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên trên.",
+          "at": "2026-03-19T12:46:09Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:46:09Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống dưới.",
+          "at": "2026-03-19T12:46:15Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T12:46:15Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống dưới.",
+          "at": "2026-03-19T12:46:15Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T12:46:15Z"
+        },
+        {
+          "sender": "user",
+          "text": "Quần lên.",
+          "at": "2026-03-19T12:46:26Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã cuộn xuống dưới.",
+          "at": "2026-03-19T12:46:26Z"
+        },
+        {
+          "sender": "user",
+          "text": "Gọi lên trên.",
+          "at": "2026-03-19T12:46:36Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã cuộn lên trên. Bạn muốn tôi làm điều gì tiếp theo?",
+          "at": "2026-03-19T12:46:36Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên trên.",
+          "at": "2026-03-19T12:46:41Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:46:41Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên trên.",
+          "at": "2026-03-19T12:46:41Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T12:46:41Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống.",
+          "at": "2026-03-19T12:46:47Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T12:46:47Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống.",
+          "at": "2026-03-19T12:46:47Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T12:46:47Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-19T12:46:47Z"
+    },
+    "sess-mmxgsv2z-98a13r26": {
+      "messages": [
+        {
+          "sender": "user",
+          "text": "Cũng nhờ giọng nói.",
+          "at": "2026-03-19T12:47:16Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Bạn muốn sử dụng tính năng giọng nói để nói chuyện hay ghi âm?",
+          "at": "2026-03-19T12:47:16Z"
+        }
+      ],
+      "facts": [],
+      "word_chain": {
+        "active": false,
+        "expected": "",
+        "expected_display": "",
+        "last_bot_phrase": "",
+        "used": []
+      },
+      "updated_at": "2026-03-19T12:47:16Z"
     }
   }
 }

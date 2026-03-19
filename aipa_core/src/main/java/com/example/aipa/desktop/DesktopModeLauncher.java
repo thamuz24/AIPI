@@ -14,11 +14,17 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
@@ -71,10 +77,9 @@ public class DesktopModeLauncher {
             return;
         }
 
-        Path appRoot = Path.of(System.getProperty("user.dir")).toAbsolutePath().normalize();
-        Path scriptPath = appRoot.resolve(controllScriptRelativePath).normalize();
-        if (!Files.exists(scriptPath)) {
-            log.warn("Controll startup script not found: {}", scriptPath);
+        Path scriptPath = resolveControllStartupScriptPath();
+        if (scriptPath == null) {
+            log.warn("Controll startup script not found. Config value: {}", controllScriptRelativePath);
             return;
         }
 
@@ -87,6 +92,144 @@ public class DesktopModeLauncher {
             log.info("Started aipa_controll from {}", scriptPath);
         } catch (IOException e) {
             log.error("Failed to start aipa_controll: {}", e.getMessage());
+        }
+    }
+
+    private Path resolveControllStartupScriptPath() {
+        // jpackage/desktop apps are often launched with an unexpected working directory (user.dir),
+        // so we resolve relative to multiple roots (cwd, exe dir, jar dir) to find the script reliably.
+        Set<Path> roots = new LinkedHashSet<>();
+        addCandidateRoot(roots, systemPropertyPath("user.dir"));
+        addCandidateRoot(roots, systemPropertyPath("jpackage.app-path")); // may not exist
+
+        detectProcessCommandPath()
+                .map(Path::getParent)
+                .ifPresent(p -> addCandidateRoot(roots, p));
+
+        detectJarPathFromCodeSource()
+                .ifPresent(jar -> {
+                    addCandidateRoot(roots, jar.getParent());
+                    addCandidateRoot(roots, jar.getParent() != null ? jar.getParent().getParent() : null);
+                });
+
+        detectJarPathsFromClasspath().forEach(jar -> {
+            addCandidateRoot(roots, jar.getParent());
+            addCandidateRoot(roots, jar.getParent() != null ? jar.getParent().getParent() : null);
+        });
+
+        List<String> relCandidates = buildScriptRelativeCandidates(controllScriptRelativePath);
+        for (Path root : roots) {
+            for (String rel : relCandidates) {
+                Path candidate = root.resolve(rel).normalize();
+                if (Files.exists(candidate)) {
+                    log.info("Resolved controll startup script: {}", candidate);
+                    return candidate;
+                }
+            }
+        }
+
+        if (!roots.isEmpty()) {
+            log.warn("Controll script lookup roots: {}", roots);
+        }
+        return null;
+    }
+
+    private static List<String> buildScriptRelativeCandidates(String configuredRelativePath) {
+        String raw = configuredRelativePath == null ? "" : configuredRelativePath.trim();
+        if (raw.isEmpty()) {
+            raw = "app/controll/run_aipa_all.bat";
+        }
+
+        // Support both "app/controll/..." and "controll/..." based on where the app root is.
+        Set<String> candidates = new LinkedHashSet<>();
+        candidates.add(raw);
+
+        String normalized = raw.replace('\\', '/');
+        if (normalized.startsWith("app/")) {
+            candidates.add(normalized.substring("app/".length()));
+        } else {
+            candidates.add("app/" + normalized);
+        }
+
+        // Best-effort: also try a plain controll/ fallback.
+        if (!normalized.contains("controll/run_aipa_all.bat")) {
+            candidates.add("app/controll/run_aipa_all.bat");
+            candidates.add("controll/run_aipa_all.bat");
+        }
+
+        return new ArrayList<>(candidates);
+    }
+
+    private static Optional<Path> detectProcessCommandPath() {
+        try {
+            return ProcessHandle.current()
+                    .info()
+                    .command()
+                    .map(Path::of)
+                    .map(Path::toAbsolutePath)
+                    .map(Path::normalize);
+        } catch (Exception ignored) {
+            return Optional.empty();
+        }
+    }
+
+    private static Optional<Path> detectJarPathFromCodeSource() {
+        try {
+            URL location = DesktopModeLauncher.class.getProtectionDomain().getCodeSource().getLocation();
+            if (location == null) {
+                return Optional.empty();
+            }
+            Path p = Path.of(location.toURI()).toAbsolutePath().normalize();
+            if (Files.isDirectory(p)) {
+                return Optional.empty();
+            }
+            return Optional.of(p);
+        } catch (Exception ignored) {
+            return Optional.empty();
+        }
+    }
+
+    private static List<Path> detectJarPathsFromClasspath() {
+        String cp = System.getProperty("java.class.path");
+        if (cp == null || cp.isBlank()) {
+            return List.of();
+        }
+        String sep = System.getProperty("path.separator", ";");
+        return Arrays.stream(cp.split(java.util.regex.Pattern.quote(sep)))
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .map(s -> {
+                    try {
+                        return Path.of(s).toAbsolutePath().normalize();
+                    } catch (Exception ignored) {
+                        return null;
+                    }
+                })
+                .filter(Objects::nonNull)
+                .filter(p -> p.getFileName() != null && p.getFileName().toString().toLowerCase().endsWith(".jar"))
+                .toList();
+    }
+
+    private static Path systemPropertyPath(String key) {
+        try {
+            String raw = System.getProperty(key);
+            if (raw == null || raw.isBlank()) {
+                return null;
+            }
+            return Path.of(raw).toAbsolutePath().normalize();
+        } catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private static void addCandidateRoot(Set<Path> roots, Path candidate) {
+        if (candidate == null) {
+            return;
+        }
+        try {
+            Path normalized = candidate.toAbsolutePath().normalize();
+            roots.add(normalized);
+        } catch (Exception ignored) {
         }
     }
 
