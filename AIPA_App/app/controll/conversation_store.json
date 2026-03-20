@@ -6399,6 +6399,116 @@
           "sender": "bot",
           "text": "Bạn muốn sử dụng tính năng giọng nói để nói chuyện hay ghi âm?",
           "at": "2026-03-19T12:47:16Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-19T12:54:01Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T12:54:01Z"
+        },
+        {
+          "sender": "user",
+          "text": "bạn là ai",
+          "at": "2026-03-19T13:32:15Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T13:32:15Z"
+        },
+        {
+          "sender": "user",
+          "text": "mở steam'",
+          "at": "2026-03-19T13:32:21Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"mở\"\n1. Đã mở ứng dụng: Steam.lnk",
+          "at": "2026-03-19T13:32:21Z"
+        },
+        {
+          "sender": "user",
+          "text": "đòng steam",
+          "at": "2026-03-19T13:32:32Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"đóng\"\n1. Đã đóng ứng dụng: steam.exe (1 tiến trình).",
+          "at": "2026-03-19T13:32:32Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bạn là ai?",
+          "at": "2026-03-19T13:32:49Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi là trợ lý cá nhân của bạn, hãy yêu cầu tôi sẽ giúp bạn.",
+          "at": "2026-03-19T13:32:49Z"
+        },
+        {
+          "sender": "user",
+          "text": "Bạn có thể làm gì?",
+          "at": "2026-03-19T13:32:55Z"
+        },
+        {
+          "sender": "bot",
+          "text": "tôi sẽ giúp bạn với phạm vi cho phép.",
+          "at": "2026-03-19T13:32:55Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên trên 3 lần.",
+          "at": "2026-03-19T13:33:02Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T13:33:02Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn lên trên 3 lần.",
+          "at": "2026-03-19T13:33:02Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn lên\"\n1. Da cuon chuot len 3 buoc.",
+          "at": "2026-03-19T13:33:02Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống 3 lần.",
+          "at": "2026-03-19T13:33:07Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T13:33:07Z"
+        },
+        {
+          "sender": "user",
+          "text": "Cuộn xuống 3 lần.",
+          "at": "2026-03-19T13:33:07Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Đã thực thi tập lệnh train: \"cuộn xuống\"\n1. Da cuon chuot xuong 3 buoc.",
+          "at": "2026-03-19T13:33:07Z"
+        },
+        {
+          "sender": "user",
+          "text": "Ê tạo phài.",
+          "at": "2026-03-19T13:33:32Z"
+        },
+        {
+          "sender": "bot",
+          "text": "Xin lỗi, yêu cầu không rõ. Bạn muốn tôi tạo gì?",
+          "at": "2026-03-19T13:33:32Z"
         }
       ],
       "facts": [],
@@ -6409,7 +6519,7 @@
         "last_bot_phrase": "",
         "used": []
       },
-      "updated_at": "2026-03-19T12:47:16Z"
+      "updated_at": "2026-03-19T13:33:32Z"
     }
   }
 }

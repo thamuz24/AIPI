@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="633261ec-bd20-4111-8690-96908a82ee6c" name="Changes" comment="te">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/aipa-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/aipa-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/chat_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/chat_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/conversation_store.json" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/conversation_store.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/run_aipa_all.bat" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/run_aipa_all.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/chat_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_controll/chat_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/run_aipa_all.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_controll/run_aipa_all.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/AipaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/AipaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/desktop/DesktopModeLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/desktop/DesktopModeLauncher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +17,7 @@
     <execution />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="42226" />
+    <option name="cachedIndexableFilesCount" value="42227" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,30 +61,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.register_face.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "release",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kamit/Desktop/AIPA",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.register_face.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;release&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kamit/Desktop/AIPA&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="register_face" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DoAnAI" />
@@ -146,6 +139,8 @@
       <workItem from="1773230715201" duration="11487000" />
       <workItem from="1773284239206" duration="6287000" />
       <workItem from="1773314148831" duration="1994000" />
+      <workItem from="1773927093068" duration="237000" />
+      <workItem from="1773950260464" duration="1187000" />
     </task>
     <task id="LOCAL-00001" summary="te">
       <option name="closed" value="true" />
