@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="633261ec-bd20-4111-8690-96908a82ee6c" name="Changes" comment="te">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/conversation_store.json" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/conversation_store.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aipa_client/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aipa_client/src/shared/api/assistantApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/shared/api/assistantApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aipa_client/src/shared/services/apiError.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/shared/services/apiError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +145,8 @@
       <workItem from="1773314148831" duration="1994000" />
       <workItem from="1773927093068" duration="237000" />
       <workItem from="1773950260464" duration="1187000" />
+      <workItem from="1773977791935" duration="78000" />
+      <workItem from="1773984053250" duration="766000" />
     </task>
     <task id="LOCAL-00001" summary="te">
       <option name="closed" value="true" />

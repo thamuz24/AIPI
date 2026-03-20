@@ -20,6 +20,18 @@ export function getApiErrorMessage(error, fallbackMessage = 'Có lỗi xảy ra.
     return 'Không thể kết nối đến aipa_core. Hãy kiểm tra backend và biến REACT_APP_API_BASE_URL.';
   }
 
+  const rawMessage = String(error?.message || '');
+  const lowerMessage = rawMessage.toLowerCase();
+  if (
+    lowerMessage.includes('failed to fetch') ||
+    lowerMessage.includes('networkerror') ||
+    lowerMessage.includes('network request failed') ||
+    lowerMessage.includes('load failed') ||
+    lowerMessage.includes('timed out')
+  ) {
+    return 'KhĂ´ng thá»ƒ káº¿t ná»‘i backend. HĂ£y kiá»ƒm tra aipa_core (:8080) vĂ  aipa_controll (:8001).';
+  }
+
   if (error instanceof Error && error.message) {
     return error.message;
   }

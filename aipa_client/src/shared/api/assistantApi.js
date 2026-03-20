@@ -1,8 +1,10 @@
-import { AIPA_CONTROLL_URL } from '../config';
+import { API_BASE_URL, AIPA_CONTROLL_URL } from '../config';
 
 const CHAT_ENDPOINT = `${AIPA_CONTROLL_URL}/api/chat`;
 const TRAIN_ENDPOINT = `${AIPA_CONTROLL_URL}/api/train`;
-const FACE_EXTRACT_ENDPOINT = `${AIPA_CONTROLL_URL}/api/face/extract`;
+const CORE_BASE_URL = String(API_BASE_URL || '').replace(/\/$/, '');
+// Route face extraction through aipa_core to avoid CORS issues and to support remote clients.
+const FACE_EXTRACT_ENDPOINT = `${CORE_BASE_URL}/api/face/extract`;
 const HEALTH_ENDPOINT = `${AIPA_CONTROLL_URL}/health`;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
