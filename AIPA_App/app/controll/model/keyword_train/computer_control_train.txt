@@ -29,7 +29,9 @@
 # OPEN_URL|url
 # SCAN_DESKTOP_CLOCK
 # OPEN_APP|app_name
+# SEARCH_APP|app_name
 # CLOSE_APP|app_name
+# MOVE_MOUSE|direction|steps
 # CLICK|target(x,y hoặc a1)
 # RIGHT_CLICK|target
 # DRAG_MOUSE|from|to
@@ -66,7 +68,9 @@ liệt kê model=>LIST_CONTROL_DIR|model
 liệt kê desktop=>LIST_DIR
 xem desktop=>LIST_DIR
 mở file=>OPEN_FILE|{REST}
-xem file=>OPEN_FILE|{REST}
+xem file=>READ_FILE|{REST}
+đọc file=>READ_FILE|{REST}
+doc file=>READ_FILE|{REST}
 ghi file=>WRITE_FILE_REST|{REST}
 ghi đè file=>WRITE_FILE_REST|{REST}
 thêm vào file=>APPEND_FILE_REST|{REST}{NL}
@@ -94,6 +98,9 @@ tạo tệp=>CREATE_FILE|{REST}
 
 # Mở ứng dụng tổng quát: "mở firefox", "mở chrome", "mở notepad", ...
 mở=>OPEN_APP|{REST}
+mở ứng dụng=>OPEN_APP|{REST}
+tìm ứng dụng=>SEARCH_APP|{REST}
+tìm app=>SEARCH_APP|{REST}
 
 # Đóng ứng dụng tổng quát: "đóng firefox", "tắt app chrome", ...
 đóng=>CLOSE_APP|{REST}

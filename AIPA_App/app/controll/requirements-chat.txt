@@ -10,3 +10,4 @@ vosk>=0.3.45
 sounddevice>=0.5.5
 openai>=1.66.0
 pynput>=1.7.7
+PyQt6>=6.11.0

@@ -15,6 +15,7 @@ public class UpdateProfileResponse {
     private int role;
     private Long registrationTimestamp;
     private String accessToken;
+    private String refreshToken;
     private String tokenType;
     private String message;
 }

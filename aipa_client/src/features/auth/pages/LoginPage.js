@@ -337,7 +337,7 @@ const LoginPage = () => {
               <>
                 <div className={styles.inputGroup}>
                   <label htmlFor="username" className={styles.inputLabel}>
-                    <User size={16} style={{ marginRight: '8px', color: '#00bcd4' }} />
+                    <User size={16} style={{ marginRight: '8px', color: 'var(--accent-strong)' }} />
                     Tên đăng nhập
                   </label>
                   <input
@@ -357,7 +357,7 @@ const LoginPage = () => {
                 </div>
                 <div className={styles.inputGroup}>
                   <label htmlFor="password" className={styles.inputLabel}>
-                    <Lock size={16} style={{ marginRight: '8px', color: '#00bcd4' }} />
+                    <Lock size={16} style={{ marginRight: '8px', color: 'var(--accent-strong)' }} />
                     Mật khẩu
                   </label>
                   <div className={styles.passwordFieldWrap}>
@@ -406,7 +406,7 @@ const LoginPage = () => {
                     display: isLoading && isCameraReady ? 'block' : 'none',
                   }}
                 />
-                <Scan className={`${styles.scanIcon} ${isLoading ? styles.scanning : ''}`} style={{ color: isLoading ? '#48bb78' : '#00bcd4' }} size={64} />
+                <Scan className={`${styles.scanIcon} ${isLoading ? styles.scanning : ''}`} style={{ color: isLoading ? 'var(--success-color)' : 'var(--accent-strong)' }} size={64} />
                 <p className="text-lg font-medium text-white">
                   {isLoading ? 'Đang quét và xác thực khuôn mặt...' : 'Vui lòng nhìn vào camera để xác thực.'}
                 </p>

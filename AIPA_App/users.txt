@@ -1,0 +1,34 @@
+{
+  "users" : [ {
+    "id" : 1,
+    "username" : "Lưu Hoàng Nguyên",
+    "email" : "kamitosenpai114@gmail.com",
+    "password" : "$2a$10$5T25ffZBPAGZLzMLXE29UewoMFvmS9mZS7kGyw1OqGTGArQ8rsBXy",
+    "faceEmbeddingsJson" : "{\"vector\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"dimension\":128,\"skipped\":true,\"reason\":\"camera_not_found\",\"timestamp\":\"2026-04-14T18:23:17.273Z\"}",
+    "registrationTimestamp" : 1776190998367,
+    "role" : 0,
+    "numberOfLoginsFails" : 0,
+    "active" : true
+  }, {
+    "id" : 2,
+    "username" : "Ken Black Gaming @112",
+    "email" : "kamito062005@gmail.com",
+    "password" : "$2a$10$AqtRaspaHQ.ErTahhaxxRu.VtRDdtwntLI5JNZZRPbDeCVmFAonxm",
+    "faceEmbeddingsJson" : "{\"vector\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"dimension\":128,\"skipped\":true,\"reason\":\"camera_not_found\",\"timestamp\":\"2026-04-14T18:24:12.585Z\"}",
+    "registrationTimestamp" : 1776191053371,
+    "role" : 0,
+    "numberOfLoginsFails" : 0,
+    "active" : true
+  }, {
+    "id" : 3,
+    "username" : "Lưu Hoàng Nguyên 1",
+    "email" : "kamito1@gmail.com",
+    "password" : "$2a$10$WKwPi3HsxSxpoc.0.p0ufuI46M0AIzvwvrlrttOCdreLt/FE3PEwO",
+    "faceEmbeddingsJson" : "{\"vector\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\"dimension\":128,\"skipped\":true,\"reason\":\"camera_not_found\",\"timestamp\":\"2026-04-14T18:27:48.745Z\"}",
+    "registrationTimestamp" : 1776191269972,
+    "role" : 0,
+    "numberOfLoginsFails" : 0,
+    "active" : true
+  } ],
+  "banLogs" : [ ]
+}

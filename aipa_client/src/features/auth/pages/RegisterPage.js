@@ -357,7 +357,7 @@ const RegisterPage = () => {
                 </div>
                 <div className={styles.inputGroup}>
                   <label htmlFor="username" className={styles.inputLabel}>
-                    <User size={16} style={{ marginRight: '8px', color: '#00bcd4' }} />
+                    <User size={16} style={{ marginRight: '8px', color: 'var(--accent-strong)' }} />
                     Tên đăng nhập
                   </label>
                   <input
@@ -373,7 +373,7 @@ const RegisterPage = () => {
                 </div>
                 <div className={styles.inputGroup}>
                   <label htmlFor="email" className={styles.inputLabel}>
-                    <Mail size={16} style={{ marginRight: '8px', color: '#00bcd4' }} />
+                    <Mail size={16} style={{ marginRight: '8px', color: 'var(--accent-strong)' }} />
                     Email
                   </label>
                   <input
@@ -389,7 +389,7 @@ const RegisterPage = () => {
                 </div>
                 <div className={styles.inputGroup}>
                   <label htmlFor="password" className={styles.inputLabel}>
-                    <Lock size={16} style={{ marginRight: '8px', color: '#00bcd4' }} />
+                    <Lock size={16} style={{ marginRight: '8px', color: 'var(--accent-strong)' }} />
                     Mật khẩu
                   </label>
                   <div className={styles.passwordFieldWrap}>
@@ -437,7 +437,7 @@ const RegisterPage = () => {
                       display: isLoading && !formData.faceEmbeddingsJson && isCameraReady ? 'block' : 'none',
                     }}
                   />
-                  <Scan className={`${styles.scanIcon} ${isLoading ? styles.scanning : ''}`} style={{ color: isFaceStepComplete ? '#48bb78' : '#00bcd4' }} size={64} />
+                  <Scan className={`${styles.scanIcon} ${isLoading ? styles.scanning : ''}`} style={{ color: isFaceStepComplete ? 'var(--success-color)' : 'var(--accent-strong)' }} size={64} />
                   <p className="text-lg font-medium text-white">
                     {isLoading
                       ? 'Đang phân tích khuôn mặt...'
@@ -450,12 +450,12 @@ const RegisterPage = () => {
                 </div>
 
                 <div style={{ display: 'flex', gap: '10px' }}>
-                  <button type="button" onClick={() => setCurrentStep(1)} className={styles.loginButton} style={{ background: '#30363d', flex: 1 }}>
+                  <button type="button" onClick={() => setCurrentStep(1)} className={styles.loginButton} style={{ background: 'var(--text-muted)', flex: 1 }}>
                     <ArrowLeft size={18} style={{ marginRight: '8px' }} /> Quay lại
                   </button>
 
                   {isCameraUnavailable && !isFaceStepComplete && (
-                    <button type="button" onClick={handleSkipFaceScan} disabled={isLoading} className={styles.loginButton} style={{ background: '#f59e0b', flex: 2 }}>
+                    <button type="button" onClick={handleSkipFaceScan} disabled={isLoading} className={styles.loginButton} style={{ background: 'var(--warning-color)', flex: 2 }}>
                       BỎ QUA QUÉT KHUÔN MẶT
                     </button>
                   )}
@@ -465,7 +465,7 @@ const RegisterPage = () => {
                     onClick={isFaceStepComplete ? handleFinalSubmit : handleFaceScan}
                     disabled={isLoading}
                     className={styles.loginButton}
-                    style={{ background: isFaceStepComplete ? '#48bb78' : '#00bcd4', flex: 2 }}
+                    style={{ background: isFaceStepComplete ? 'var(--success-color)' : 'var(--accent-hover)', flex: 2 }}
                   >
                     {isLoading ? (
                       <>

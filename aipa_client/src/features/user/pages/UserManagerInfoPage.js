@@ -114,6 +114,7 @@ const UserManagerInfoPage = () => {
         setStoredAuth({
           ...currentAuth,
           accessToken: response.accessToken,
+          refreshToken: response?.refreshToken || currentAuth.refreshToken,
           tokenType: response?.tokenType || currentAuth?.tokenType || 'Bearer',
         });
       }
@@ -238,7 +239,7 @@ const UserManagerInfoPage = () => {
           <button type="submit" className={styles.saveButton} disabled={isSavingProfile}>
             <Zap size={16} style={{ marginRight: '8px' }} /> {isSavingProfile ? 'Đang lưu...' : 'Lưu thay đổi'}
           </button>
-          <button type="button" className={styles.actionButton} style={{ backgroundColor: '#4b5563' }} onClick={() => setIsEditing(false)}>
+          <button type="button" className={styles.actionButton} style={{ backgroundColor: 'var(--text-muted)' }} onClick={() => setIsEditing(false)}>
             Hủy
           </button>
         </form>
@@ -263,7 +264,7 @@ const UserManagerInfoPage = () => {
           <button
             type="button"
             className={styles.saveButton}
-            style={{ backgroundColor: userSettings.twoFactorEnabled ? '#ef4444' : '#48bb78', width: '220px' }}
+            style={{ backgroundColor: userSettings.twoFactorEnabled ? 'var(--danger-color)' : 'var(--success-color)', width: '220px' }}
             onClick={() =>
               updateSettings(
                 { twoFactorEnabled: !userSettings.twoFactorEnabled },
@@ -279,7 +280,7 @@ const UserManagerInfoPage = () => {
           <button
             type="button"
             className={styles.saveButton}
-            style={{ backgroundColor: userSettings.faceVerificationEnabled ? '#ef4444' : '#48bb78', width: '260px' }}
+            style={{ backgroundColor: userSettings.faceVerificationEnabled ? 'var(--danger-color)' : 'var(--success-color)', width: '260px' }}
             onClick={handleFaceVerificationToggle}
           >
             {userSettings.faceVerificationEnabled ? 'Tắt xác nhận khuôn mặt' : 'Bật xác nhận khuôn mặt'}
@@ -291,7 +292,7 @@ const UserManagerInfoPage = () => {
           <button
             type="button"
             className={styles.saveButton}
-            style={{ backgroundColor: userSettings.voiceChatEnabled ? '#ef4444' : '#48bb78', width: '280px' }}
+            style={{ backgroundColor: userSettings.voiceChatEnabled ? 'var(--danger-color)' : 'var(--success-color)', width: '280px' }}
             onClick={handleVoiceChatToggle}
           >
             {userSettings.voiceChatEnabled ? 'Tắt trò chuyện giọng nói' : 'Bật trò chuyện giọng nói'}
@@ -317,7 +318,7 @@ const UserManagerInfoPage = () => {
           <button
             type="button"
             className={styles.saveButton}
-            style={{ backgroundColor: userSettings.shareDataForTraining ? '#ef4444' : '#48bb78', width: '320px' }}
+            style={{ backgroundColor: userSettings.shareDataForTraining ? 'var(--danger-color)' : 'var(--success-color)', width: '320px' }}
             onClick={() =>
               updateSettings(
                 { shareDataForTraining: !userSettings.shareDataForTraining },

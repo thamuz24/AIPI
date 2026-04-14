@@ -2,6 +2,12 @@ import { API_BASE_URL, AIPA_CONTROLL_URL } from '../config';
 
 const CHAT_ENDPOINT = `${AIPA_CONTROLL_URL}/api/chat`;
 const TRAIN_ENDPOINT = `${AIPA_CONTROLL_URL}/api/train`;
+const COMPUTER_CONTROL_SAVE_ENDPOINT = `${AIPA_CONTROLL_URL}/api/computer-control/save`;
+const COMPUTER_CONTROL_RULES_ENDPOINT = `${AIPA_CONTROLL_URL}/api/computer-control/rules`;
+const COMPUTER_CONTROL_GRID_ENDPOINT = `${AIPA_CONTROLL_URL}/api/computer-control/grid`;
+const COMPUTER_CONTROL_OVERLAY_STATUS_ENDPOINT = `${AIPA_CONTROLL_URL}/api/computer-control/overlay/status`;
+const COMPUTER_CONTROL_OVERLAY_SHOW_ENDPOINT = `${AIPA_CONTROLL_URL}/api/computer-control/overlay/show`;
+const COMPUTER_CONTROL_OVERLAY_HIDE_ENDPOINT = `${AIPA_CONTROLL_URL}/api/computer-control/overlay/hide`;
 const CORE_BASE_URL = String(API_BASE_URL || '').replace(/\/$/, '');
 // Route face extraction through aipa_core to avoid CORS issues and to support remote clients.
 const FACE_EXTRACT_ENDPOINT = `${CORE_BASE_URL}/api/face/extract`;
@@ -66,6 +72,30 @@ async function requestJson(url, payload, timeoutMs = 30000) {
   return data;
 }
 
+async function requestGetJson(url, timeoutMs = 20000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  let response;
+  try {
+    response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const message = data?.detail || data?.message || 'Không thể lấy dữ liệu hướng dẫn.';
+    throw new Error(message);
+  }
+  return data;
+}
+
 export async function chatWithAssistantApi(payload) {
   const maxAttempts = 7;
   let lastError;
@@ -94,6 +124,30 @@ export async function chatWithAssistantApi(payload) {
 
 export async function trainAssistantApi(payload) {
   return requestJson(TRAIN_ENDPOINT, payload, 20000);
+}
+
+export async function saveComputerControlRuleApi(payload) {
+  return requestJson(COMPUTER_CONTROL_SAVE_ENDPOINT, payload, 25000);
+}
+
+export async function fetchComputerControlRulesApi() {
+  return requestGetJson(COMPUTER_CONTROL_RULES_ENDPOINT, 20000);
+}
+
+export async function fetchComputerControlGridApi() {
+  return requestGetJson(COMPUTER_CONTROL_GRID_ENDPOINT, 20000);
+}
+
+export async function fetchComputerControlOverlayStatusApi() {
+  return requestGetJson(COMPUTER_CONTROL_OVERLAY_STATUS_ENDPOINT, 15000);
+}
+
+export async function showComputerControlOverlayApi(payload = {}) {
+  return requestJson(COMPUTER_CONTROL_OVERLAY_SHOW_ENDPOINT, payload, 20000);
+}
+
+export async function hideComputerControlOverlayApi() {
+  return requestJson(COMPUTER_CONTROL_OVERLAY_HIDE_ENDPOINT, {}, 15000);
 }
 
 export async function extractFaceEmbeddingApi(payload) {

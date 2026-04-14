@@ -1,0 +1,14 @@
+{
+  "users" : [ {
+    "id" : 1,
+    "username" : "codex_tmp_test",
+    "email" : "codex_tmp_test@example.com",
+    "password" : "$2a$10$PssDX/rf/rWaR.H6SfSuAebYmpcQd1A9Zu0LOSd/Ou2gVpfxia.fm",
+    "faceEmbeddingsJson" : "{\"vector\":[0,0,0,0,0,0,0,0,0,0],\"dimension\":10,\"skipped\":true,\"reason\":\"camera_not_found\",\"timestamp\":\"2026-04-15T01:00:00Z\"}",
+    "registrationTimestamp" : 1776190770446,
+    "role" : 0,
+    "numberOfLoginsFails" : 0,
+    "active" : true
+  } ],
+  "banLogs" : [ ]
+}

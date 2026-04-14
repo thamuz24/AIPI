@@ -1,382 +1,381 @@
-﻿/* RegisterPage.module.css */
-
 @keyframes slow-pulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 0.2; }
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.2; }
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes scan-animate {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .loginPageContainer {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    background-color: #0d1117;
-    color: #c9d1d9;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: linear-gradient(160deg, var(--page-bg) 0%, var(--page-bg-alt) 50%, var(--page-bg-soft) 100%);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .loginBox {
-    width: 100%;
-    max-width: 448px;
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.2);
-    padding: 32px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
+  width: 100%;
+  max-width: 448px;
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .loginBox:hover {
-    box-shadow: 0 0 40px rgba(0, 188, 212, 0.5);
-    transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-5px);
 }
 
 .aiGlow {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 160px;
-    height: 160px;
-    background-color: rgba(0, 188, 212, 0.3);
-    border-radius: 50%;
-    filter: blur(48px);
-    opacity: 0.5;
-    pointer-events: none;
-    animation: slow-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 160px;
+  background-color: rgba(var(--accent-rgb), 0.3);
+  border-radius: 50%;
+  filter: blur(48px);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: slow-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: 0;
 }
 
 .loginContent {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 .aiLogoContainer {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    margin-bottom: 12px;
-    margin-left: auto;
-    margin-right: auto;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .aiLogoOuter {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #00bcd4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
-    overflow: hidden;
-    animation: slow-pulse 4s ease-in-out infinite alternate;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--accent-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.45);
+  overflow: hidden;
+  animation: slow-pulse 4s ease-in-out infinite alternate;
 }
 
 .eye {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 20;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--text-inverse);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
 }
 
 .eye:first-child {
-    left: 15px;
+  left: 15px;
 }
 
 .eye:last-child {
-    right: 15px;
+  right: 15px;
 }
 
 .pupil {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background-color: black;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s linear;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--text-strong);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s linear;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
 .title {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 0.05em;
-    margin-top: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-strong);
+  letter-spacing: 0.05em;
+  margin-top: 12px;
 }
 
 .stepContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 10px;
 }
 
 .stepItem {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 .stepCircle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #30363d;
-    color: #c9d1d9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    transition: background-color 0.4s, color 0.4s, box-shadow 0.4s;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--surface-strong);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s;
 }
 
 .stepCircleActive {
-    background-color: #00bcd4;
-    color: white;
-    box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+  background-color: var(--accent-hover);
+  color: var(--text-inverse);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.45);
 }
 
 .stepCircleCompleted {
-    background-color: #48bb78;
-    color: white;
+  background-color: var(--success-color);
+  color: var(--text-inverse);
 }
 
 .stepLabel {
-    margin-top: 8px;
-    font-size: 13px;
-    color: #9ca3af;
-    text-align: center;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
 }
 
 .stepLine {
-    position: absolute;
-    width: 50%;
-    height: 2px;
-    background-color: #30363d;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-100%);
-    z-index: 5;
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: var(--border-color);
+  top: 15px;
+  left: 50%;
+  transform: translateX(-100%);
+  z-index: 5;
 }
 
 .stepLine:last-child {
-    display: none;
+  display: none;
 }
 
 .inputGroup {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .inputLabel {
-    font-size: 14px;
-    font-weight: 500;
-    color: #9ca3af;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-    line-height: 1.2;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  line-height: 1.2;
 }
 
 .inputField {
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-    padding: 10px 16px;
-    background-color: rgba(31, 41, 55, 0.5);
-    border: 1px solid #4b5563;
-    border-radius: 8px;
-    color: white;
-    line-height: 1.4;
-    transition: all 0.3s;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  color: var(--text-strong);
+  line-height: 1.4;
+  transition: all 0.3s;
 }
 
 .inputFieldError {
-    border-color: #ef4444;
-    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.4);
+  border-color: var(--danger-color);
+  box-shadow: 0 0 0 1px rgba(var(--danger-rgb), 0.3);
 }
 
 .inputField:focus {
-    outline: none;
-    border-color: #00bcd4;
-    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.5), 0 0 8px rgba(0, 188, 212, 0.7);
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.35), 0 0 8px rgba(var(--accent-rgb), 0.22);
 }
 
 .passwordFieldWrap {
-    position: relative;
+  position: relative;
 }
 
 .passwordFieldWrap .inputField {
-    padding-right: 44px;
+  padding-right: 44px;
 }
 
 .visibilityButton {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    border: none;
-    background: transparent;
-    color: #9ca3af;
-    cursor: pointer;
-    padding: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .visibilityButton:hover {
-    color: #e5e7eb;
+  color: var(--text-strong);
 }
 
 .requirementBox {
-    margin-bottom: 14px;
-    padding: 12px 14px;
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    border-radius: 8px;
-    background: rgba(8, 47, 73, 0.2);
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
+  border-radius: 8px;
+  background: var(--accent-soft);
 }
 
 .requirementTitle {
-    margin: 0 0 8px;
-    color: #bae6fd;
-    font-size: 13px;
-    font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--text-strong);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .requirementList {
-    margin: 0;
-    padding-left: 18px;
-    color: #cbd5e1;
-    font-size: 12px;
-    line-height: 1.5;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-primary);
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .fieldErrorText {
-    margin: 6px 0 0;
-    font-size: 12px;
-    color: #fca5a5;
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--danger-color);
 }
 
 .errorMessage {
-    margin-bottom: 12px;
-    padding: 10px 12px;
-    border: 1px solid rgba(239, 68, 68, 0.45);
-    border-radius: 8px;
-    background: rgba(127, 29, 29, 0.22);
-    color: #fecaca;
-    font-size: 13px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(var(--danger-rgb), 0.35);
+  border-radius: 8px;
+  background: var(--danger-soft);
+  color: #b44e5c;
+  font-size: 13px;
 }
 
 .infoMessage {
-    margin-bottom: 12px;
-    padding: 10px 12px;
-    border: 1px solid rgba(56, 189, 248, 0.45);
-    border-radius: 8px;
-    background: rgba(8, 47, 73, 0.24);
-    color: #bae6fd;
-    font-size: 13px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--text-primary);
+  font-size: 13px;
 }
 
 .faceScanArea {
-    text-align: center;
-    padding: 32px;
-    border: 2px dashed #00bcd4;
-    border-radius: 8px;
-    background-color: rgba(31, 41, 55, 0.2);
-    margin: 24px 0;
-    transition: border-color 0.3s;
+  text-align: center;
+  padding: 32px;
+  border: 2px dashed var(--accent-hover);
+  border-radius: 8px;
+  background-color: var(--surface-secondary);
+  margin: 24px 0;
+  transition: border-color 0.3s;
 }
 
 .scanIcon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 16px;
-    color: #00bcd4;
-    transition: color 0.3s;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  color: var(--accent-strong);
+  transition: color 0.3s;
 }
 
 .scanIcon.scanning {
-    color: #48bb78;
-    animation: scan-animate 0.8s ease-in-out infinite alternate;
+  color: var(--success-color);
+  animation: scan-animate 0.8s ease-in-out infinite alternate;
 }
 
 .loginButton {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-    background-color: #00bcd4;
-    transition: all 0.3s;
-    cursor: pointer;
-    margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-inverse);
+  background-color: var(--accent-hover);
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .loginButton:hover:not(:disabled) {
-    background-color: #0097a7;
-    box-shadow: 0 8px 16px rgba(0, 188, 212, 0.5);
+  background-color: var(--accent-strong);
+  box-shadow: 0 8px 16px rgba(var(--accent-rgb), 0.35);
 }
 
 .loginButton:disabled {
-    background-color: #00bcd4;
-    opacity: 0.7;
-    cursor: not-allowed;
+  background-color: var(--surface-strong);
+  color: var(--text-secondary);
+  opacity: 0.8;
+  cursor: not-allowed;
 }
 
 .loadingIcon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    animation: spin 1s linear infinite;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  animation: spin 1s linear infinite;
 }
 
 .footerText {
-    margin-top: 24px;
-    text-align: center;
-    font-size: 12px;
-    color: #6b7280;
+  margin-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
 .highlight {
-    color: #00bcd4;
+  color: var(--accent-strong);
 }

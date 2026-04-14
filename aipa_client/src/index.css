@@ -1,3 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --page-bg: #eef8ff;
+  --page-bg-alt: #e2f1fb;
+  --page-bg-soft: #d6ebf9;
+  --surface-primary: #fbfeff;
+  --surface-secondary: #edf6fd;
+  --surface-tertiary: #deedf8;
+  --surface-strong: #d2e5f3;
+  --border-color: #bfd6e7;
+  --border-strong: #9fc1d8;
+  --text-primary: #26485f;
+  --text-secondary: #557b92;
+  --text-muted: #7c99ad;
+  --text-strong: #14384d;
+  --text-inverse: #ffffff;
+  --accent-color: #91d4fa;
+  --accent-soft: #dff1ff;
+  --accent-hover: #69bce9;
+  --accent-strong: #3f9bcf;
+  --accent-rgb: 145, 212, 250;
+  --success-color: #5db88a;
+  --success-soft: #e3f6eb;
+  --success-rgb: 93, 184, 138;
+  --danger-color: #e3717f;
+  --danger-soft: #fde9ec;
+  --danger-rgb: 227, 113, 127;
+  --warning-color: #f0b95a;
+  --warning-soft: #fff4d9;
+  --shadow-soft: 0 10px 28px rgba(111, 152, 181, 0.16);
+  --shadow-strong: 0 18px 40px rgba(97, 142, 173, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,19 +45,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(180deg, var(--page-bg) 0%, var(--page-bg-alt) 52%, var(--page-bg-soft) 100%);
+  color: var(--text-primary);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-/* index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Thêm style body để đảm bảo nền tối cho Dark Mode */
-body {
-  background-color: #0d1117; 
-  color: #c9d1d9;
 }

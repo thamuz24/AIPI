@@ -1,0 +1,134 @@
+
+[START] 14/04/2026 21:03:12,36 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+
+[START] 14/04/2026 21:03:30,57 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+
+[START] 14/04/2026 21:03:30,63 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Clearing old uvicorn on :8001
+[INFO] Clearing old uvicorn on :8001
+[INFO] Launching uvicorn chat_server:app on 8001
+[INFO] Launching uvicorn chat_server:app on 8001
+[EXIT] uvicorn process returned with code 1
+[EXIT] uvicorn process returned with code -1
+
+[START] 14/04/2026 21:54:09,24 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+
+[START] 14/04/2026 21:54:30,54 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+
+[START] 14/04/2026 21:54:30,59 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Another startup is in progress. Waiting for backend health...
+[INFO] Another startup is in progress. Waiting for backend health...
+[WARN] Startup lock existed but backend never became healthy. Exit duplicate starter.
+[WARN] Startup lock existed but backend never became healthy. Exit duplicate starter.
+
+[START] 14/04/2026 21:59:25,74 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+
+[START] 14/04/2026 22:00:19,20 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Another startup is in progress. Waiting for backend health...
+[WARN] Startup lock existed but backend never became healthy. Exit duplicate starter.
+
+[START] 14/04/2026 22:04:30,77 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[WARN] Found existing startup lock. Waiting briefly before reclaiming...
+[WARN] Removed stale startup lock.
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 14/04/2026 22:05:48,87 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 14/04/2026 22:06:01,13 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Backend 8001 already available. Exit startup script.
+
+[START] 14/04/2026 22:38:54,87 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 14/04/2026 23:17:52,29 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 14/04/2026 23:37:27,97 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 14/04/2026 23:45:35,48 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 15/04/2026  0:00:10,49 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 15/04/2026  0:12:03,62 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 15/04/2026  0:12:21,17 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Backend 8001 already available. Exit startup script.
+
+[START] 15/04/2026  0:20:13,21 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 15/04/2026  0:20:29,01 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Backend 8001 already available. Exit startup script.
+
+[START] 15/04/2026  0:26:30,74 cwd=C:\Users\kamit\Desktop\AIPA script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 15/04/2026  1:22:55,08 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Backend 8001 already available. Exit startup script.
+
+[START] 15/04/2026  1:23:00,02 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Backend 8001 already available. Exit startup script.
+
+[START] 15/04/2026  3:09:02,14 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.
+
+[START] 15/04/2026  3:24:21,28 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Backend 8001 already available. Exit startup script.
+
+[START] 15/04/2026  3:34:05,25 cwd=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll script_dir=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\
+[INFO] Using python=C:\Users\kamit\Desktop\AIPA\AIPA_App\app\controll\.venv\Scripts\python.exe
+[INFO] Startup lock acquired.
+[INFO] Spawning detached uvicorn process...
+[INFO] Backend 8001 is available after detached launch.

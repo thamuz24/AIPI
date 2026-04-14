@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { User, Settings, Lock, LogOut, Trash2, Send, Zap, Mic, Volume2, Shield, MessageSquarePlus, BookOpen } from 'lucide-react';
+import { User, Settings, Lock, LogOut, Trash2, Send, Zap, Mic, Volume2, Shield, MessageSquarePlus, BookOpen, Grid3X3 } from 'lucide-react';
 import styles from './HomePage.module.css';
 import { useAuth } from '../../auth/context';
 import { ANIME_MODEL_IMAGE_PATH } from '../model/animeModelConfig';
-import { chatWithAssistantApi, trainAssistantApi } from '../../../shared/api';
+import { chatWithAssistantApi, trainAssistantApi, saveComputerControlRuleApi, fetchComputerControlRulesApi, showComputerControlOverlayApi, hideComputerControlOverlayApi } from '../../../shared/api';
 import { appendPromptHistory, getUserSettings, patchUserSettings } from '../../../shared/services';
 
 const EXPRESSIONS = [
@@ -57,11 +57,69 @@ const QUICK_TIPS = [
   'Nh\u1eadp 1 l\u1ec7nh trong m\u1ed7i tin nh\u1eafn, kh\u00f4ng g\u1ed9p nhi\u1ec1u t\u00e1c v\u1ee5 c\u00f9ng l\u00fac.',
   'C\u00fa ph\u00e1p t\u1ed1t nh\u1ea5t: \u0111\u1ed9ng t\u1eeb + \u0111\u1ed1i t\u01b0\u1ee3ng. V\u00ed d\u1ee5: "m\u1edf notepad", "\u0111\u00f3ng chrome".',
   '\u0110i\u1ec1u khi\u1ec3n chu\u1ed9t: "click a1", "click ph\u1ea3i b3", ho\u1eb7c "click 520,340".',
-  'K\u00e9o chu\u1ed9t: "k\u00e9o chu\u1ed9t a1 -> c3" ho\u1eb7c "k\u00e9o chu\u1ed9t 100,200 -> 500,700".',
+  'K\u00e9o chu\u1ed9t: "k\u00e9o chu\u1ed9t t\u1eeb a1 \u0111\u1ebfn c3" ho\u1eb7c "k\u00e9o chu\u1ed9t t\u1eeb 100,200 \u0111\u1ebfn 300,400".',
+  'M\u1edf l\u01b0\u1edbi tham chi\u1ebfu: "hi\u1ec3n th\u1ecb l\u01b0\u1edbi t\u1ecda \u0111\u1ed9".',
   'G\u00f5 ch\u1eef: "g\u00f5 ch\u1eef Xin ch\u00e0o", ph\u00edm t\u1eaft: "nh\u1ea5n ph\u00edm ctrl+s", "ph\u00edm t\u1eaft alt+tab".',
   'T\u1ea1o file m\u1ecdi \u0111\u1ecbnh d\u1ea1ng: "t\u1ea1o file bao_cao.docx", "t\u1ea1o file du_lieu.xlsx".',
+  'L\u01b0u thao t\u00e1c ngay trong chat: "th\u00eam thao t\u00e1c di chu\u1ed9t l\u00ean 3 b\u01b0\u1edbc v\u00e0 click".',
   'N\u1ebfu t\u00ean app d\u1ec5 sai, h\u00e3y nh\u1eadp g\u1ea7n \u0111\u00fang: h\u1ec7 th\u1ed1ng s\u1ebd g\u1ee3i \u00fd t\u00ean \u1ee9ng d\u1ee5ng g\u1ea7n nh\u1ea5t.',
   'D\u00f9ng "Tr\u00f2 chuy\u1ec7n m\u1edbi" khi \u0111\u1ed5i ch\u1ee7 \u0111\u1ec1 \u0111\u1ec3 AI ph\u1ea3n h\u1ed3i ch\u00ednh x\u00e1c h\u01a1n.',
+];
+const COMMAND_GUIDE_SECTIONS = [
+  {
+    title: 'Chat v\u00e0 gi\u1ecdng n\u00f3i',
+    items: [
+      'Tr\u00f2 chuy\u1ec7n th\u01b0\u1eddng: nh\u1eadp c\u00e2u h\u1ecfi b\u1ea5t k\u1ef3 trong \u00f4 chat.',
+      'Xem h\u01b0\u1edbng d\u1eabn nhanh ngay trong chat: "tip", "tips", "h\u01b0\u1edbng d\u1eabn", "l\u1ec7nh \u0111i\u1ec1u khi\u1ec3n".',
+      'B\u1eadt nh\u1eadp prompt b\u1eb1ng gi\u1ecdng n\u00f3i: "kh\u1edfi \u0111\u1ed9ng nh\u1eadp gi\u1ecdng n\u00f3i".',
+      'T\u1eaft nh\u1eadp prompt b\u1eb1ng gi\u1ecdng n\u00f3i: "k\u1ebft th\u00fac nh\u1eadp gi\u1ecdng n\u00f3i".',
+      'B\u1eadt \u0111\u1ecdc ph\u1ea3n h\u1ed3i: "b\u1eadt gi\u1ecdng \u0111\u1ecdc" ho\u1eb7c "b\u1eadt \u0111\u1ecdc".',
+      'T\u1eaft \u0111\u1ecdc ph\u1ea3n h\u1ed3i: "t\u1eaft gi\u1ecdng \u0111\u1ecdc", "t\u1eaft \u0111\u1ecdc", "im l\u1eb7ng".',
+    ],
+  },
+  {
+    title: '\u1ee8ng d\u1ee5ng',
+    items: [
+      'M\u1edf \u1ee9ng d\u1ee5ng: "m\u1edf chrome", "m\u1edf \u1ee9ng d\u1ee5ng steam".',
+      'T\u00ecm \u1ee9ng d\u1ee5ng tr\u00ean m\u00e1y: "t\u00ecm \u1ee9ng d\u1ee5ng steam", "t\u00ecm app zalo".',
+      '\u0110\u00f3ng \u1ee9ng d\u1ee5ng: "\u0111\u00f3ng chrome", "t\u1eaft app edge", "\u0111\u00f3ng \u1ee9ng d\u1ee5ng notepad".',
+      'M\u1edf web: "m\u1edf web openai.com", "m\u1edf website github.com".',
+    ],
+  },
+  {
+    title: 'Chu\u1ed9t v\u00e0 b\u00e0n ph\u00edm',
+    items: [
+      'Click tr\u00e1i: "click a1", "click 520,340".',
+      'Click ph\u1ea3i: "click ph\u1ea3i b3".',
+      'K\u00e9o chu\u1ed9t: "k\u00e9o chu\u1ed9t t\u1eeb a1 \u0111\u1ebfn c3", "k\u00e9o chu\u1ed9t t\u1eeb 100,200 \u0111\u1ebfn 300,400".',
+      'M\u1edf l\u01b0\u1edbi t\u1ecda \u0111\u1ed9: "hi\u1ec3n th\u1ecb l\u01b0\u1edbi t\u1ecda \u0111\u1ed9".',
+      'Cu\u1ed9n chu\u1ed9t: "cu\u1ed9n l\u00ean", "cu\u1ed9n xu\u1ed1ng".',
+      'G\u00f5 ch\u1eef: "g\u00f5 ch\u1eef Xin ch\u00e0o".',
+      'Nh\u1ea5n ph\u00edm: "nh\u1ea5n ph\u00edm ctrl+s", "ph\u00edm t\u1eaft alt+tab".',
+      'L\u01b0u thao t\u00e1c m\u1edbi: "th\u00eam thao t\u00e1c di chu\u1ed9t l\u00ean 3 b\u01b0\u1edbc v\u00e0 click".',
+    ],
+  },
+  {
+    title: 'File v\u00e0 th\u01b0 m\u1ee5c Desktop',
+    items: [
+      'Li\u1ec7t k\u00ea Desktop: "li\u1ec7t k\u00ea desktop", "xem desktop".',
+      'M\u1edf/\u0111\u1ecdc file: "m\u1edf file ghi_chu.txt", "xem file bao_cao.docx".',
+      'Li\u1ec7t k\u00ea th\u01b0 m\u1ee5c: "li\u1ec7t k\u00ea th\u01b0 m\u1ee5c Downloads".',
+      'T\u1ea1o file: "t\u1ea1o file bao_cao.docx", "t\u1ea1o file du_lieu.xlsx".',
+      'Ghi file: "ghi file ghi_chu.txt: n\u1ed9i dung m\u1edbi", "ghi \u0111\u00e8 file ghi_chu.txt n\u1ed9i dung h\u00f4m nay".',
+      'Th\u00eam v\u00e0o file: "th\u00eam v\u00e0o file ghi_chu.txt d\u00f2ng m\u1edbi".',
+      'T\u1ea1o/x\u00f3a th\u01b0 m\u1ee5c: "t\u1ea1o th\u01b0 m\u1ee5c test", "x\u00f3a th\u01b0 m\u1ee5c test".',
+      'X\u00f3a file/\u0111\u01b0\u1eddng d\u1eabn: "x\u00f3a file ghi_chu.txt", "x\u00f3a \u0111\u01b0\u1eddng d\u1eabn tmp/test".',
+    ],
+  },
+  {
+    title: 'Ti\u1ec7n \u00edch',
+    items: [
+      'Ki\u1ec3m tra \u0111\u1ed3ng h\u1ed3 desktop: "th\u1ef1c hi\u1ec7n t\u00e1c v\u1ee5: ki\u1ec3m tra th\u1eddi gian".',
+      'Ch\u1edd: "ch\u1edd 1.5".',
+      'M\u1edf file d\u1ef1 \u00e1n \u0111i\u1ec1u khi\u1ec3n: "m\u1edf file train", "xem l\u1ecbch s\u1eed h\u1ed9i tho\u1ea1i", "li\u1ec7t k\u00ea model".',
+    ],
+  },
 ];
 const TIP_COMMANDS = new Set([
   'tip',
@@ -73,6 +131,13 @@ const TIP_COMMANDS = new Set([
   'lenh dieu khien',
   'dieu khien may tinh',
 ]);
+const SAVE_ACTION_COMMAND_PATTERN = /^\s*(?:thêm|them|lưu|luu|cấu hình|cau hinh)\s+(?:thao tác|thao tac|lệnh|lenh|câu lệnh|cau lenh)\s+(.+?)\s*$/iu;
+const getSaveActionBody = (value) => {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  const matched = text.match(SAVE_ACTION_COMMAND_PATTERN);
+  return matched ? String(matched[1] || '').trim() : '';
+};
 
 const toChatHistory = (history) =>
   history
@@ -118,9 +183,49 @@ const normalizeVoiceCommand = (value) => String(value || '')
   .trim();
 
 const includesAny = (text, phrases) => phrases.some((phrase) => text.includes(phrase));
+const hasCoordinateGridKeyword = (normalizedText) =>
+  includesAny(normalizedText, [
+    'luoi toa do',
+    'toa do',
+    'to do',
+    'luoi chuot',
+    'grid',
+  ]);
 const isTipsCommand = (normalizedText) =>
   TIP_COMMANDS.has(normalizedText) ||
   includesAny(normalizedText, ['xem tip', 'xem huong dan', 'hien huong dan', 'goi y lenh']);
+const isCoordinateGridCommand = (normalizedText) =>
+  !includesAny(normalizedText, ['an ', 'tat ', 'dong ', 'hide ']) && includesAny(normalizedText, [
+    'hien thi luoi toa do',
+    'mo luoi toa do',
+    'xem luoi toa do',
+    'luoi toa do',
+    'toa do chuot',
+    'luoi chuot',
+  ]);
+const isHideCoordinateGridCommand = (normalizedText) =>
+  includesAny(normalizedText, [
+    'an luoi toa do',
+    'tat luoi toa do',
+    'dong luoi toa do',
+    'hide luoi toa do',
+    'an luoi chuot',
+    'tat luoi chuot',
+    'dong luoi chuot',
+  ]) || (
+    hasCoordinateGridKeyword(normalizedText)
+    && includesAny(normalizedText, ['an', 'tat', 'dong', 'hide'])
+  );
+const shouldAutoOpenCoordinateGrid = (normalizedText) =>
+  includesAny(normalizedText, [
+    'keo chuot',
+    'drag mouse',
+    'drag ',
+    'click ',
+    'click phai',
+    'di chuot',
+    'move chuot',
+  ]);
 const buildTipsMessage = () => `H\u01b0\u1edbng d\u1eabn \u0111i\u1ec1u khi\u1ec3n nhanh:\n${QUICK_TIPS.map((tip, index) => `${index + 1}. ${tip}`).join('\n')}`;
 const stripControlChars = (value) =>
   Array.from(String(value || ''))
@@ -407,6 +512,18 @@ const SettingsPopover = ({ userData, handleAction, isSettingsOpen, isAdmin }) =>
       <Lock size={16} style={{ marginRight: '10px' }} />
       {'Thay \u0111\u1ed5i quy\u1ec1n ri\u00eang t\u01b0'}
     </div>
+    <div className={styles.popoverItem} onClick={() => handleAction('guide')}>
+      <BookOpen size={16} style={{ marginRight: '10px' }} />
+      {'H\u01b0\u1edbng d\u1eabn l\u1ec7nh'}
+    </div>
+    <div className={styles.popoverItem} onClick={() => handleAction('gridShow')}>
+      <Grid3X3 size={16} style={{ marginRight: '10px' }} />
+      {'Hi\u1ec7n l\u01b0\u1edbi t\u1ecda \u0111\u1ed9'}
+    </div>
+    <div className={styles.popoverItem} onClick={() => handleAction('gridHide')}>
+      <Grid3X3 size={16} style={{ marginRight: '10px' }} />
+      {'\u1ea8n l\u01b0\u1edbi t\u1ecda \u0111\u1ed9'}
+    </div>
     <div className={styles.popoverItem} onClick={() => handleAction('train')}>
       <Send size={16} style={{ marginRight: '10px' }} />
       {'Train AI'}
@@ -492,6 +609,93 @@ const TrainModal = ({
   );
 };
 
+const CommandSaveProgressModal = ({ isOpen, progress, stageText }) => {
+  if (!isOpen) return null;
+  const safeProgress = Math.max(0, Math.min(100, Number(progress) || 0));
+  return (
+    <div className={styles.trainOverlay}>
+      <div className={styles.commandSaveModal}>
+        <div className={styles.commandSaveHeader}>
+          <h3>{'Đang lưu cấu hình thao tác'}</h3>
+          <span className={styles.commandSavePercent}>{`${safeProgress}%`}</span>
+        </div>
+        <p className={styles.commandSaveHint}>{stageText || 'Đang xử lý yêu cầu...'}</p>
+        <div className={styles.commandSaveProgressTrack}>
+          <div className={styles.commandSaveProgressBar} style={{ width: `${safeProgress}%` }}></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CommandGuideModal = ({
+  isOpen,
+  isLoading,
+  error,
+  rules,
+  sections,
+  onClose,
+}) => {
+  if (!isOpen) return null;
+
+  const triggerLabels = Array.isArray(rules)
+    ? rules
+      .map((rule) => String(rule?.trigger_display || '').trim())
+      .filter(Boolean)
+    : [];
+
+  return (
+    <div className={styles.trainOverlay}>
+      <div className={styles.guideModal}>
+        <div className={styles.guideHeader}>
+          <div>
+            <h3>{'H\u01b0\u1edbng d\u1eabn l\u1ec7nh AIPA'}</h3>
+            <p>{'Danh s\u00e1ch l\u1ec7nh ng\u01b0\u1eddi d\u00f9ng c\u00f3 th\u1ec3 g\u1ecdi tr\u1ef1c ti\u1ebfp trong chat.'}</p>
+          </div>
+          <button type="button" className={styles.trainCloseButton} onClick={onClose}>
+            {'\u0110\u00f3ng'}
+          </button>
+        </div>
+
+        <div className={styles.guideBody}>
+          {sections.map((section) => (
+            <section key={section.title} className={styles.guideSection}>
+              <h4>{section.title}</h4>
+              <ul className={styles.guideList}>
+                {section.items.map((item, index) => (
+                  <li key={`${section.title}-${index}`}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ))}
+
+          <section className={styles.guideSection}>
+            <h4>{'Trigger \u0111i\u1ec1u khi\u1ec3n \u0111ang c\u1ea5u h\u00ecnh'}</h4>
+            {isLoading ? (
+              <p className={styles.guideMeta}>{'\u0110ang t\u1ea3i danh s\u00e1ch l\u1ec7nh...'}</p>
+            ) : error ? (
+              <p className={styles.guideError}>{error}</p>
+            ) : triggerLabels.length ? (
+              <>
+                <p className={styles.guideMeta}>
+                  {`Hi\u1ec7n c\u00f3 ${triggerLabels.length} trigger c\u00f3 th\u1ec3 g\u1ecdi tr\u1ef1c ti\u1ebfp trong chat.`}
+                </p>
+                <div className={styles.guideRuleGrid}>
+                  {triggerLabels.map((label) => (
+                    <span key={label} className={styles.guideRuleItem}>{label}</span>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className={styles.guideMeta}>{'Ch\u01b0a c\u00f3 trigger n\u00e0o \u0111\u01b0\u1ee3c c\u1ea5u h\u00ecnh.'}</p>
+            )}
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const HomePage = () => {
   const navigate = useNavigate();
   const { currentUser, auth, logout } = useAuth();
@@ -517,10 +721,17 @@ const HomePage = () => {
   const [userSettings, setUserSettings] = useState(() => getUserSettings(username));
   const [isVoicePromptMode, setIsVoicePromptMode] = useState(false);
   const [isTrainModalOpen, setIsTrainModalOpen] = useState(false);
-  const [isTipsOpen, setIsTipsOpen] = useState(true);
+  const [isTipsOpen, setIsTipsOpen] = useState(false);
+  const [isCommandGuideOpen, setIsCommandGuideOpen] = useState(false);
+  const [isLoadingCommandGuide, setIsLoadingCommandGuide] = useState(false);
+  const [commandGuideError, setCommandGuideError] = useState('');
+  const [commandGuideRules, setCommandGuideRules] = useState([]);
   const [trainQuestion, setTrainQuestion] = useState('');
   const [trainAnswer, setTrainAnswer] = useState('');
   const [isSubmittingTrain, setIsSubmittingTrain] = useState(false);
+  const [isSavingControlCommand, setIsSavingControlCommand] = useState(false);
+  const [saveControlCommandProgress, setSaveControlCommandProgress] = useState(0);
+  const [saveControlCommandStage, setSaveControlCommandStage] = useState('');
   const isVoiceMicEnabled = Boolean(userSettings.voiceChatEnabled);
   const isVoiceResponseEnabled = userSettings.aiResponseVoiceEnabled !== false;
 
@@ -533,6 +744,7 @@ const HomePage = () => {
   const handleBotResponseRef = useRef(null);
   const speechSupportNotifiedRef = useRef(false);
   const micPermissionDeniedNotifiedRef = useRef(false);
+  const saveControlProgressTimerRef = useRef(null);
 
   const stopCurrentSpeechOutput = useCallback(() => {
     if (currentAudioRef.current) {
@@ -562,6 +774,96 @@ const HomePage = () => {
         text,
       },
     ]);
+  }, []);
+
+  const stopSaveControlProgress = useCallback(() => {
+    if (saveControlProgressTimerRef.current) {
+      window.clearInterval(saveControlProgressTimerRef.current);
+      saveControlProgressTimerRef.current = null;
+    }
+  }, []);
+
+  const closeSaveControlDialog = useCallback(() => {
+    stopSaveControlProgress();
+    setIsSavingControlCommand(false);
+    setSaveControlCommandProgress(0);
+    setSaveControlCommandStage('');
+  }, [stopSaveControlProgress]);
+
+  const closeCommandGuide = useCallback(() => {
+    setIsCommandGuideOpen(false);
+  }, []);
+
+  const openCommandGuide = useCallback(async () => {
+    setIsCommandGuideOpen(true);
+    setIsLoadingCommandGuide(true);
+    setCommandGuideError('');
+    try {
+      const payload = await fetchComputerControlRulesApi();
+      const rules = Array.isArray(payload?.rules) ? payload.rules : [];
+      setCommandGuideRules(rules);
+    } catch (error) {
+      setCommandGuideRules([]);
+      setCommandGuideError(String(error?.message || '').trim() || 'Kh\u00f4ng t\u1ea3i \u0111\u01b0\u1ee3c danh s\u00e1ch l\u1ec7nh \u0111i\u1ec1u khi\u1ec3n.');
+    } finally {
+      setIsLoadingCommandGuide(false);
+    }
+  }, []);
+
+  const showDesktopCoordinateGrid = useCallback(async ({ announce = true, focus = '' } = {}) => {
+    try {
+      await showComputerControlOverlayApi({ focus });
+      if (announce) {
+        pushBotMessage('Đã hiển thị lưới tọa độ trực tiếp trên màn hình. Bạn có thể nói: "kéo chuột từ 100,200 đến 300,400" hoặc "kéo chuột từ a1 đến c3".');
+      }
+      return true;
+    } catch (error) {
+      if (announce) {
+        pushBotMessage(String(error?.message || '').trim() || 'Không hiển thị được lưới tọa độ trên màn hình.');
+      }
+      return false;
+    }
+  }, [pushBotMessage]);
+
+  const hideDesktopCoordinateGrid = useCallback(async (announce = true) => {
+    try {
+      await hideComputerControlOverlayApi();
+      if (announce) {
+        pushBotMessage('Đã ẩn lưới tọa độ trên màn hình.');
+      }
+      return true;
+    } catch (error) {
+      if (announce) {
+        pushBotMessage(String(error?.message || '').trim() || 'Không ẩn được lưới tọa độ lúc này.');
+      }
+      return false;
+    }
+  }, [pushBotMessage]);
+
+  const startSaveControlProgress = useCallback(() => {
+    stopSaveControlProgress();
+    setIsSavingControlCommand(true);
+    setSaveControlCommandProgress(8);
+    setSaveControlCommandStage('Đang phân tích câu lệnh chat...');
+    let currentProgress = 8;
+    saveControlProgressTimerRef.current = window.setInterval(() => {
+      currentProgress = Math.min(92, currentProgress + (currentProgress < 40 ? 12 : currentProgress < 70 ? 8 : 4));
+      setSaveControlCommandProgress(currentProgress);
+      if (currentProgress < 35) {
+        setSaveControlCommandStage('Đang chuyển câu lệnh thành thao tác hệ thống...');
+      } else if (currentProgress < 75) {
+        setSaveControlCommandStage('Đang lưu cấu hình thao tác vào máy...');
+      } else {
+        setSaveControlCommandStage('Đang hoàn tất cấu hình...');
+      }
+    }, 220);
+  }, [stopSaveControlProgress]);
+
+  useEffect(() => () => {
+    if (saveControlProgressTimerRef.current) {
+      window.clearInterval(saveControlProgressTimerRef.current);
+      saveControlProgressTimerRef.current = null;
+    }
   }, []);
 
   const stopVoiceRecognition = useCallback(() => {
@@ -873,12 +1175,41 @@ const HomePage = () => {
 
   handleBotResponseRef.current = handleBotResponse;
 
-  const handleSend = (e) => {
+  const handleSaveControlCommandFromChat = useCallback(async (rawPrompt, actionBody) => {
+    const triggerText = String(actionBody || '').trim();
+    if (!triggerText) {
+      pushBotMessage('Không nhận diện được thao tác cần lưu. Bạn thử lại với mẫu: "thêm thao tác di chuột lên 3 bước và click".');
+      return;
+    }
+
+    startSaveControlProgress();
+    try {
+      const result = await saveComputerControlRuleApi({
+        prompt: rawPrompt,
+        trigger: triggerText,
+      });
+      stopSaveControlProgress();
+      setSaveControlCommandProgress(100);
+      setSaveControlCommandStage('Đã lưu cấu hình thành công.');
+      await new Promise((resolve) => window.setTimeout(resolve, 350));
+      closeSaveControlDialog();
+
+      const savedTrigger = String(result?.trigger_display || triggerText).trim();
+      pushBotMessage(`Lưu thao tác thành công. Bạn có thể chat "${savedTrigger}" để chạy lại cấu hình này.`);
+    } catch (error) {
+      closeSaveControlDialog();
+      const message = String(error?.message || '').trim() || 'Không thể lưu cấu hình thao tác lúc này.';
+      pushBotMessage(message);
+    }
+  }, [closeSaveControlDialog, pushBotMessage, startSaveControlProgress, stopSaveControlProgress]);
+
+  const handleSend = async (e) => {
     e.preventDefault();
-    if (!input.trim() || isBotTyping) return;
+    if (!input.trim() || isBotTyping || isSavingControlCommand) return;
 
     const messageText = input.trim();
     const normalizedMessage = normalizeVoiceCommand(messageText);
+    const saveActionBody = getSaveActionBody(messageText);
     const newMessage = { id: Date.now(), sender: 'user', text: messageText };
 
     if (isTipsCommand(normalizedMessage)) {
@@ -913,12 +1244,36 @@ const HomePage = () => {
       return;
     }
 
+    if (saveActionBody) {
+      setMessages((prev) => [...prev, newMessage]);
+      setInput('');
+      await handleSaveControlCommandFromChat(messageText, saveActionBody);
+      return;
+    }
+
+    if (isHideCoordinateGridCommand(normalizedMessage)) {
+      setMessages((prev) => [...prev, newMessage]);
+      setInput('');
+      await hideDesktopCoordinateGrid();
+      return;
+    }
+
+    if (isCoordinateGridCommand(normalizedMessage)) {
+      setMessages((prev) => [...prev, newMessage]);
+      setInput('');
+      await showDesktopCoordinateGrid();
+      return;
+    }
+
     let historySnapshot = [];
     setMessages((prev) => {
       historySnapshot = [...prev, newMessage];
       return historySnapshot;
     });
     setInput('');
+    if (shouldAutoOpenCoordinateGrid(normalizedMessage)) {
+      void showDesktopCoordinateGrid({ announce: false });
+    }
     handleBotResponse(messageText, historySnapshot, 'text');
   };
 
@@ -1024,6 +1379,17 @@ const HomePage = () => {
         historySnapshot = [...prev, voiceMessage];
         return historySnapshot;
       });
+      if (isHideCoordinateGridCommand(normalizedTranscript)) {
+        void hideDesktopCoordinateGrid();
+        return;
+      }
+      if (isCoordinateGridCommand(normalizedTranscript)) {
+        void showDesktopCoordinateGrid();
+        return;
+      }
+      if (shouldAutoOpenCoordinateGrid(normalizedTranscript)) {
+        void showDesktopCoordinateGrid({ announce: false });
+      }
       if (handleBotResponseRef.current) {
         handleBotResponseRef.current(transcript, historySnapshot, 'voice');
       }
@@ -1057,7 +1423,7 @@ const HomePage = () => {
       recognitionRef.current = null;
       setIsRecording(false);
     }
-  }, [isVoiceMicEnabled, isBotTyping, isSpeaking, pushBotMessage, stopVoiceRecognition, isVoicePromptMode, toggleVoiceResponse]);
+  }, [isVoiceMicEnabled, isBotTyping, isSpeaking, pushBotMessage, stopVoiceRecognition, isVoicePromptMode, toggleVoiceResponse, showDesktopCoordinateGrid, hideDesktopCoordinateGrid]);
 
   useEffect(() => {
     if (!isVoiceMicEnabled || isBotTyping || isSpeaking) {
@@ -1088,6 +1454,21 @@ const HomePage = () => {
 
     if (action === 'privacy') {
       navigate('/userInfo?tab=security');
+      return;
+    }
+
+    if (action === 'guide') {
+      openCommandGuide();
+      return;
+    }
+
+    if (action === 'gridShow') {
+      void showDesktopCoordinateGrid();
+      return;
+    }
+
+    if (action === 'gridHide') {
+      void hideDesktopCoordinateGrid();
       return;
     }
 
@@ -1155,7 +1536,7 @@ const HomePage = () => {
     <div className={styles.homePageContainer}>
       <header className={styles.header}>
         <h1 className={styles.headerTitle}>
-          {'TRANG CH\u1ee6 AIPA'} <Zap size={18} style={{ display: 'inline', color: '#00bcd4' }} />
+          {'TRANG CH\u1ee6 AIPA'} <Zap size={18} style={{ display: 'inline', color: 'var(--accent-strong)' }} />
         </h1>
 
         <div className={styles.headerActions}>
@@ -1192,7 +1573,7 @@ const HomePage = () => {
 
           <div className={styles.botInfo}>
             <p className={styles.botName}>{'Tr\u1ee3 l\u00fd AI'}</p>
-            <p className={styles.botStatus} style={{ color: !isVoiceMicEnabled ? '#9ca3af' : isVoicePromptMode ? '#ef4444' : isSpeaking ? '#00bcd4' : '#48bb78' }}>
+            <p className={styles.botStatus} style={{ color: !isVoiceMicEnabled ? 'var(--text-muted)' : isVoicePromptMode ? 'var(--danger-color)' : isSpeaking ? 'var(--accent-strong)' : 'var(--success-color)' }}>
               &#9679; {!isVoiceMicEnabled ? 'MIC \u0110ANG T\u1ea2T TRONG C\u00c0I \u0110\u1eb6T' : isVoicePromptMode ? '\u0110ANG NH\u1eacP GI\u1eccNG N\u00d3I' : isRecording ? 'MIC \u0110ANG CH\u1edc T\u1eea K\u00cdCH HO\u1ea0T' : isSpeaking ? '\u0110ANG \u0110\u1eccC C\u00c2U TR\u1ea2 L\u1edcI' : 'TR\u1ef0C TUY\u1ebeN - S\u1eb4N S\u00c0NG'}
             </p>
             <div className={styles.voiceSelector}>
@@ -1262,11 +1643,11 @@ const HomePage = () => {
                 handleSend(e);
               }
             }}
-            disabled={isBotTyping}
+            disabled={isBotTyping || isSavingControlCommand}
           />
 
           {input.trim() ? (
-            <button type="submit" className={styles.sendButton} disabled={isBotTyping || !input.trim()}>
+            <button type="submit" className={styles.sendButton} disabled={isBotTyping || isSavingControlCommand || !input.trim()}>
               <Send size={20} fill="white" />
             </button>
           ) : (
@@ -1281,6 +1662,14 @@ const HomePage = () => {
           )}
         </form>
       </footer>
+      <CommandGuideModal
+        isOpen={isCommandGuideOpen}
+        isLoading={isLoadingCommandGuide}
+        error={commandGuideError}
+        rules={commandGuideRules}
+        sections={COMMAND_GUIDE_SECTIONS}
+        onClose={closeCommandGuide}
+      />
       <TrainModal
         isOpen={isTrainModalOpen}
         question={trainQuestion}
@@ -1290,6 +1679,11 @@ const HomePage = () => {
         onAnswerChange={setTrainAnswer}
         onClose={closeTrainModal}
         onSubmit={handleSubmitTrain}
+      />
+      <CommandSaveProgressModal
+        isOpen={isSavingControlCommand}
+        progress={saveControlCommandProgress}
+        stageText={saveControlCommandStage}
       />
     </div>
   );

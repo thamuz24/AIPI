@@ -5,9 +5,9 @@ import com.example.aipa.dto.auth.AuthResponse;
 import com.example.aipa.dto.auth.LoginRequest;
 import com.example.aipa.dto.auth.RegisterRequest;
 import com.example.aipa.model.User;
-import com.example.aipa.repository.IUserRepository;
 import com.example.aipa.security.JwtService;
 import com.example.aipa.service.AuthService;
+import com.example.aipa.service.UserService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.JwtException;
@@ -26,7 +26,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
-    private final IUserRepository userRepository;
+    private final UserService userService;
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
@@ -43,7 +43,7 @@ public class AuthServiceImpl implements AuthService {
                 new UsernamePasswordAuthenticationToken(usernameOrEmail, request.getPassword())
         );
 
-        User user = userRepository.findByUsernameOrEmail(usernameOrEmail)
+        User user = userService.findByUsernameOrEmail(usernameOrEmail)
                 .orElseThrow(() -> new BadCredentialsException("Invalid username/email or password"));
 
         org.springframework.security.core.userdetails.User principal =
@@ -58,7 +58,7 @@ public class AuthServiceImpl implements AuthService {
     public AuthResponse loginByFace(FaceLoginRequest request) {
         double[] loginVector = parseEmbeddingVector(request.getFaceEmbeddingsJson());
 
-        List<User> candidates = userRepository.findByIsActiveTrueAndFaceEmbeddingsJsonIsNotNull();
+        List<User> candidates = userService.getActiveUsersWithFaceEmbeddings();
         if (candidates.isEmpty()) {
             throw new BadCredentialsException("Chua co du lieu khuon mat de xac thuc");
         }
@@ -98,10 +98,10 @@ public class AuthServiceImpl implements AuthService {
         String email = request.getEmail().trim().toLowerCase();
         String faceEmbeddingsJson = request.getFaceEmbeddingsJson().trim();
 
-        if (userRepository.findByUsername(username).isPresent()) {
+        if (userService.findByUsername(username).isPresent()) {
             throw new IllegalArgumentException("Username already exists");
         }
-        if (userRepository.findByEmail(email).isPresent()) {
+        if (userService.findByEmail(email).isPresent()) {
             throw new IllegalArgumentException("Email already exists");
         }
         parseEmbeddingVector(faceEmbeddingsJson);
@@ -114,7 +114,8 @@ public class AuthServiceImpl implements AuthService {
         user.setRole(0);
         user.setActive(true);
 
-        User savedUser = userRepository.save(user);
+        User savedUser = userService.registerUser(user)
+                .orElseThrow(() -> new IllegalStateException("Cannot save user"));
         org.springframework.security.core.userdetails.User principal =
                 buildPrincipal(savedUser);
         String role = resolveRole(savedUser);
@@ -132,7 +133,7 @@ public class AuthServiceImpl implements AuthService {
             throw new BadCredentialsException("Invalid refresh token");
         }
 
-        User user = userRepository.findByUsernameOrEmail(username)
+        User user = userService.findByUsernameOrEmail(username)
                 .orElseThrow(() -> new BadCredentialsException("User not found"));
 
         UserDetails principal = buildPrincipal(user);

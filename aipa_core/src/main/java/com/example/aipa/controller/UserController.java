@@ -42,6 +42,7 @@ public class UserController {
         );
 
         String accessToken = jwtService.generateToken(updatedPrincipal, role);
+        String refreshToken = jwtService.generateRefreshToken(updatedPrincipal);
 
         return ResponseEntity.ok(
                 new UpdateProfileResponse(
@@ -52,6 +53,7 @@ public class UserController {
                         updatedUser.getRole(),
                         updatedUser.getRegistrationTimestamp(),
                         accessToken,
+                        refreshToken,
                         "Bearer",
                         "Profile updated successfully"
                 )
