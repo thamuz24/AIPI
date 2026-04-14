@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="633261ec-bd20-4111-8690-96908a82ee6c" name="Changes" comment="te">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AIPA_App/app/aipa-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/aipa-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/run_aipa_all.log" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/run_aipa_all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/uvicorn.out.log" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/uvicorn.out.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/shared/api/assistantApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/shared/api/assistantApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/shared/services/apiError.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/shared/services/apiError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/service/UserFileStoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/service/UserFileStoreService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +150,7 @@
       <workItem from="1774610778407" duration="20000" />
       <workItem from="1775823812965" duration="3719000" />
       <workItem from="1776169666138" duration="17925000" />
-      <workItem from="1776188289485" duration="12022000" />
+      <workItem from="1776188289485" duration="13251000" />
     </task>
     <task id="LOCAL-00001" summary="te">
       <option name="closed" value="true" />

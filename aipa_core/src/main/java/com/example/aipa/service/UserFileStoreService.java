@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -19,6 +20,9 @@ import java.util.Optional;
 
 @Service
 public class UserFileStoreService {
+    private static final String PRIMARY_STORE_FILE_NAME = "user.txt";
+    private static final String LEGACY_STORE_FILE_NAME = "users.txt";
+
     private final ObjectMapper objectMapper;
     private final Object monitor = new Object();
     private final Path storePath;
@@ -204,6 +208,7 @@ public class UserFileStoreService {
         synchronized (monitor) {
             try {
                 Files.createDirectories(storePath.getParent());
+                migrateLegacyStoreIfNeeded();
                 if (!Files.exists(storePath)) {
                     writeStore(new StoreDocument());
                 }
@@ -259,17 +264,48 @@ public class UserFileStoreService {
             Path appExecutable = Paths.get(jpackageAppPath).toAbsolutePath().normalize();
             Path appRoot = appExecutable.getParent();
             if (appRoot != null) {
-                return appRoot.resolve("users.txt");
+                return appRoot.resolve(PRIMARY_STORE_FILE_NAME);
             }
         }
 
         Path current = Paths.get("").toAbsolutePath().normalize();
         Path resolved = findAipaAppDirectory(current);
         if (resolved != null) {
-            return resolved.resolve("users.txt");
+            return resolved.resolve(PRIMARY_STORE_FILE_NAME);
         }
 
-        return current.resolve("users.txt");
+        return current.resolve(PRIMARY_STORE_FILE_NAME);
+    }
+
+    private void migrateLegacyStoreIfNeeded() throws IOException {
+        if (Files.exists(storePath)) {
+            return;
+        }
+
+        for (Path legacyPath : resolveLegacyStorePaths()) {
+            if (!Files.exists(legacyPath) || Files.isDirectory(legacyPath)) {
+                continue;
+            }
+
+            Files.createDirectories(storePath.getParent());
+            Files.copy(legacyPath, storePath, StandardCopyOption.REPLACE_EXISTING);
+            return;
+        }
+    }
+
+    private List<Path> resolveLegacyStorePaths() {
+        List<Path> legacyPaths = new ArrayList<>();
+        Path siblingLegacy = storePath.resolveSibling(LEGACY_STORE_FILE_NAME).toAbsolutePath().normalize();
+        if (!siblingLegacy.equals(storePath)) {
+            legacyPaths.add(siblingLegacy);
+        }
+
+        Path currentLegacy = Paths.get("").toAbsolutePath().normalize().resolve(LEGACY_STORE_FILE_NAME);
+        if (!currentLegacy.equals(storePath) && !legacyPaths.contains(currentLegacy)) {
+            legacyPaths.add(currentLegacy);
+        }
+
+        return legacyPaths;
     }
 
     private Path findAipaAppDirectory(Path start) {
