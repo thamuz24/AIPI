@@ -1,11 +1,46 @@
 import axios from 'axios';
 
+function extractMessageFromPayload(payload) {
+  if (!payload) return '';
+
+  if (typeof payload === 'string') {
+    const value = payload.trim();
+    return value === '[object Object]' ? '' : value;
+  }
+
+  if (Array.isArray(payload)) {
+    for (const item of payload) {
+      const message = extractMessageFromPayload(item);
+      if (message) return message;
+    }
+    return '';
+  }
+
+  if (typeof payload === 'object') {
+    for (const key of ['message', 'detail', 'error', 'title', 'description', 'defaultMessage']) {
+      const message = extractMessageFromPayload(payload?.[key]);
+      if (message) return message;
+    }
+
+    if (typeof payload?.field === 'string' && typeof payload?.defaultMessage === 'string') {
+      return `${payload.field}: ${payload.defaultMessage}`.trim();
+    }
+
+    for (const value of Object.values(payload)) {
+      const message = extractMessageFromPayload(value);
+      if (message) return message;
+    }
+  }
+
+  return '';
+}
+
 export function getApiErrorMessage(error, fallbackMessage = 'Có lỗi xảy ra. Vui lòng thử lại.') {
   if (!error) return fallbackMessage;
 
   if (axios.isAxiosError(error)) {
-    const responseMessage = error.response?.data?.message;
-    if (typeof responseMessage === 'string' && responseMessage.trim()) {
+    const responseMessage = extractMessageFromPayload(error.response?.data);
+    if (responseMessage) {
       return responseMessage;
     }
 
@@ -33,7 +68,18 @@ export function getApiErrorMessage(error, fallbackMessage = 'Có lỗi xảy ra.
   }
 
   if (error instanceof Error && error.message) {
+    if (error.message === '[object Object]') {
+      const objectMessage = extractMessageFromPayload(error);
+      if (objectMessage && objectMessage !== '[object Object]') {
+        return objectMessage;
+      }
+    }
     return error.message;
+  }
+
+  const payloadMessage = extractMessageFromPayload(error);
+  if (payloadMessage) {
+    return payloadMessage;
   }
 
   return fallbackMessage;

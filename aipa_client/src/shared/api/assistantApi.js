@@ -15,6 +15,40 @@ const HEALTH_ENDPOINT = `${AIPA_CONTROLL_URL}/health`;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+const extractErrorMessage = (payload) => {
+  if (!payload) return '';
+  if (typeof payload === 'string') {
+    const value = payload.trim();
+    return value === '[object Object]' ? '' : value;
+  }
+
+  if (Array.isArray(payload)) {
+    for (const item of payload) {
+      const message = extractErrorMessage(item);
+      if (message) return message;
+    }
+    return '';
+  }
+
+  if (typeof payload === 'object') {
+    for (const key of ['message', 'detail', 'error', 'title', 'description', 'defaultMessage']) {
+      const message = extractErrorMessage(payload?.[key]);
+      if (message) return message;
+    }
+
+    if (typeof payload?.field === 'string' && typeof payload?.defaultMessage === 'string') {
+      return `${payload.field}: ${payload.defaultMessage}`.trim();
+    }
+
+    for (const value of Object.values(payload)) {
+      const message = extractErrorMessage(value);
+      if (message) return message;
+    }
+  }
+
+  return '';
+};
+
 const looksLikeNetworkError = (error) => {
   if (!error) return false;
   if (error.name === 'AbortError') return true;
@@ -65,7 +99,7 @@ async function requestJson(url, payload, timeoutMs = 30000) {
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    const message = data?.detail || data?.message || 'Kh\u00f4ng th\u1ec3 k\u1ebft n\u1ed1i d\u1ecbch v\u1ee5 AI.';
+    const message = extractErrorMessage(data) || 'Kh\u00f4ng th\u1ec3 k\u1ebft n\u1ed1i d\u1ecbch v\u1ee5 AI.';
     throw new Error(message);
   }
 

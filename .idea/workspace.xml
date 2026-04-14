@@ -6,46 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="633261ec-bd20-4111-8690-96908a82ee6c" name="Changes" comment="te">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/AIPA.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/AIPA.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/aipa-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/aipa-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/client/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/client/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/client/static/css/main.dd54e5ae.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/client/static/css/main.dd54e5ae.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/client/static/js/main.fa36ce46.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/client/static/js/main.fa36ce46.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/client/static/js/main.fa36ce46.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/chat_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/chat_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/controllers/mouse_keyboard_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/controllers/mouse_keyboard_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/conversation_store.json" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/conversation_store.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/model/keyword_train/computer_control_train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/model/keyword_train/computer_control_train.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/requirements-chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/requirements-chat.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/run_aipa_all.bat" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/run_aipa_all.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/admin/pages/AdminDashboardPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/admin/pages/AdminDashboardPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/auth/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/auth/pages/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/auth/pages/LoginPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/auth/pages/LoginPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/auth/pages/RegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/auth/pages/RegisterPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/auth/pages/RegisterPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/auth/pages/RegisterPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/home/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/home/pages/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/home/pages/HomePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/home/pages/HomePage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/user/pages/UserManagerInfoPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/user/pages/UserManagerInfoPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/features/user/pages/UserManagerInfoPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/features/user/pages/UserManagerInfoPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AIPA_App/app/controll/uvicorn.out.log" beforeDir="false" afterPath="$PROJECT_DIR$/AIPA_App/app/controll/uvicorn.out.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aipa_client/src/shared/api/assistantApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/shared/api/assistantApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/shared/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/shared/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_client/src/shared/ui/ToastProvider.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/shared/ui/ToastProvider.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_controll/chat_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_controll/chat_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/AipaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/AipaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/controller/SecurityTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/controller/SecurityTestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/dto/user/UpdateProfileResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/dto/user/UpdateProfileResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/security/CustomUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/security/CustomUserDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/java/com/example/aipa/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aipa_core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_core/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aipa_client/src/shared/services/apiError.js" beforeDir="false" afterPath="$PROJECT_DIR$/aipa_client/src/shared/services/apiError.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +149,7 @@
       <workItem from="1774610778407" duration="20000" />
       <workItem from="1775823812965" duration="3719000" />
       <workItem from="1776169666138" duration="17925000" />
-      <workItem from="1776188289485" duration="10120000" />
+      <workItem from="1776188289485" duration="12022000" />
     </task>
     <task id="LOCAL-00001" summary="te">
       <option name="closed" value="true" />
